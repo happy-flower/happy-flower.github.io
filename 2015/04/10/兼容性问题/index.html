@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是做成png8即可。 不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为{padding：0px; margin:0px} IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{float:left">
+<meta name="description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是 做成png8即可 。  不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为 {padding：0px; margin:0px}。  IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{floa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="兼容性问题及解决方案">
 <meta property="og:url" content="http://yoursite.com/2015/04/10/兼容性问题/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是做成png8即可。 不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为{padding：0px; margin:0px} IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{float:left">
+<meta property="og:description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是 做成png8即可 。  不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为 {padding：0px; margin:0px}。  IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{floa">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-26T15:49:34.000Z">
+<meta property="og:updated_time" content="2017-07-27T16:25:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="兼容性问题及解决方案">
-<meta name="twitter:description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是做成png8即可。 不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为{padding：0px; margin:0px} IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{float:left">
+<meta name="twitter:description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是 做成png8即可 。  不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为 {padding：0px; margin:0px}。  IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{floa">
 
 
 
@@ -323,10 +323,20 @@
 
       
         <h3 id="工作中常见的兼容性问题及解决方式"><a href="#工作中常见的兼容性问题及解决方式" class="headerlink" title="工作中常见的兼容性问题及解决方式"></a>工作中常见的兼容性问题及解决方式</h3><ol>
-<li>png24位的图片在IE6上出背景，解决方案是做成png8即可。</li>
-<li>不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为{padding：0px; margin:0px}</li>
-<li>IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{float:left;width:10px;margin:0 0  0  100px;}这种情况下，IE<br>会产生20px的距离，解决方案是float的标签样式控制中加入<em>display：inline;将其转化为行内属性。（”</em>“这个符号只有IE6会识别）。</li>
-<li>IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用getAtttibute()获取自定义属性;但在Firefox下,只能使用getAtttibute()来获取自定义的属性。解决方式：统一使用getAtttibute()来获取自定义的属性。</li>
+<li><p>png24位的图片在IE6上出背景，解决方案是 <code>做成png8即可 。</code></p>
+</li>
+<li><p>不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为 <code>{padding：0px; margin:0px}。</code></p>
+</li>
+<li><p>IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{float:left;width:10px;margin:0 0  0  100px;}这种情况下，IE会产生20px的距离，解决方案是 <code>float的标签样式控制中加入_display：inline;将其转化为行内属性。（&quot;_&quot;这个符号只有IE6会识别）。</code></p>
+</li>
+<li><p>IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用getAtttibute()获取自定义属性;但在Firefox下,只能使用getAtttibute()来获取自定义的属性。解决方式： <code>统一使用getAtttibute()来获取自定义的属性。</code></p>
+</li>
+<li><p>IE下，even对象有x，y属性，但没有pageX和pageY属性，Firefox下，event对象有pageX和pageY属性，但没有x和y属性。解决方式： <code>（条件注释）缺点是IE浏览器可能会增加额外的HTTP请求数。</code></p>
+</li>
+<li><p>Chrome中文界面下默认会将小于12px的文本强制按照12px来显示，解决方式： <code>可通过加入css属性：-webkit-text-size-adjust：none;解决。</code></p>
+</li>
+<li><p>超链接访问过后的样式hover样式就不出现了，被点击访问过的超链接样式不在具有hover和active了。解决方式： <code>改变css属性的排列顺序：L-V-H-A(a:link{} a:visited{} a:hover{} a:active{})。</code></p>
+</li>
 </ol>
 
       
@@ -368,8 +378,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/23/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/20/WEB前端性能优化/" rel="prev" title="WEB前端性能优化">
+                WEB前端性能优化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -442,7 +452,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
