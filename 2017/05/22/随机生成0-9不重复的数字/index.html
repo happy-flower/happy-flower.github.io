@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="方法一：1234567var str=&quot;  &quot;; //定义一个字符串，其给一个空的元素for(var i=0;i&amp;lt;10;i++)&amp;#123;    var s=str.charAt(Math.floor(Math.random()*(str.length)));    str=str.replace(s,i+s); //由于s是随机的，所以位置的放置也是随机的&amp;#125;str=str.re">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-28T16:09:00.000Z">
+<meta property="og:updated_time" content="2017-07-30T01:07:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="随机生成不重复的0-9的整数-----案例">
 <meta name="twitter:description" content="方法一：1234567var str=&quot;  &quot;; //定义一个字符串，其给一个空的元素for(var i=0;i&amp;lt;10;i++)&amp;#123;    var s=str.charAt(Math.floor(Math.random()*(str.length)));    str=str.replace(s,i+s); //由于s是随机的，所以位置的放置也是随机的&amp;#125;str=str.re">
@@ -105,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -324,8 +324,7 @@
       
         <h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
 <h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> chest = &#123;&#125;,arr = [],mun, count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">    mun = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div><div class="line">    <span class="keyword">if</span> (!chest[mun]) &#123; <span class="comment">//间接的使用in的方法，判断是否含有mun数字，从而启动去重的作用</span></div><div class="line">        chest[mun] = <span class="literal">true</span>;</div><div class="line">        arr.push(mun);</div><div class="line">        <span class="keyword">continue</span>;<span class="comment">//跳出本次循环，进入下次循环</span></div><div class="line">    &#125;</div><div class="line">    ++count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2><p>  ``` js</p>
-
+<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;</div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -516,7 +515,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -587,6 +586,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>

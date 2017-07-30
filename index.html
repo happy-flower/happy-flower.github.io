@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -104,7 +104,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -456,8 +456,7 @@
           
             <h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
 <h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> chest = &#123;&#125;,arr = [],mun, count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">    mun = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div><div class="line">    <span class="keyword">if</span> (!chest[mun]) &#123; <span class="comment">//间接的使用in的方法，判断是否含有mun数字，从而启动去重的作用</span></div><div class="line">        chest[mun] = <span class="literal">true</span>;</div><div class="line">        arr.push(mun);</div><div class="line">        <span class="keyword">continue</span>;<span class="comment">//跳出本次循环，进入下次循环</span></div><div class="line">    &#125;</div><div class="line">    ++count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2><p>  ``` js</p>
-
+<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;</div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -740,6 +739,22 @@
 <li><p>Chrome中文界面下默认会将小于12px的文本强制按照12px来显示，解决方式： <code>可通过加入css属性：-webkit-text-size-adjust：none;解决。</code></p>
 </li>
 <li><p>超链接访问过后的样式hover样式就不出现了，被点击访问过的超链接样式不在具有hover和active了。解决方式： <code>改变css属性的排列顺序：L-V-H-A(a:link{} a:visited{} a:hover{} a:active{})。</code></p>
+</li>
+<li><p>背景透明:opacity在IE下无效。解决方式: <code>非IE:opacity=.1;IE:filter: alpha(opacity=10)。</code></p>
+</li>
+<li><p>子元素会继承透明属性:父元素设置了透明度，则子元素也会透明。解决办法：<code>非IE:background:rgba(0,0,0,0.6);IE:filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)。</code><br><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1501379319&amp;di=743f3211cd0ede77c41c5a0db7a9d019&amp;src=http://images2015.cnblogs.com/blog/593188/201512/593188-20151204102045549-1154843748.png" alt="插入圖片"></p>
+</li>
+<li><p>宽度解析不同:在Ie6中width（宽度）包括padding，在其他浏览器中width不包括padding。解決方法：<code>使用过滤器。</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">a.下划线属性过滤器</div><div class="line">当在一个属性前面增加了一个下划线后，由于符合标准的浏览器不能识别带有下线的属性而忽略了这个声明，但是在IE6及更低版本浏览器中会继续解析这个规则。</div><div class="line">语法：选择符&#123;_属性：属性值;&#125;</div><div class="line"></div><div class="line">b. !important关键字过滤器</div><div class="line">它表示所附加的声明具有最高优先级的意思。但由于IE6及更低版本不能识别它,我们可以利用IE6的这个Bug作为过滤器来兼容ＩＥ６和其它标准浏览器。</div><div class="line">语法：选择符&#123;属性：属性值!important;&#125;</div><div class="line"></div><div class="line">c. *属性过滤器</div><div class="line">当在一个属性前面增加了*后，该属性只能被IE7浏览器识别，其它浏览器混略该属性的作用。</div><div class="line">语法：选择符&#123;*属性：属性值;&#125;</div><div class="line"></div><div class="line">d. \9:IE版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\9;&#125;</div><div class="line"></div><div class="line">e.  \0  :   IE8 及以上版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\0;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>最大、最小宽、高问题:IE不识别min-width、min-heigh、max-width、max-heigh。解决办法：<code>div{width: auto;height: auto;min-width: 200px;min-height: 200px;}  
+http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code></p>
+</li>
+<li><p>IE6下默认行高：IE6下无法设置低于14px高，原因是由其默认行高引起的。解決办法：<code>声明：overflow:hidden;或者line-height:1px。</code></p>
+</li>
+<li><p>居中问题:IE6下在使用margin:0 auto;无法使其居中。解決办法：<code>为其父容器设置text-align:center。</code></p>
+</li>
+<li><p>baseline：各种元素的baseline不同，导致同样高度的行内元素无法垂直对齐。解決方法：<code>vertical-align:middle。</code></p>
 </li>
 </ol>
 
@@ -1294,7 +1309,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -1365,6 +1380,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
 
   
 
