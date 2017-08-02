@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="方法一：1234567var str=&quot;  &quot;; //定义一个字符串，其给一个空的元素for(var i=0;i&amp;lt;10;i++)&amp;#123;    var s=str.charAt(Math.floor(Math.random()*(str.length)));    str=str.replace(s,i+s); //由于s是随机的，所以位置的放置也是随机的&amp;#125;str=str.re">
+<meta name="description" content="清除浮动的优缺点及原理阐述 方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用  方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随机生成不重复的0-9的整数-----案例">
-<meta property="og:url" content="http://yoursite.com/2017/05/22/随机生成0-9不重复的数字/index.html">
+<meta property="og:title" content="清除浮动的方式">
+<meta property="og:url" content="http://yoursite.com/2017/07/25/清除浮动的方式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="方法一：1234567var str=&quot;  &quot;; //定义一个字符串，其给一个空的元素for(var i=0;i&amp;lt;10;i++)&amp;#123;    var s=str.charAt(Math.floor(Math.random()*(str.length)));    str=str.replace(s,i+s); //由于s是随机的，所以位置的放置也是随机的&amp;#125;str=str.re">
+<meta property="og:description" content="清除浮动的优缺点及原理阐述 方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用  方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:b">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-31T23:38:02.000Z">
+<meta property="og:updated_time" content="2017-08-02T00:34:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随机生成不重复的0-9的整数-----案例">
-<meta name="twitter:description" content="方法一：1234567var str=&quot;  &quot;; //定义一个字符串，其给一个空的元素for(var i=0;i&amp;lt;10;i++)&amp;#123;    var s=str.charAt(Math.floor(Math.random()*(str.length)));    str=str.replace(s,i+s); //由于s是随机的，所以位置的放置也是随机的&amp;#125;str=str.re">
+<meta name="twitter:title" content="清除浮动的方式">
+<meta name="twitter:description" content="清除浮动的优缺点及原理阐述 方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用  方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:b">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/22/随机生成0-9不重复的数字/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/25/清除浮动的方式/"/>
 
 
 
 
 
-  <title> 随机生成不重复的0-9的整数-----案例 | Hexo </title>
+  <title> 清除浮动的方式 | Hexo </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/22/随机生成0-9不重复的数字/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/清除浮动的方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘金芳">
@@ -271,7 +271,7 @@
             
             
               
-                随机生成不重复的0-9的整数-----案例
+                清除浮动的方式
               
             
           </h1>
@@ -286,8 +286,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-22T00:00:00+08:00">
-                2017-05-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T00:00:00+08:00">
+                2017-07-25
               </time>
             
 
@@ -322,9 +322,50 @@
       
 
       
-        <h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
-<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> chest = &#123;&#125;,arr = [],mun, count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">    mun = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div><div class="line">    <span class="keyword">if</span> (!chest[mun]) &#123; <span class="comment">//间接的使用in的方法，判断是否含有mun数字，从而启动去重的作用</span></div><div class="line">        chest[mun] = <span class="literal">true</span>;</div><div class="line">        arr.push(mun);</div><div class="line">        <span class="keyword">continue</span>;<span class="comment">//跳出本次循环，进入下次循环</span></div><div class="line">    &#125;</div><div class="line">    ++count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;</div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="清除浮动的优缺点及原理阐述"><a href="#清除浮动的优缺点及原理阐述" class="headerlink" title="清除浮动的优缺点及原理阐述"></a>清除浮动的优缺点及原理阐述</h2><ul>
+<li><p><strong>方法一：如果高度是固定的，给父级加height</strong><br>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用</p>
+</li>
+<li><p><strong>方法二：父级结尾处添加额外的标签</strong><br>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方法三：父级div定义 伪类:after和zoom</strong><br>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
+<pre><code class="js">.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+.left{float:left;width:20%;height:200px;background:#DDD}
+.right{float:right;width:30%;height:80px;background:#DDD}
+.div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
+&lt;div class="div1 clearfloat"&gt; 
+  &lt;div class="left"&gt;Left&lt;/div&gt; 
+  &lt;div class="right"&gt;Right&lt;/div&gt; 
+&lt;/div&gt;
+&lt;div class="div2"&gt;div2&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><strong>方法四：父级div定义 overflow：hidden</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。<pre><code class="js">.div1{background:#000080;border:1px solid red;/*解决代码*/width:98%;overflow:auto}
+.div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
+.left{float:left;width:20%;height:200px;background:#DDD}
+.right{float:right;width:30%;height:80px;background:#DDD}
+&lt;div class="div1"&gt; 
+ &lt;div class="left"&gt;Left&lt;/div&gt; 
+ &lt;div class="right"&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="div2"&gt;div2&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p><strong>方法五：父级div定义 overlow:auto</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。<br>建议：如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
+</li>
+<li><p><strong>方法六：父级div也一起浮动</strong><br>原理：所有代码一起浮动，就变成了一个整体<br>优点：没有优点<br>缺点：会产生新的浮动问题。<br>建议：不推荐使用，只作了解。</p>
+</li>
+<li><p><strong>方法七：父级div定义 display:table</strong><br>原理：将div属性变成表格<br>优点：没有优点<br>缺点：会产生新的未知问题。<br>建议：不推荐使用，只作了解。</p>
+</li>
+<li><p><strong>方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”</strong><br>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both<br>建议：不推荐使用，只作了解。</p>
+</li>
+</ul>
+
       
     </div>
 
@@ -354,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/20/WEB前端性能优化/" rel="next" title="WEB前端性能优化">
-                <i class="fa fa-chevron-left"></i> WEB前端性能优化
+              <a href="/2017/07/23/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
@@ -363,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/22/js中单线程的证明/" rel="prev" title="关于js执行属于单线程案例---demo">
-                关于js执行属于单线程案例---demo <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -477,7 +514,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一："><span class="nav-number">1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二："><span class="nav-number">2.</span> <span class="nav-text">方法二：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法三："><span class="nav-number">3.</span> <span class="nav-text">方法三：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动的优缺点及原理阐述"><span class="nav-number">1.</span> <span class="nav-text">清除浮动的优缺点及原理阐述</span></a></li></ol></div>
             
 
           </div>

@@ -251,6 +251,166 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/清除浮动的方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/25/清除浮动的方式/" itemprop="url">
+                  清除浮动的方式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-25T00:00:00+08:00">
+                2017-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="清除浮动的优缺点及原理阐述"><a href="#清除浮动的优缺点及原理阐述" class="headerlink" title="清除浮动的优缺点及原理阐述"></a>清除浮动的优缺点及原理阐述</h2><ul>
+<li><p><strong>方法一：如果高度是固定的，给父级加height</strong><br>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用</p>
+</li>
+<li><p><strong>方法二：父级结尾处添加额外的标签</strong><br>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方法三：父级div定义 伪类:after和zoom</strong><br>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
+<pre><code class="js">.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{zoom:1}
+.left{float:left;width:20%;height:200px;background:#DDD}
+.right{float:right;width:30%;height:80px;background:#DDD}
+.div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
+&lt;div class="div1 clearfloat"&gt; 
+  &lt;div class="left"&gt;Left&lt;/div&gt; 
+  &lt;div class="right"&gt;Right&lt;/div&gt; 
+&lt;/div&gt;
+&lt;div class="div2"&gt;div2&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><strong>方法四：父级div定义 overflow：hidden</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。<pre><code class="js">.div1{background:#000080;border:1px solid red;/*解决代码*/width:98%;overflow:auto}
+.div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
+.left{float:left;width:20%;height:200px;background:#DDD}
+.right{float:right;width:30%;height:80px;background:#DDD}
+&lt;div class="div1"&gt; 
+ &lt;div class="left"&gt;Left&lt;/div&gt; 
+ &lt;div class="right"&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="div2"&gt;div2&lt;/div&gt;
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p><strong>方法五：父级div定义 overlow:auto</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。<br>建议：如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
+</li>
+<li><p><strong>方法六：父级div也一起浮动</strong><br>原理：所有代码一起浮动，就变成了一个整体<br>优点：没有优点<br>缺点：会产生新的浮动问题。<br>建议：不推荐使用，只作了解。</p>
+</li>
+<li><p><strong>方法七：父级div定义 display:table</strong><br>原理：将div属性变成表格<br>优点：没有优点<br>缺点：会产生新的未知问题。<br>建议：不推荐使用，只作了解。</p>
+</li>
+<li><p><strong>方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”</strong><br>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both<br>建议：不推荐使用，只作了解。</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/23/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -338,6 +498,132 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/js中单线程的证明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/22/js中单线程的证明/" itemprop="url">
+                  关于js执行属于单线程案例---demo
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-22T00:00:00+08:00">
+                2017-07-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="在-js-中是单线程的-所谓的异步是假的"><a href="#在-js-中是单线程的-所谓的异步是假的" class="headerlink" title="在 js 中是单线程的, 所谓的异步是假的."></a>在 js 中是单线程的, 所谓的异步是假的.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 <span class="built_in">shift</span> 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 <span class="string">"数组"</span> 中. 例如:</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="number">1</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">5</span>);</div><div class="line">&#125;<span class="comment">//加入此条命令后，定时器里面的命令将永远无法执行。</span></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console1'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> ); </div><div class="line">&#125;, <span class="number">2000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console2'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">2</span> ); </div><div class="line">&#125;, <span class="number">1000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console3'</span> );</div></pre></td></tr></table></figure>
+<p> 简单分析:</p>
+<pre><code>1.  代码从上往下运行, 执行第一个 打印, 打印出 console1
+2.  有一个异步代码, 将函数投递到数组中. 
+3.  打印, 就打印出 console2
+4.  有看到一个计时器, 又将函数存储到数组中
+5.  又看到了打印, 所以打印出 console3
+6.  代码执行完, 将数组中的函数依次执行. 同时清空数组.
+</code></pre><h2 id="while-1-当加行死循环后，队列中的两个定时器将永远也不会执行的。"><a href="#while-1-当加行死循环后，队列中的两个定时器将永远也不会执行的。" class="headerlink" title="while ( 1 );当加行死循环后，队列中的两个定时器将永远也不会执行的。"></a>while ( 1 );当加行死循环后，队列中的两个定时器将永远也不会执行的。</h2>
           
         
       
@@ -1248,7 +1534,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
