@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="清除浮动的优缺点及原理阐述 方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用  方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:b">
+<meta name="description" content="方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用 方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:both清除浮动，让父级div能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="清除浮动的方式">
 <meta property="og:url" content="http://yoursite.com/2017/07/25/清除浮动的方式/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="清除浮动的优缺点及原理阐述 方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用  方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:b">
+<meta property="og:description" content="方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用 方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:both清除浮动，让父级div能">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-02T00:34:14.000Z">
+<meta property="og:updated_time" content="2017-08-03T13:21:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="清除浮动的方式">
-<meta name="twitter:description" content="清除浮动的优缺点及原理阐述 方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用  方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:b">
+<meta name="twitter:description" content="方法一：如果高度是固定的，给父级加height原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。优点：简单，代码少，容易掌握缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题建议：不推荐使用，只建议高度固定的布局时使用 方法二：父级结尾处添加额外的标签原理：添加一个空div，利用css的clear:both清除浮动，让父级div能">
 
 
 
@@ -322,49 +322,35 @@
       
 
       
-        <h2 id="清除浮动的优缺点及原理阐述"><a href="#清除浮动的优缺点及原理阐述" class="headerlink" title="清除浮动的优缺点及原理阐述"></a>清除浮动的优缺点及原理阐述</h2><ul>
-<li><p><strong>方法一：如果高度是固定的，给父级加height</strong><br>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用</p>
-</li>
-<li><p><strong>方法二：父级结尾处添加额外的标签</strong><br>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>方法三：父级div定义 伪类:after和zoom</strong><br>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
+        <h3 id="方法一：如果高度是固定的，给父级加height"><a href="#方法一：如果高度是固定的，给父级加height" class="headerlink" title="方法一：如果高度是固定的，给父级加height"></a>方法一：如果高度是固定的，给父级加height</h3><p>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用</p>
+<h3 id="方法二：父级结尾处添加额外的标签"><a href="#方法二：父级结尾处添加额外的标签" class="headerlink" title="方法二：父级结尾处添加额外的标签"></a>方法二：父级结尾处添加额外的标签</h3><p>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="方法三：父级div定义-伪类-after和zoom"><a href="#方法三：父级div定义-伪类-after和zoom" class="headerlink" title="方法三：父级div定义 伪类:after和zoom"></a>方法三：父级div定义 伪类:after和zoom</h3><p>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
 <pre><code class="js">.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
 .left{float:left;width:20%;height:200px;background:#DDD}
 .right{float:right;width:30%;height:80px;background:#DDD}
 .div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
 &lt;div class="div1 clearfloat"&gt; 
-  &lt;div class="left"&gt;Left&lt;/div&gt; 
-  &lt;div class="right"&gt;Right&lt;/div&gt; 
+&lt;div class="left"&gt;Left&lt;/div&gt; 
+&lt;div class="right"&gt;Right&lt;/div&gt; 
 &lt;/div&gt;
 &lt;div class="div2"&gt;div2&lt;/div&gt;
 </code></pre>
-</li>
-</ul>
-<ul>
-<li><strong>方法四：父级div定义 overflow：hidden</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。<pre><code class="js">.div1{background:#000080;border:1px solid red;/*解决代码*/width:98%;overflow:auto}
+<h3 id="方法四：父级div定义-overflow：hidden"><a href="#方法四：父级div定义-overflow：hidden" class="headerlink" title="方法四：父级div定义 overflow：hidden"></a>方法四：父级div定义 overflow：hidden</h3><p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。</p>
+<pre><code class="js">.div1{background:#000080;border:1px solid red;/*解决代码*/width:98%;overflow:auto}
 .div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
 .left{float:left;width:20%;height:200px;background:#DDD}
 .right{float:right;width:30%;height:80px;background:#DDD}
 &lt;div class="div1"&gt; 
- &lt;div class="left"&gt;Left&lt;/div&gt; 
- &lt;div class="right"&gt;Right&lt;/div&gt;
+    &lt;div class="left"&gt;Left&lt;/div&gt; 
+    &lt;div class="right"&gt;Right&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="div2"&gt;div2&lt;/div&gt;
 </code></pre>
-</li>
-</ul>
-<ul>
-<li><p><strong>方法五：父级div定义 overlow:auto</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。<br>建议：如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
-</li>
-<li><p><strong>方法六：父级div也一起浮动</strong><br>原理：所有代码一起浮动，就变成了一个整体<br>优点：没有优点<br>缺点：会产生新的浮动问题。<br>建议：不推荐使用，只作了解。</p>
-</li>
-<li><p><strong>方法七：父级div定义 display:table</strong><br>原理：将div属性变成表格<br>优点：没有优点<br>缺点：会产生新的未知问题。<br>建议：不推荐使用，只作了解。</p>
-</li>
-<li><p><strong>方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”</strong><br>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both<br>建议：不推荐使用，只作了解。</p>
-</li>
-</ul>
+<h3 id="方法五：父级div定义-overlow-auto"><a href="#方法五：父级div定义-overlow-auto" class="headerlink" title="方法五：父级div定义 overlow:auto"></a>方法五：父级div定义 overlow:auto</h3><p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。<br>建议：如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
+<h3 id="方法六：父级div也一起浮动"><a href="#方法六：父级div也一起浮动" class="headerlink" title="方法六：父级div也一起浮动"></a>方法六：父级div也一起浮动</h3><p>原理：所有代码一起浮动，就变成了一个整体<br>优点：没有优点<br>缺点：会产生新的浮动问题。<br>建议：不推荐使用，只作了解。</p>
+<h3 id="方法七：父级div定义-display-table"><a href="#方法七：父级div定义-display-table" class="headerlink" title="方法七：父级div定义 display:table"></a>方法七：父级div定义 display:table</h3><p>原理：将div属性变成表格<br>优点：没有优点<br>缺点：会产生新的未知问题。<br>建议：不推荐使用，只作了解。</p>
+<h3 id="方法八：父级结尾处添加标签”-lt-br-style-”clear-both-gt-”"><a href="#方法八：父级结尾处添加标签”-lt-br-style-”clear-both-gt-”" class="headerlink" title="方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”"></a>方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”</h3><p>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both<br>建议：不推荐使用，只作了解。</p>
 
       
     </div>
@@ -404,6 +390,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/28/词法作用域和块级作用域的介绍/" rel="prev" title="词法作用域和块级作用域的介绍">
+                词法作用域和块级作用域的介绍 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -475,7 +465,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -514,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#清除浮动的优缺点及原理阐述"><span class="nav-number">1.</span> <span class="nav-text">清除浮动的优缺点及原理阐述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一：如果高度是固定的，给父级加height"><span class="nav-number">1.</span> <span class="nav-text">方法一：如果高度是固定的，给父级加height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二：父级结尾处添加额外的标签"><span class="nav-number">2.</span> <span class="nav-text">方法二：父级结尾处添加额外的标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三：父级div定义-伪类-after和zoom"><span class="nav-number">3.</span> <span class="nav-text">方法三：父级div定义 伪类:after和zoom</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法四：父级div定义-overflow：hidden"><span class="nav-number">4.</span> <span class="nav-text">方法四：父级div定义 overflow：hidden</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法五：父级div定义-overlow-auto"><span class="nav-number">5.</span> <span class="nav-text">方法五：父级div定义 overlow:auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法六：父级div也一起浮动"><span class="nav-number">6.</span> <span class="nav-text">方法六：父级div也一起浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法七：父级div定义-display-table"><span class="nav-number">7.</span> <span class="nav-text">方法七：父级div定义 display:table</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法八：父级结尾处添加标签”-lt-br-style-”clear-both-gt-”"><span class="nav-number">8.</span> <span class="nav-text">方法八：父级结尾处添加标签”<br style=”clear:both;/>”</span></a></li></ol></div>
             
 
           </div>
@@ -534,27 +524,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">刘金芳</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+        
 
 
         

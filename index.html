@@ -251,6 +251,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/词法作用域和块级作用域的介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/28/词法作用域和块级作用域的介绍/" itemprop="url">
+                  词法作用域和块级作用域的介绍
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T00:00:00+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p><strong>定义</strong>： 使用代码块来限定标志的使用范围。<br><strong>块级作用域的访问范围</strong> : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束.<br><strong> 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域.</strong></p>
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>定义</strong>： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。<br><strong>块级作用域的访问范围</strong> : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中具有全局可访问性.</p>
+<p><strong>变量访问规则( 变量搜索原则 )</strong><br>操作步骤:<br>    1&gt; 将所有的 script 标签看成一个 0 级作用域.可以考虑绘制一条直线.上面标记为 0 级。<br>    2&gt; 在全局作用域中,凡是看到声明, 名字等就在线上标记一个举行块, 里面放置需要的名字( 不要数据的值 )。<br>    3&gt; 0 级链绘制完,分析 0 级作用域中所有的函数,凡是函数, 引出 1 级链,依旧绘制直线。<br>    4&gt; 分别在函数中检查是否有声明, 如果有绘制到对应的链中, 如此往复, 得到新的链, 每一条先都比原来的数字 +1。<br>    5&gt; 绘制完成后, 即得到作用域链结构。</p>
+<p><strong>变量搜索原则</strong><br>凡是需要访问变量, 会考虑在当前作用域中查找是否含有该变量的声明. 如果没有对应的声明, 会到上一级作用域链中。查找是否有对应的声明. 如果有直接使用, 结束查找. 如果没有继续到上一级作用域中. 知道 0 级作用域. 如果还没有就会抛出一个错误, 就是 is not defined.</p>
+<p><strong>代码分析</strong><br>分析步骤：<br>    1&gt; js 代码在预解析的时候会做两件事情, 一个是语法, 另一个是记录声明( 不包括函数内的声明 )。<br>    2&gt; 预解析完成后会从第一行代码开始依次执行 js 代码( 语句 )。<br>    3&gt; 如果进入了函数, 会在函数进入, 执行之前, 对函数内再进行对应的预解析。<br>    4&gt; 如果函数内预解析结束, 再从函数开始的位置一步一步的执行代码。</p>
+<p><strong>具体事例分析</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">123</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    num = <span class="number">456</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> num = <span class="number">789</span>;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(num);<span class="comment">//undefined</span></div><div class="line">            <span class="keyword">var</span> num = <span class="string">'abc'</span>;</div><div class="line">        &#125;</div><div class="line">        func3();</div><div class="line">        <span class="built_in">console</span>.log(num);<span class="comment">//789</span></div><div class="line">    &#125;</div><div class="line">    func2();</div><div class="line">    <span class="built_in">console</span>.log(num);<span class="comment">//456</span></div><div class="line">&#125;</div><div class="line">func1();</div></pre></td></tr></table></figure></p>
+<ol>
+<li>全局的预解析，在script标签中，找到0级作用域，并用直线标明，实例中可以看出，0级上面有变量num和函数func1()；在func1()下面画直线并标明1级，找到函数func2()；在func2()下面画直线并标明2级，找到变量num，func3()；在func3()下面画直线并标明3级，并找到变量num;</li>
+<li>赋值：0级的变量num为123；调用函数func1()，然后将num赋值，由于1级没有变量，直接找到0级的num并将赋值给num = 456，同时打印出num为456；给2级func2()的的num赋值num = 789，并打印num为789；再调用func3()到3级,先打印num的值,由于没有赋值，所以是undefined，然后再赋值num为abc。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/25/清除浮动的方式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -328,49 +455,35 @@
       
         
           
-            <h2 id="清除浮动的优缺点及原理阐述"><a href="#清除浮动的优缺点及原理阐述" class="headerlink" title="清除浮动的优缺点及原理阐述"></a>清除浮动的优缺点及原理阐述</h2><ul>
-<li><p><strong>方法一：如果高度是固定的，给父级加height</strong><br>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用</p>
-</li>
-<li><p><strong>方法二：父级结尾处添加额外的标签</strong><br>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p><strong>方法三：父级div定义 伪类:after和zoom</strong><br>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
+            <h3 id="方法一：如果高度是固定的，给父级加height"><a href="#方法一：如果高度是固定的，给父级加height" class="headerlink" title="方法一：如果高度是固定的，给父级加height"></a>方法一：如果高度是固定的，给父级加height</h3><p>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用</p>
+<h3 id="方法二：父级结尾处添加额外的标签"><a href="#方法二：父级结尾处添加额外的标签" class="headerlink" title="方法二：父级结尾处添加额外的标签"></a>方法二：父级结尾处添加额外的标签</h3><p>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="方法三：父级div定义-伪类-after和zoom"><a href="#方法三：父级div定义-伪类-after和zoom" class="headerlink" title="方法三：父级div定义 伪类:after和zoom"></a>方法三：父级div定义 伪类:after和zoom</h3><p>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题<br>优点：浏览器支持好，不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等）<br>缺点：代码多，不少初学者不理解原理，要两句代码结合使用，才能让主流浏览器都支持。<br>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
 <pre><code class="js">.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
 .clearfloat{zoom:1}
 .left{float:left;width:20%;height:200px;background:#DDD}
 .right{float:right;width:30%;height:80px;background:#DDD}
 .div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
 &lt;div class="div1 clearfloat"&gt; 
-  &lt;div class="left"&gt;Left&lt;/div&gt; 
-  &lt;div class="right"&gt;Right&lt;/div&gt; 
+&lt;div class="left"&gt;Left&lt;/div&gt; 
+&lt;div class="right"&gt;Right&lt;/div&gt; 
 &lt;/div&gt;
 &lt;div class="div2"&gt;div2&lt;/div&gt;
 </code></pre>
-</li>
-</ul>
-<ul>
-<li><strong>方法四：父级div定义 overflow：hidden</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。<pre><code class="js">.div1{background:#000080;border:1px solid red;/*解决代码*/width:98%;overflow:auto}
+<h3 id="方法四：父级div定义-overflow：hidden"><a href="#方法四：父级div定义-overflow：hidden" class="headerlink" title="方法四：父级div定义 overflow：hidden"></a>方法四：父级div定义 overflow：hidden</h3><p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。<br>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。</p>
+<pre><code class="js">.div1{background:#000080;border:1px solid red;/*解决代码*/width:98%;overflow:auto}
 .div2{background:#800080;border:1px solid red;margin-top:10px;width:98%}
 .left{float:left;width:20%;height:200px;background:#DDD}
 .right{float:right;width:30%;height:80px;background:#DDD}
 &lt;div class="div1"&gt; 
- &lt;div class="left"&gt;Left&lt;/div&gt; 
- &lt;div class="right"&gt;Right&lt;/div&gt;
+    &lt;div class="left"&gt;Left&lt;/div&gt; 
+    &lt;div class="right"&gt;Right&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="div2"&gt;div2&lt;/div&gt;
 </code></pre>
-</li>
-</ul>
-<ul>
-<li><p><strong>方法五：父级div定义 overlow:auto</strong><br>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。<br>建议：如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
-</li>
-<li><p><strong>方法六：父级div也一起浮动</strong><br>原理：所有代码一起浮动，就变成了一个整体<br>优点：没有优点<br>缺点：会产生新的浮动问题。<br>建议：不推荐使用，只作了解。</p>
-</li>
-<li><p><strong>方法七：父级div定义 display:table</strong><br>原理：将div属性变成表格<br>优点：没有优点<br>缺点：会产生新的未知问题。<br>建议：不推荐使用，只作了解。</p>
-</li>
-<li><p><strong>方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”</strong><br>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both<br>建议：不推荐使用，只作了解。</p>
-</li>
-</ul>
+<h3 id="方法五：父级div定义-overlow-auto"><a href="#方法五：父级div定义-overlow-auto" class="headerlink" title="方法五：父级div定义 overlow:auto"></a>方法五：父级div定义 overlow:auto</h3><p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度<br>优点：简单，代码少，浏览器支持好<br>缺点：内部宽高超过父级div时，会出现滚动条。<br>建议：如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。</p>
+<h3 id="方法六：父级div也一起浮动"><a href="#方法六：父级div也一起浮动" class="headerlink" title="方法六：父级div也一起浮动"></a>方法六：父级div也一起浮动</h3><p>原理：所有代码一起浮动，就变成了一个整体<br>优点：没有优点<br>缺点：会产生新的浮动问题。<br>建议：不推荐使用，只作了解。</p>
+<h3 id="方法七：父级div定义-display-table"><a href="#方法七：父级div定义-display-table" class="headerlink" title="方法七：父级div定义 display:table"></a>方法七：父级div定义 display:table</h3><p>原理：将div属性变成表格<br>优点：没有优点<br>缺点：会产生新的未知问题。<br>建议：不推荐使用，只作了解。</p>
+<h3 id="方法八：父级结尾处添加标签”-lt-br-style-”clear-both-gt-”"><a href="#方法八：父级结尾处添加标签”-lt-br-style-”clear-both-gt-”" class="headerlink" title="方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”"></a>方法八：父级结尾处添加标签”&lt;br style=”clear:both;/&gt;”</h3><p>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both<br>建议：不推荐使用，只作了解。</p>
 
           
         
@@ -742,7 +855,7 @@
           
             <h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
 <h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> chest = &#123;&#125;,arr = [],mun, count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">    mun = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div><div class="line">    <span class="keyword">if</span> (!chest[mun]) &#123; <span class="comment">//间接的使用in的方法，判断是否含有mun数字，从而启动去重的作用</span></div><div class="line">        chest[mun] = <span class="literal">true</span>;</div><div class="line">        arr.push(mun);</div><div class="line">        <span class="keyword">continue</span>;<span class="comment">//跳出本次循环，进入下次循环</span></div><div class="line">    &#125;</div><div class="line">    ++count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;</div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;<span class="comment">//通过两两的位置交换来实现</span></div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1534,7 +1647,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1577,27 +1690,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">刘金芳</span>
-</div>
-
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+        
 
 
         
