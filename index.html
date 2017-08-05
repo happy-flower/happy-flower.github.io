@@ -251,6 +251,266 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/06/demo/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T00:14:42+08:00">
+                2017-08-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = 'getElementById';//转化为get-element-by-id
+        str = str.split('');
+        var newstr = str.map(function (v) {
+            if (v.toUpperCase() == v) {
+                return "-" + v.toLowerCase();
+            } else {
+                return v;
+            }
+        }).join('')//转化为需求了
+    </script>
+</body>
+
+</html>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/数组操作常用的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/30/数组操作常用的方法/" itemprop="url">
+                  数组操作常用的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T00:00:00+08:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。<br><strong>length</strong> <code>属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。</code><br><strong>join()</strong> <code>将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。</code><br><strong>reverse()</strong> <code>将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。</code><br><strong>delete</strong> <code>运算符只能删除数组元素的值，而所占空间还在，总长度没变(arr.length)。</code><br><strong>shift()</strong> <code>删除数组中第一个元素，返回删除的那个值，并将长度减1。</code><br><strong>pop()</strong> <code>删除数组中最后一个元素，返回删除的那个值，并将长度减1。</code><br><strong>unshift()</strong> <code>往数组前面添加一个或多个数组元素，长度要改变。arrObj.unshift(“a” ， “b，“c”)。</code><br><strong>push()</strong> <code>往数组结尾添加一个或多个数组元素，长度要改变。arrObj.push(“a” ， “b” ， “c”)。</code><br><strong>concat( )</strong> <code>连接数组。它连接的如果是数组的话，只能是平铺的数组，如果是二维的数组，不能展开添加，如需展开，必须结合apply使用。</code><br><strong>slice( )</strong> <code>返回数组的一部分。</code><br><strong>sort( )</strong> <code>对数组元素进行排序。</code><br><strong>splice( )</strong> <code>插入、删除或替换数组的元素。</code><br><strong>toLocaleString( )</strong> <code>把数组转换成局部字符串。</code><br><strong>toString( )</strong> <code>将数组转换成一个字符串。</code><br><strong>in</strong> <code>判断元素是不是数组当中的元素，同时此方法也可以判断是不是对象的属性，返回的值是布尔值。</code></p>
+<h3 id="通过简单的demo来验证或者取代以上的方法。"><a href="#通过简单的demo来验证或者取代以上的方法。" class="headerlink" title="通过简单的demo来验证或者取代以上的方法。"></a>通过简单的demo来验证或者取代以上的方法。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>] </div><div class="line"><span class="keyword">var</span> array = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = arr.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    array[array.length] = arr[i];</div><div class="line">&#125;   <span class="comment">//此方法获得的结果和reverse()方法相同。</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'getElementById'</span>;<span class="comment">//转化为get-element-by-id</span></div><div class="line">    str = str.split(<span class="string">''</span>);<span class="comment">//使用split方法来切割字符串，并转化为数组，</span></div><div class="line">    <span class="keyword">var</span> newstr = str.map(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (v.toUpperCase() == v) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"-"</span> + v.toLowerCase();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> v;</div><div class="line">        &#125;</div><div class="line">    &#125;).join(<span class="string">''</span>)<span class="comment">//转化为需求了</span></div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/词法作用域和块级作用域的介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -338,6 +598,124 @@
 <li>全局的预解析，在script标签中，找到0级作用域，并用直线标明，实例中可以看出，0级上面有变量num和函数func1()；在func1()下面画直线并标明1级，找到函数func2()；在func2()下面画直线并标明2级，找到变量num，func3()；在func3()下面画直线并标明3级，并找到变量num;</li>
 <li>赋值：0级的变量num为123；调用函数func1()，然后将num赋值，由于1级没有变量，直接找到0级的num并将赋值给num = 456，同时打印出num为456；给2级func2()的的num赋值num = 789，并打印num为789；再调用func3()到3级,先打印num的值,由于没有赋值，所以是undefined，然后再赋值num为abc。</li>
 </ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/28/字符串操作的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/28/字符串操作的方法/" itemprop="url">
+                  字符串操作常用的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-28T00:00:00+08:00">
+                2017-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。<br><strong>charCodeAt</strong> <code>方法返回一个整数，代表指定位置字符的Unicode编码。</code><br><strong>charAt</strong> <code>方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串。</code><br><strong>slice</strong> <code>方法返回字符串的片段。</code><br><strong>substring</strong> <code>方法返回位于String 对象中指定位置的子字符串。</code><br><strong>substr</strong> <code>方法返回一个从指定位置开始的指定长度的子字符串。</code><br><strong>indexOf</strong> <code>方法返回String 对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。</code><br><strong>lastIndexOf</strong> <code>方法返回String 对象中字符串最后出现的位置。如果没有匹配到子字符串，则返回-1。</code><br><strong>search</strong> <code>方法返回与正则表达式查找内容匹配的第一个字符串的位置。</code><br><strong>concat</strong> <code>方法返回字符串值，该值包含了两个或多个提供的字符串的连接。</code><br><strong>split</strong> <code>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</code><br><strong>match(searchvalue||regexp)</strong> <code>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。括号内的条件必须填写。</code><br><strong>replace(regexp，replacement)</strong> <code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</code><br><strong>toLowerCase()</strong> <code>方法用于把字符串转换为小写。一个新的字符串，在其中 stringObject 的所有大写字符全部被转换为了小写字符。</code><br><strong>toUpperCase()</strong> <code>方法用于把字符串转换为大写。一个新的字符串，在其中 stringObject 的所有小写字符全部被转换为了大写字符。</code></p>
 
           
         
@@ -1187,424 +1565,13 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/15/常见的浏览器内核/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘金芳">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/15/常见的浏览器内核/" itemprop="url">
-                  常见的浏览器内核
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-15T00:00:00+08:00">
-                2015-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="nbsp-nbsp-nbsp-通常所属的浏览器内核（Rendering-Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。"><a href="#nbsp-nbsp-nbsp-通常所属的浏览器内核（Rendering-Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。" class="headerlink" title="&nbsp;  &nbsp;  &nbsp;  通常所属的浏览器内核（Rendering Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。"></a>&nbsp;  &nbsp;  &nbsp;  通常所属的浏览器内核（Rendering Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。</h4><ol>
-<li><code>Trident内核（又称MSHTML）</code><ol>
-<li>IE、MaxThon、360、搜狗浏览器、猎豹安全浏览器、百度浏览器。</li>
-</ol>
-</li>
-<li><code>Gecko内核</code><ol>
-<li>Firefox、火狐。</li>
-</ol>
-</li>
-<li><code>Webkit内核</code><ol>
-<li>Safari。</li>
-</ol>
-</li>
-<li><code>Blink内核</code><ol>
-<li>Chrome、Opera。</li>
-</ol>
-</li>
-<li><code>Presto内核</code><ol>
-<li>Opera7以上(Opera7原来为Presto，现为Blink) 。</li>
-</ol>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/12/hexo快速创建个人博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘金芳">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/12/hexo快速创建个人博客/" itemprop="url">
-                  HEXO快速创建个人博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-12T00:00:00+08:00">
-                2015-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
-<li><p>安装GIT</p>
-<p>  下载 msysgit 并执行即可完成安装。</p>
-</li>
-<li><p>安装node.js</p>
-<p>  在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入<br>  <code>node -v</code> 用来查看版本</p>
-</li>
-<li><p>download <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo</a></p>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3></li>
-</ul>
-<ol>
-<li><p>利用npm安装(cmd或者任意位置git bash)：<br> <code>npm install -g hexo</code></p>
-<p> <em>npm ERR! registry error parsing json 错误</em><br> 可能需要设置npm代理,执行命令<br> <code>npm config set registry http://registry.cnpmjs.org</code></p>
-</li>
-<li><p>创建hexo文件夹</p>
-<p> 在任意一个文件夹下使用git bash，输入以下指令<br> <code>hexo init</code></p>
-</li>
-<li><p>安装依赖包</p>
-<p> <code>npm install</code></p>
-</li>
-<li><p>在本地查看博客</p>
-<p> 在文件夹下执行<br> <code>hexo generate</code>  //生成静态页面<br> <code>hexo server</code>   本地起动，在浏览器中输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
-</li>
-<li><p>在github上建立一个仓库，对应的名字必须是以下格式<br> yourname.github.io</p>
-<p> 在本地的文件夹中有一个_config.yml文件来建立关联：  </p>
-<p> <code>#Hexo Configuration</code><br> <code>## Docs:http://hexo.io/docs/configuration.html</code><br> <code>## Source: https://github.com/hexojs/hexo/</code><br> <code># Site #站点信息</code><br> <code>title: #标题</code><br> <code>subtitle: #副标题</code><br> <code>description: #站点描述，给搜索引擎看的</code><br> <code>author: #作者</code><br> <code>email: #电子邮箱</code><br> <code>language: zh-CN #语言</code><br> <code># URL #链接格式</code><br> <code>url: #网址</code><br> <code>root: / #根目录</code><br> <code>permalink: :year/:month/:day/:title/ #文章的链接格式</code><br> <code>tag_dir: tags #标签目录</code><br> <code>archive_dir: archives #存档目录</code><br> <code>category_dir: categories #分类目录</code><br> <code>code_dir: downloads/code</code><br> <code>permalink_defaults: # Directory #目录</code><br> <code>source_dir: source #源文件目录</code><br> <code>public_dir: public #生成的网页文件目录</code><br> <code># Writing #写作</code><br> <code>new_post_name: :title.md #新文章标题</code><br> <code>default_layout: post #默认的模板，包括 post、page、photo、draft（文章、页面、照片、草稿)</code><br> <code>titlecase: false #标题转换成大写</code><br> <code>external_link: true #在新选项卡中打开连接</code><br> <code>filename_case: 0</code><br> <code>render_drafts: false</code><br> <code>post_asset_folder: false</code><br> <code>relative_link: false</code><br> <code>highlight: #语法高亮</code><br> <code>enable: true #是否启用</code><br> <code>line_number: true#显示行号</code><br> <code>tab_replace: # Category &amp; Tag #分类和标签</code><br> <code>default_category: uncategorized #默认分类</code><br> <code>category_map:</code><br> <code>tag_map:</code><br> <code># Archives</code><br> <code>2: 开启分页</code><br> <code>1: 禁用分页</code><br> <code>0: 全部禁用</code><br> <code>archive: 2</code><br> <code>category: 2</code><br> <code>tag: 2</code><br> <code># Server #本地服务器</code><br> <code>port: 4000 #端口号</code><br> <code>server_ip: localhost #IP 地址</code><br> <code>logger: false</code><br> <code>logger_format: dev</code><br> <code># Date / Time format #日期时间格式</code><br> <code>date_format: YYYY-MM-DD #参考http://momentjs.com/docs/#/displaying/format/</code><br> <code>time_format: H:mm:ss</code><br> <code># Pagination #分页</code><br> <code>per_page: 10 #每页文章数，设置成 0 禁用分页</code><br> <code>pagination_dir: page</code><br> <code># Disqus #Disqus评论，替换为多说</code><br> <code>disqus_shortname:</code><br> <code># Extensions #拓展插件</code><br> <code>theme: landscape-plus #主题</code><br> <code>exclude_generator:</code><br> <code>plugins: #插件，例如生成 RSS 和站点地图的</code><br> <code>- hexo-generator-feed</code><br> <code>- hexo-generator-sitemap</code><br> <code># Deployment #部署</code><br> <code>deploy:</code><br> <code>type: git</code><br> <code>repo: 刚刚github创库地址.git</code><br> <code>branch: master</code></p>
-</li>
-<li><p><code>npm install hexo-deployer-git --save</code>执行命令</p>
-</li>
-<li><p><code>hexo deploy</code></p>
-</li>
-</ol>
-<ol>
-<li><p>常用指令</p>
-<p> <code>hexo help #查看帮助</code><br> <code>hexo init #初始化一个目录</code><br> <code>hexo new &quot;postName&quot; #新建文章</code><br> <code>hexo new page &quot;pageName&quot; #新建页面</code><br> <code>hexo generate #生成网页，可以在 public 目录查看整个网站的文件</code><br> <code>hexo server #本地预览，&#39;Ctrl+C&#39;关闭</code><br> <code>hexo deploy #部署.deploy目录</code><br> <code>hexo clean #清除缓存，**强烈建议每次执行命令前先清理缓存，每次部署前先删除 .deploy 文件夹**</code></p>
-</li>
-<li><p>每次修改文件后，直接输入<code>hexo g &amp; hexo d</code>即可更新</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/03/10/first-fell/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘金芳">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/03/10/first-fell/" itemprop="url">
-                  欢迎来踩***不忘初衷
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-03-10T00:00:00+08:00">
-                2015-03-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="开篇感受"><a href="#开篇感受" class="headerlink" title="开篇感受"></a>开篇感受</h2><blockquote>
-<p>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不知从何时开始，每每自己开始弄一个新的东西，都喜欢留点当时的感受，以便后续自己在回味时，无穷，记忆是无序的，感受是不曾停留的，为留住这一瞬间的感动，以文字作为凭证。<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搭建博客的初衷是记录自己学习前端的点滴，对于我个人而言，是把自己难以记住的知识点或者工作当中，跳进的坑洼，在此记录，便于后续自己再次查看，不在同一个坑里点进两次，同时也希望能给那些和我一样，遇到同样困境的，猿友们一点捷径，不往坑里跳，或许方法或者知识点不够完善，乃至偏离正轨，在此希望进来的各位大神们，指点，小女子不胜感激。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
           
           </div>
@@ -1647,7 +1614,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
