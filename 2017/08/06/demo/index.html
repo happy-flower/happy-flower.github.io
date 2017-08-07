@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="Document                 var str = &apos;getElementById&apos;;//转化为get-element-by-id         str = str.split(&apos;&apos;);         var newstr = str.map(function (v) {             if (v.toUpperCase">
+<meta name="description" content="Document                 if (!String.prototype.trim) {             String.prototype.trim = function () {                 return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2017/08/06/demo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Document                 var str = &apos;getElementById&apos;;//转化为get-element-by-id         str = str.split(&apos;&apos;);         var newstr = str.map(function (v) {             if (v.toUpperCase">
+<meta property="og:description" content="Document                 if (!String.prototype.trim) {             String.prototype.trim = function () {                 return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-05T23:46:28.000Z">
+<meta property="og:updated_time" content="2017-08-07T05:37:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Document                 var str = &apos;getElementById&apos;;//转化为get-element-by-id         str = str.split(&apos;&apos;);         var newstr = str.map(function (v) {             if (v.toUpperCase">
+<meta name="twitter:description" content="Document                 if (!String.prototype.trim) {             String.prototype.trim = function () {                 return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g">
 
 
 
@@ -334,15 +334,11 @@
 
 <body>
     <script>
-        var str = 'getElementById';//转化为get-element-by-id
-        str = str.split('');
-        var newstr = str.map(function (v) {
-            if (v.toUpperCase() == v) {
-                return "-" + v.toLowerCase();
-            } else {
-                return v;
-            }
-        }).join('')//转化为需求了
+        if (!String.prototype.trim) {
+            String.prototype.trim = function () {
+                return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+            };
+        }
     </script>
 </body>
 
