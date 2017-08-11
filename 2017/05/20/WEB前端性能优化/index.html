@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Liu jinfang's Nodes" type="application/atom+xml" />
+
 
 
 
@@ -91,10 +93,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="WEB前端性能优化">
 <meta property="og:url" content="http://yoursite.com/2017/05/20/WEB前端性能优化/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="WEB前端性能优化总结1.减少http请求,合理设置HTTP缓存原因1234567a. http协议是无状态的应用层协议，意味着每次http请求都需要建立通信链路、进行数据传输，而在服务器端，每个http都需要启动独立的线程去处理。这些通信和服务的开销都很昂贵，减少http请求的数目可有效提高访问性能。b. 减少http的主要手段是合并CSS、合并javascript、合并图片。将浏览器一次访问需">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-03T04:44:30.000Z">
+<meta property="og:updated_time" content="2017-08-11T06:27:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB前端性能优化">
 <meta name="twitter:description" content="WEB前端性能优化总结1.减少http请求,合理设置HTTP缓存原因1234567a. http协议是无状态的应用层协议，意味着每次http请求都需要建立通信链路、进行数据传输，而在服务器端，每个http都需要启动独立的线程去处理。这些通信和服务的开销都很昂贵，减少http请求的数目可有效提高访问性能。b. 减少http的主要手段是合并CSS、合并javascript、合并图片。将浏览器一次访问需">
@@ -131,7 +133,7 @@
 
 
 
-  <title> WEB前端性能优化 | Hexo </title>
+  <title> WEB前端性能优化 | Liu jinfang's Nodes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -167,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Liu jinfang's Nodes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -198,6 +200,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -259,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Liu jinfang's Nodes">
     </span>
 
     
@@ -323,6 +335,7 @@
 
       
         <h1 id="WEB前端性能优化总结"><a href="#WEB前端性能优化总结" class="headerlink" title="WEB前端性能优化总结"></a>WEB前端性能优化总结</h1><h3 id="1-减少http请求-合理设置HTTP缓存"><a href="#1-减少http请求-合理设置HTTP缓存" class="headerlink" title="1.减少http请求,合理设置HTTP缓存"></a>1.减少http请求,合理设置HTTP缓存</h3><h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a. http协议是无状态的应用层协议，意味着每次http请求都需要建立通信链路、进行数据传输，而在服务器端，每个http都需要启动独立的线程去处理。这些通信和服务的开销都很昂贵，减少http请求的数目可有效提高访问性能。</div><div class="line"></div><div class="line">b. 减少http的主要手段是合并CSS、合并javascript、合并图片。将浏览器一次访问需要的javascript和CSS合并成一个文件，这样浏览器就只需要一次请求。图片也可以合并，多张图片合并成一张，如果每张图片都有不同的超链接，可通过CSS偏移响应鼠标点击操作，构造不同的URL。</div><div class="line"></div><div class="line">c. 缓存的力量是强大的，恰当的缓存设置可以大大的减少 HTTP请求。假设某网站首页，当浏览器没有缓存的时候访问一共会发出 78个请求，共 600多 K数据，而当第二次访问即浏览器已缓存之后访问则仅有 10个请求，共 20多 K数据。 (这里需要说明的是，如果直接 F5刷新页面的话效果是不一样的，这种情况下请求数还是一样，不过被缓存资源的请求服务器是 304响应，只有 Header没有Body，可以节省带宽 )</div><div class="line"></div><div class="line">d. 怎样才算合理设置 ?原则很简单，能缓存越多越好，能缓存越久越好。例如，很少变化的图片资源可以直接通过 HTTP Header中的Expires设置一个很长的过期头 ;变化不频繁而又可能会变的资源可以使用 Last-Modifed来做请求验证。尽可能的让资源能够在缓存中待得更久。关于 HTTP缓存的具体设置和原理此处就不再详述了。</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="基本原理："><a href="#基本原理：" class="headerlink" title="基本原理："></a>基本原理：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a. 在浏览器(客户端)和服务器发生通信时，就已经消耗了大量的时间，尤其是在网络情况比较糟糕的时候，这个问题尤其的突出。</div><div class="line"></div><div class="line">b. 一个正常HTTP请求的流程简述：如在浏览器中输入<span class="string">"www.xxxxxx.com"</span>并按下回车，浏览器再与这个URL指向的服务器建立连接，然后浏览器才能向服务器发送请求信息，服务器在接受到请求的信息后再返回相应的信息，浏览器接收到来自服务器的应答信息后，对这些数据解释执行。</div><div class="line"></div><div class="line">c.而当我们请求的网页文件中有很多图片、CSS、JS甚至音乐等信息时，将会频繁的与服务器建立连接，与释放连接，这必定会造成资源的浪费，且每个HTTP请求都会对服务器和浏览器产生性能负担。</div><div class="line"></div><div class="line">d.网速相同的条件下，下载一个100KB的图片比下载两个50KB的图片要快。所以，请减少HTTP请求。</div></pre></td></tr></table></figure>
 <h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><ul>
 <li>合并图片（css sprites），合并CSS和JS文件；图片较多的页面也可以使用 lazyLoad 等技术进行优化。</li>
@@ -483,6 +496,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">

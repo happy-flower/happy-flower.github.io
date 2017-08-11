@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Liu jinfang's Nodes" type="application/atom+xml" />
+
 
 
 
@@ -91,10 +93,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于js执行属于单线程案例---demo">
 <meta property="og:url" content="http://yoursite.com/2017/07/22/js中单线程的证明/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="在 js 中是单线程的, 所谓的异步是假的.1以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 shift 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 &quot;数组&quot; 中.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-31T23:51:48.000Z">
+<meta property="og:updated_time" content="2017-08-11T03:53:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于js执行属于单线程案例---demo">
 <meta name="twitter:description" content="在 js 中是单线程的, 所谓的异步是假的.1以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 shift 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 &quot;数组&quot; 中.">
@@ -131,7 +133,7 @@
 
 
 
-  <title> 关于js执行属于单线程案例---demo | Hexo </title>
+  <title> 关于js执行属于单线程案例---demo | Liu jinfang's Nodes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -167,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Liu jinfang's Nodes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -198,6 +200,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -259,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Liu jinfang's Nodes">
     </span>
 
     
@@ -324,6 +336,7 @@
       
         <h2 id="在-js-中是单线程的-所谓的异步是假的"><a href="#在-js-中是单线程的-所谓的异步是假的" class="headerlink" title="在 js 中是单线程的, 所谓的异步是假的."></a>在 js 中是单线程的, 所谓的异步是假的.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 <span class="built_in">shift</span> 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 <span class="string">"数组"</span> 中. 例如:</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="number">1</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">5</span>);</div><div class="line">&#125;<span class="comment">//加入此条命令后，定时器里面的命令将永远无法执行。</span></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console1'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> ); </div><div class="line">&#125;, <span class="number">2000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console2'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">2</span> ); </div><div class="line">&#125;, <span class="number">1000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console3'</span> );</div></pre></td></tr></table></figure>
+ <a id="more"></a>
 <p> 简单分析:</p>
 <pre><code>1.  代码从上往下运行, 执行第一个 打印, 打印出 console1
 2.  有一个异步代码, 将函数投递到数组中. 
@@ -457,6 +470,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">

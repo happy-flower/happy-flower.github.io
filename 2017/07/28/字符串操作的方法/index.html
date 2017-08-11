@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Liu jinfang's Nodes" type="application/atom+xml" />
+
 
 
 
@@ -91,10 +93,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串操作常用的方法">
 <meta property="og:url" content="http://yoursite.com/2017/07/28/字符串操作的方法/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。charCodeAt 方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。charAt 方法返回指定索引">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-07T05:45:46.000Z">
+<meta property="og:updated_time" content="2017-08-11T06:26:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串操作常用的方法">
 <meta name="twitter:description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。charCodeAt 方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。charAt 方法返回指定索引">
@@ -131,7 +133,7 @@
 
 
 
-  <title> 字符串操作常用的方法 | Hexo </title>
+  <title> 字符串操作常用的方法 | Liu jinfang's Nodes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -167,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Liu jinfang's Nodes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -198,6 +200,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -259,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Liu jinfang's Nodes">
     </span>
 
     
@@ -322,7 +334,7 @@
       
 
       
-        <p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。<br><strong>charCodeAt</strong> <code>方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。</code><br><strong>charAt</strong> <code>方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。</code><br><strong>slice</strong> <code>方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。</code><br><strong>substring</strong> <code>方法返回位于String 对象中指定位置的子字符串。</code><br><strong>substr</strong> <code>方法返回一个从指定位置开始的指定长度的子字符串。</code><br><strong>indexOf</strong> <code>方法返回String 对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。</code><br><strong>lastIndexOf</strong> <code>方法返回String 对象中字符串最后出现的位置。如果没有匹配到子字符串，则返回-1。</code><br><strong>search</strong> <code>方法返回与正则表达式查找内容匹配的第一个字符串的位置。</code><br><strong>concat</strong> <code>concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</code><br><strong>split</strong> <code>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</code><br><strong>match(searchvalue||regexp)</strong> <code>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。括号内的条件必须填写。</code><br><strong>replace(regexp，replacement)</strong> <code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</code><br><strong>toLowerCase()</strong> <code>方法用于把字符串转换为小写。一个新的字符串，在其中 stringObject 的所有大写字符全部被转换为了小写字符。</code><br><strong>toUpperCase()</strong> <code>方法用于把字符串转换为大写。一个新的字符串，在其中 stringObject 的所有小写字符全部被转换为了大写字符。</code><br><strong>trim()</strong> <code>方法会从一个字符串的两端删除空白字符。</code></p>
+        <p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。<br><strong>charCodeAt</strong> <code>方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。</code><br><strong>charAt</strong> <code>方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。</code><br><strong>slice</strong> <code>方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。</code><br><strong>substring</strong> <code>方法返回位于String 对象中指定位置的子字符串。</code><br><strong>substr</strong> <code>方法返回一个从指定位置开始的指定长度的子字符串。</code><br><a id="more"></a><br><strong>indexOf</strong> <code>方法返回String 对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。</code><br><strong>lastIndexOf</strong> <code>方法返回String 对象中字符串最后出现的位置。如果没有匹配到子字符串，则返回-1。</code><br><strong>search</strong> <code>方法返回与正则表达式查找内容匹配的第一个字符串的位置。</code><br><strong>concat</strong> <code>concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</code><br><strong>split</strong> <code>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</code><br><strong>match(searchvalue||regexp)</strong> <code>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。括号内的条件必须填写。</code><br><strong>replace(regexp，replacement)</strong> <code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</code><br><strong>toLowerCase()</strong> <code>方法用于把字符串转换为小写。一个新的字符串，在其中 stringObject 的所有大写字符全部被转换为了小写字符。</code><br><strong>toUpperCase()</strong> <code>方法用于把字符串转换为大写。一个新的字符串，在其中 stringObject 的所有小写字符全部被转换为了大写字符。</code><br><strong>trim()</strong> <code>方法会从一个字符串的两端删除空白字符。</code></p>
 <h3 id="通过简单的demo来具体说明以上的方法的使用情况。"><a href="#通过简单的demo来具体说明以上的方法的使用情况。" class="headerlink" title="通过简单的demo来具体说明以上的方法的使用情况。"></a>通过简单的demo来具体说明以上的方法的使用情况。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">charCodeAt()  语法：str.charCodeAt(index)</div><div class="line"><span class="string">"ABC"</span>.charCodeAt(<span class="number">0</span>) <span class="comment">//return 65</span></div><div class="line">注意：如果指定的 index 小于 <span class="number">0</span> 或不小于字符串的长度，则 charCodeAt 返回 <span class="literal">NaN</span>。</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">charAt()  语法：str.charAt(index)</div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">0</span>) <span class="comment">//return h</span></div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">5</span>) <span class="comment">//return ' ' ,空格也占位置。</span></div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">8</span>) <span class="comment">//return ''，当索引值大于length-1后，将会返回空字符串。</span></div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">slice()  语法：str.slice(beginSlice，endSlice)</div><div class="line"><span class="string">"hello my wold"</span>.slice(<span class="number">0</span>,<span class="number">11</span>) <span class="comment">//return hello my wo</span></div><div class="line"><span class="string">"hello my wold"</span>.slice(<span class="number">0</span>,<span class="number">-2</span>) <span class="comment">//return hello my wo,如果endSlice该参数为负数，则被看作是 sourceLength + endSlice</span></div><div class="line">注意：slice() 提取的新字符串包括beginSlice但不包括 endSlice。</div></pre></td></tr></table></figure>
@@ -463,6 +475,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">

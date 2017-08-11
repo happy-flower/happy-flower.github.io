@@ -77,6 +77,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Liu jinfang's Nodes" type="application/atom+xml" />
+
 
 
 
@@ -87,17 +89,17 @@
 
 
 
-<meta name="description" content="环境准备 安装GIT   下载 msysgit 并执行即可完成安装。  安装node.js   在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入  node -v 用来查看版本  download hexo 安装hexo   利用npm安装(cmd或者任意位置git bash)： npm install -g hexo  npm ERR! regi">
+<meta name="description" content="环境准备 安装GIT   下载 msysgit 并执行即可完成安装。  安装node.js   在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入  node -v 用来查看版本  download hexo 安装hexo   利用npm安装(cmd或者任意位置git bash)： npm install -g hexo npm ERR! regis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HEXO快速创建个人博客">
 <meta property="og:url" content="http://yoursite.com/2015/03/12/hexo快速创建个人博客/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="环境准备 安装GIT   下载 msysgit 并执行即可完成安装。  安装node.js   在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入  node -v 用来查看版本  download hexo 安装hexo   利用npm安装(cmd或者任意位置git bash)： npm install -g hexo  npm ERR! regi">
+<meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
+<meta property="og:description" content="环境准备 安装GIT   下载 msysgit 并执行即可完成安装。  安装node.js   在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入  node -v 用来查看版本  download hexo 安装hexo   利用npm安装(cmd或者任意位置git bash)： npm install -g hexo npm ERR! regis">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-27T16:16:50.000Z">
+<meta property="og:updated_time" content="2017-08-11T06:27:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO快速创建个人博客">
-<meta name="twitter:description" content="环境准备 安装GIT   下载 msysgit 并执行即可完成安装。  安装node.js   在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入  node -v 用来查看版本  download hexo 安装hexo   利用npm安装(cmd或者任意位置git bash)： npm install -g hexo  npm ERR! regi">
+<meta name="twitter:description" content="环境准备 安装GIT   下载 msysgit 并执行即可完成安装。  安装node.js   在windows下安装node.js,下载并且安装文件即可，查看node.js版本，在cmd中输入  node -v 用来查看版本  download hexo 安装hexo   利用npm安装(cmd或者任意位置git bash)： npm install -g hexo npm ERR! regis">
 
 
 
@@ -131,7 +133,7 @@
 
 
 
-  <title> HEXO快速创建个人博客 | Hexo </title>
+  <title> HEXO快速创建个人博客 | Liu jinfang's Nodes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -167,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Liu jinfang's Nodes</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -198,6 +200,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -259,7 +271,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Liu jinfang's Nodes">
     </span>
 
     
@@ -333,9 +345,7 @@
 <h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3></li>
 </ul>
 <ol>
-<li><p>利用npm安装(cmd或者任意位置git bash)：<br> <code>npm install -g hexo</code></p>
-<p> <em>npm ERR! registry error parsing json 错误</em><br> 可能需要设置npm代理,执行命令<br> <code>npm config set registry http://registry.cnpmjs.org</code></p>
-</li>
+<li>利用npm安装(cmd或者任意位置git bash)：<br> <code>npm install -g hexo</code><br> <em>npm ERR! registry error parsing json 错误</em><br> 可能需要设置npm代理,执行命令<br> <code>npm config set registry http://registry.cnpmjs.org</code> <a id="more"></a></li>
 <li><p>创建hexo文件夹</p>
 <p> 在任意一个文件夹下使用git bash，输入以下指令<br> <code>hexo init</code></p>
 </li>
@@ -361,7 +371,7 @@
 <li><p>每次修改文件后，直接输入<code>hexo g &amp; hexo d</code>即可更新</p>
 </li>
 </ol>
-
+<!--more-->
       
     </div>
 
@@ -487,6 +497,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
