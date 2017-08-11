@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Liu jinfang&#39;s Nodes</title>
-  
+  <subtitle>Quick notes</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-07T05:37:40.000Z</updated>
+  <updated>2017-08-11T13:34:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/08/11/tag/"/>
+    <id>http://yoursite.com/2017/08/11/tag/</id>
+    <published>2017-08-11T13:34:55.370Z</published>
+    <updated>2017-08-11T13:34:56.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>欢迎来踩***不忘初衷</title>
+    <link href="http://yoursite.com/2017/08/10/first-fell/"/>
+    <id>http://yoursite.com/2017/08/10/first-fell/</id>
+    <published>2017-08-09T16:00:00.000Z</published>
+    <updated>2017-08-11T14:01:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="开篇感受"><a href="#开篇感受" class="headerlink" title="开篇感受"></a>开篇感受</h2><blockquote>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不知从何时开始，每每自己开始弄一个新的东西，都喜欢留点当时的感受，以便后续自己在回味时，无穷，记忆是无序的，感受是不曾停留的，为留住这一瞬间的感动，以文字作为凭证。<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搭建博客的初衷是记录自己学习前端的点滴，对于我个人而言，是把自己难以记住的知识点或者工作当中，跳进的坑洼，在此记录，便于后续自己再次查看，不在同一个坑里点进两次，同时也希望能给那些和我一样，遇到同样困境的，猿友们一点捷径，不往坑里跳，或许方法或者知识点不够完善，乃至偏离正轨，在此希望进来的各位大神们，指点，小女子不胜感激。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;开篇感受&quot;&gt;&lt;a href=&quot;#开篇感受&quot; class=&quot;headerlink&quot; title=&quot;开篇感受&quot;&gt;&lt;/a&gt;开篇感受&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;不知从何时
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -63,7 +103,7 @@
     <link href="http://yoursite.com/2017/07/30/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2017/07/30/数组操作常用的方法/</id>
     <published>2017-07-29T16:00:00.000Z</published>
-    <updated>2017-08-11T08:05:44.000Z</updated>
+    <updated>2017-08-11T14:16:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。<br><strong>length</strong> <code>属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。</code><br><strong>join()</strong> <code>将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。</code><br><strong>reverse()</strong> <code>将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。</code><br><strong>shift()</strong> <code>从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><a id="more"></a><br><strong>pop()</strong> <code>从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><strong>unshift()</strong> <code>将一个或多个元素添加到数组的开头，并返回新数组的长度。</code><br><strong>push()</strong> <code>往数组结尾添加一个或多个数组元素，长度要改变。</code><br><strong>concat( )</strong> <code>连接数组，返回的是一个新数组。它连接的如果是数组的话，只能是平铺数组，如果是二维的数组，不能展开添加，如需展开，必须结合apply使用。</code><br><strong>slice( )</strong> <code>返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</code><br><strong>sort( )</strong> <code>对数组元素进行排序，默认排序顺序是根据字符串Unicode码点。</code><br><strong>splice( )</strong> <code>插入、删除或替换数组的元素,由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</code><br><strong>toLocaleString( )</strong> <code>把数组转换成局部字符串。</code><br><strong>toString( )</strong> <code>将数组转换成一个字符串。</code><br><strong>forEach()</strong> <code>将数组转换成一个字符串。</code><br><strong>every()</strong>  <code>测试数组的所有元素是否都通过了指定函数的测试。</code><br><strong>some()</strong> <code>方法测试数组中的某些元素是否通过由提供的函数实现的测试。</code><br><strong>map()</strong>  <code>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</code><br><strong>filter()</strong>  <code>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</code><br><!--more--></p>
 <h3 id="通过简单的demo来验证或者取代以上的方法。"><a href="#通过简单的demo来验证或者取代以上的方法。" class="headerlink" title="通过简单的demo来验证或者取代以上的方法。"></a>通过简单的demo来验证或者取代以上的方法。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">join() </div><div class="line">语法: <span class="number">1.</span> str = arr.join() <span class="comment">// 默认是",";</span></div><div class="line">      <span class="number">2.</span> str = arr.join(<span class="string">""</span>) <span class="comment">// 空格符===空字符串""; </span></div><div class="line">      <span class="number">3.</span> str = arr.join(separate) <span class="comment">// 分隔符</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'I'</span>, <span class="string">'love'</span>, <span class="string">'China'</span>] ;</div><div class="line">arr.join() <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">","</span>) <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">""</span>) <span class="comment">//return IloveChina</span></div><div class="line">arr.join(<span class="string">"-"</span>)<span class="comment">//return I-love-China</span></div><div class="line"></div><div class="line">join()和split()结合使用的demo</div><div class="line"><span class="keyword">var</span> str = <span class="string">'getElementById'</span>;<span class="comment">//转化为get-element-by-id</span></div><div class="line">    str = str.split(<span class="string">''</span>);<span class="comment">//使用split方法来切割字符串，并转化为数组，</span></div><div class="line">    <span class="keyword">var</span> newstr = str.map(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (v.toUpperCase() == v) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"-"</span> + v.toLowerCase();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> v;</div><div class="line">        &#125;</div><div class="line">    &#125;).join(<span class="string">''</span>)<span class="comment">//转化为需求了</span></div><div class="line">注意：如果数组为空，通过join()分割后，均返回为一个空字符串；关于字符串之间的转换，经常和split()方法结合使用。</div></pre></td></tr></table></figure>
@@ -91,34 +131,14 @@
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
     
-  </entry>
-  
-  <entry>
-    <title>词法作用域和块级作用域的介绍</title>
-    <link href="http://yoursite.com/2017/07/28/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E4%BB%8B%E7%BB%8D/"/>
-    <id>http://yoursite.com/2017/07/28/词法作用域和块级作用域的介绍/</id>
-    <published>2017-07-27T16:00:00.000Z</published>
-    <updated>2017-08-11T06:25:52.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p><strong>定义</strong>： 使用代码块来限定标志的使用范围。<br><strong>块级作用域的访问范围</strong> : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束.<br><strong> 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域.</strong></p>
-<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>定义</strong>： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。<br><strong>块级作用域的访问范围</strong> : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中具有全局可访问性.<br><a id="more"></a><br><strong>变量访问规则( 变量搜索原则 )</strong><br>操作步骤:<br>    1&gt; 将所有的 script 标签看成一个 0 级作用域.可以考虑绘制一条直线.上面标记为 0 级。<br>    2&gt; 在全局作用域中,凡是看到声明, 名字等就在线上标记一个举行块, 里面放置需要的名字( 不要数据的值 )。<br>    3&gt; 0 级链绘制完,分析 0 级作用域中所有的函数,凡是函数, 引出 1 级链,依旧绘制直线。<br>    4&gt; 分别在函数中检查是否有声明, 如果有绘制到对应的链中, 如此往复, 得到新的链, 每一条先都比原来的数字 +1。<br>    5&gt; 绘制完成后, 即得到作用域链结构。</p>
-<p><strong>变量搜索原则</strong><br>凡是需要访问变量, 会考虑在当前作用域中查找是否含有该变量的声明. 如果没有对应的声明, 会到上一级作用域链中。查找是否有对应的声明. 如果有直接使用, 结束查找. 如果没有继续到上一级作用域中. 知道 0 级作用域. 如果还没有就会抛出一个错误, 就是 is not defined.</p>
-<p><strong>代码分析</strong><br>分析步骤：<br>    1&gt; js 代码在预解析的时候会做两件事情, 一个是语法, 另一个是记录声明( 不包括函数内的声明 )。<br>    2&gt; 预解析完成后会从第一行代码开始依次执行 js 代码( 语句 )。<br>    3&gt; 如果进入了函数, 会在函数进入, 执行之前, 对函数内再进行对应的预解析。<br>    4&gt; 如果函数内预解析结束, 再从函数开始的位置一步一步的执行代码。</p>
-<p><strong>具体事例分析</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">123</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    num = <span class="number">456</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> num = <span class="number">789</span>;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(num);<span class="comment">//undefined</span></div><div class="line">            <span class="keyword">var</span> num = <span class="string">'abc'</span>;</div><div class="line">        &#125;</div><div class="line">        func3();</div><div class="line">        <span class="built_in">console</span>.log(num);<span class="comment">//789</span></div><div class="line">    &#125;</div><div class="line">    func2();</div><div class="line">    <span class="built_in">console</span>.log(num);<span class="comment">//456</span></div><div class="line">&#125;</div><div class="line">func1();</div></pre></td></tr></table></figure></p>
-<ol>
-<li>全局的预解析，在script标签中，找到0级作用域，并用直线标明，实例中可以看出，0级上面有变量num和函数func1()；在func1()下面画直线并标明1级，找到函数func2()；在func2()下面画直线并标明2级，找到变量num，func3()；在func3()下面画直线并标明3级，并找到变量num;</li>
-<li>赋值：0级的变量num为123；调用函数func1()，然后将num赋值，由于1级没有变量，直接找到0级的num并将赋值给num = 456，同时打印出num为456；给2级func2()的的num赋值num = 789，并打印num为789；再调用func3()到3级,先打印num的值,由于没有赋值，所以是undefined，然后再赋值num为abc。</li>
-</ol>
-]]></content>
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
-    <summary type="html">
+      <category term="Number" scheme="http://yoursite.com/tags/Number/"/>
     
-      &lt;h2 id=&quot;块级作用域&quot;&gt;&lt;a href=&quot;#块级作用域&quot; class=&quot;headerlink&quot; title=&quot;块级作用域&quot;&gt;&lt;/a&gt;块级作用域&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;： 使用代码块来限定标志的使用范围。&lt;br&gt;&lt;strong&gt;块级作用域的访问范围&lt;/strong&gt; : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束.&lt;br&gt;&lt;strong&gt; 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;词法作用域&quot;&gt;&lt;a href=&quot;#词法作用域&quot; class=&quot;headerlink&quot; title=&quot;词法作用域&quot;&gt;&lt;/a&gt;词法作用域&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。&lt;br&gt;&lt;strong&gt;块级作用域的访问范围&lt;/strong&gt; : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中具有全局可访问性.&lt;br&gt;
-    
-    </summary>
-    
+      <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
     
   </entry>
   
@@ -127,7 +147,7 @@
     <link href="http://yoursite.com/2017/07/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://yoursite.com/2017/07/28/字符串操作的方法/</id>
     <published>2017-07-27T16:00:00.000Z</published>
-    <updated>2017-08-11T06:26:40.000Z</updated>
+    <updated>2017-08-11T14:17:54.000Z</updated>
     
     <content type="html"><![CDATA[<p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。<br><strong>charCodeAt</strong> <code>方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。</code><br><strong>charAt</strong> <code>方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。</code><br><strong>slice</strong> <code>方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。</code><br><strong>substring</strong> <code>方法返回位于String 对象中指定位置的子字符串。</code><br><strong>substr</strong> <code>方法返回一个从指定位置开始的指定长度的子字符串。</code><br><a id="more"></a><br><strong>indexOf</strong> <code>方法返回String 对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。</code><br><strong>lastIndexOf</strong> <code>方法返回String 对象中字符串最后出现的位置。如果没有匹配到子字符串，则返回-1。</code><br><strong>search</strong> <code>方法返回与正则表达式查找内容匹配的第一个字符串的位置。</code><br><strong>concat</strong> <code>concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</code><br><strong>split</strong> <code>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</code><br><strong>match(searchvalue||regexp)</strong> <code>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。括号内的条件必须填写。</code><br><strong>replace(regexp，replacement)</strong> <code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</code><br><strong>toLowerCase()</strong> <code>方法用于把字符串转换为小写。一个新的字符串，在其中 stringObject 的所有大写字符全部被转换为了小写字符。</code><br><strong>toUpperCase()</strong> <code>方法用于把字符串转换为大写。一个新的字符串，在其中 stringObject 的所有小写字符全部被转换为了大写字符。</code><br><strong>trim()</strong> <code>方法会从一个字符串的两端删除空白字符。</code></p>
 <h3 id="通过简单的demo来具体说明以上的方法的使用情况。"><a href="#通过简单的demo来具体说明以上的方法的使用情况。" class="headerlink" title="通过简单的demo来具体说明以上的方法的使用情况。"></a>通过简单的demo来具体说明以上的方法的使用情况。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">charCodeAt()  语法：str.charCodeAt(index)</div><div class="line"><span class="string">"ABC"</span>.charCodeAt(<span class="number">0</span>) <span class="comment">//return 65</span></div><div class="line">注意：如果指定的 index 小于 <span class="number">0</span> 或不小于字符串的长度，则 charCodeAt 返回 <span class="literal">NaN</span>。</div></pre></td></tr></table></figure>
@@ -152,6 +172,44 @@
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="String" scheme="http://yoursite.com/tags/String/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>词法作用域和块级作用域的介绍</title>
+    <link href="http://yoursite.com/2017/07/28/%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F%E5%92%8C%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2017/07/28/词法作用域和块级作用域的介绍/</id>
+    <published>2017-07-27T16:00:00.000Z</published>
+    <updated>2017-08-11T14:07:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h2><p><strong>定义</strong>： 使用代码块来限定标志的使用范围。<br><strong>块级作用域的访问范围</strong> : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束.<br><strong> 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域.</strong></p>
+<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><p><strong>定义</strong>： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。<br><strong>块级作用域的访问范围</strong> : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中具有全局可访问性.<br><a id="more"></a><br><strong>变量访问规则( 变量搜索原则 )</strong><br>操作步骤:<br>    1&gt; 将所有的 script 标签看成一个 0 级作用域.可以考虑绘制一条直线.上面标记为 0 级。<br>    2&gt; 在全局作用域中,凡是看到声明, 名字等就在线上标记一个举行块, 里面放置需要的名字( 不要数据的值 )。<br>    3&gt; 0 级链绘制完,分析 0 级作用域中所有的函数,凡是函数, 引出 1 级链,依旧绘制直线。<br>    4&gt; 分别在函数中检查是否有声明, 如果有绘制到对应的链中, 如此往复, 得到新的链, 每一条先都比原来的数字 +1。<br>    5&gt; 绘制完成后, 即得到作用域链结构。</p>
+<p><strong>变量搜索原则</strong><br>凡是需要访问变量, 会考虑在当前作用域中查找是否含有该变量的声明. 如果没有对应的声明, 会到上一级作用域链中。查找是否有对应的声明. 如果有直接使用, 结束查找. 如果没有继续到上一级作用域中. 知道 0 级作用域. 如果还没有就会抛出一个错误, 就是 is not defined.</p>
+<p><strong>代码分析</strong><br>分析步骤：<br>    1&gt; js 代码在预解析的时候会做两件事情, 一个是语法, 另一个是记录声明( 不包括函数内的声明 )。<br>    2&gt; 预解析完成后会从第一行代码开始依次执行 js 代码( 语句 )。<br>    3&gt; 如果进入了函数, 会在函数进入, 执行之前, 对函数内再进行对应的预解析。<br>    4&gt; 如果函数内预解析结束, 再从函数开始的位置一步一步的执行代码。</p>
+<p><strong>具体事例分析</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">123</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    num = <span class="number">456</span>;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> num = <span class="number">789</span>;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">func3</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(num);<span class="comment">//undefined</span></div><div class="line">            <span class="keyword">var</span> num = <span class="string">'abc'</span>;</div><div class="line">        &#125;</div><div class="line">        func3();</div><div class="line">        <span class="built_in">console</span>.log(num);<span class="comment">//789</span></div><div class="line">    &#125;</div><div class="line">    func2();</div><div class="line">    <span class="built_in">console</span>.log(num);<span class="comment">//456</span></div><div class="line">&#125;</div><div class="line">func1();</div></pre></td></tr></table></figure></p>
+<ol>
+<li>全局的预解析，在script标签中，找到0级作用域，并用直线标明，实例中可以看出，0级上面有变量num和函数func1()；在func1()下面画直线并标明1级，找到函数func2()；在func2()下面画直线并标明2级，找到变量num，func3()；在func3()下面画直线并标明3级，并找到变量num;</li>
+<li>赋值：0级的变量num为123；调用函数func1()，然后将num赋值，由于1级没有变量，直接找到0级的num并将赋值给num = 456，同时打印出num为456；给2级func2()的的num赋值num = 789，并打印num为789；再调用func3()到3级,先打印num的值,由于没有赋值，所以是undefined，然后再赋值num为abc。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;块级作用域&quot;&gt;&lt;a href=&quot;#块级作用域&quot; class=&quot;headerlink&quot; title=&quot;块级作用域&quot;&gt;&lt;/a&gt;块级作用域&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;： 使用代码块来限定标志的使用范围。&lt;br&gt;&lt;strong&gt;块级作用域的访问范围&lt;/strong&gt; : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束.&lt;br&gt;&lt;strong&gt; 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;词法作用域&quot;&gt;&lt;a href=&quot;#词法作用域&quot; class=&quot;headerlink&quot; title=&quot;词法作用域&quot;&gt;&lt;/a&gt;词法作用域&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义&lt;/strong&gt;： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。&lt;br&gt;&lt;strong&gt;块级作用域的访问范围&lt;/strong&gt; : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中具有全局可访问性.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
+    
+    
+      <category term="块级和词法作用域" scheme="http://yoursite.com/tags/%E5%9D%97%E7%BA%A7%E5%92%8C%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     
   </entry>
   
@@ -160,7 +218,7 @@
     <link href="http://yoursite.com/2017/07/25/%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F/"/>
     <id>http://yoursite.com/2017/07/25/清除浮动的方式/</id>
     <published>2017-07-24T16:00:00.000Z</published>
-    <updated>2017-08-11T06:26:10.000Z</updated>
+    <updated>2017-08-11T14:14:32.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="方法一：如果高度是固定的，给父级加height"><a href="#方法一：如果高度是固定的，给父级加height" class="headerlink" title="方法一：如果高度是固定的，给父级加height"></a>方法一：如果高度是固定的，给父级加height</h3><p>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。<br>优点：简单，代码少，容易掌握<br>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题<br>建议：不推荐使用，只建议高度固定的布局时使用<br><a id="more"></a></p>
 <h3 id="方法二：父级结尾处添加额外的标签"><a href="#方法二：父级结尾处添加额外的标签" class="headerlink" title="方法二：父级结尾处添加额外的标签"></a>方法二：父级结尾处添加额外的标签</h3><p>原理：添加一个空div，利用css的clear:both清除浮动，让父级div能自动获取到高度<br>优点：简单，代码少，浏览器支持好，不容易出现怪问题<br>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div<br>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div style="clear:both;"&gt;&lt;/div&gt;</div><div class="line">.clearfloat&#123;clear:both;&#125;</div><div class="line">&lt;div class="div1"&gt; </div><div class="line">    &lt;div class="left"&gt;Left&lt;/div&gt; </div><div class="line">&lt;div class="right"&gt;Right&lt;/div&gt;</div><div class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
@@ -199,6 +257,12 @@
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -236,7 +300,7 @@
     <link href="http://yoursite.com/2017/07/22/js%E4%B8%AD%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E8%AF%81%E6%98%8E/"/>
     <id>http://yoursite.com/2017/07/22/js中单线程的证明/</id>
     <published>2017-07-21T16:00:00.000Z</published>
-    <updated>2017-08-11T03:53:54.000Z</updated>
+    <updated>2017-08-11T14:21:00.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在-js-中是单线程的-所谓的异步是假的"><a href="#在-js-中是单线程的-所谓的异步是假的" class="headerlink" title="在 js 中是单线程的, 所谓的异步是假的."></a>在 js 中是单线程的, 所谓的异步是假的.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 <span class="built_in">shift</span> 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 <span class="string">"数组"</span> 中. 例如:</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="number">1</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">5</span>);</div><div class="line">&#125;<span class="comment">//加入此条命令后，定时器里面的命令将永远无法执行。</span></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console1'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> ); </div><div class="line">&#125;, <span class="number">2000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console2'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">2</span> ); </div><div class="line">&#125;, <span class="number">1000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console3'</span> );</div></pre></td></tr></table></figure>
@@ -257,6 +321,12 @@
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="setTimeout" scheme="http://yoursite.com/tags/setTimeout/"/>
     
   </entry>
   
@@ -265,7 +335,7 @@
     <link href="http://yoursite.com/2017/05/22/%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%900-9%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
     <id>http://yoursite.com/2017/05/22/随机生成0-9不重复的数字/</id>
     <published>2017-05-21T16:00:00.000Z</published>
-    <updated>2017-08-11T06:26:30.000Z</updated>
+    <updated>2017-08-11T14:17:14.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -278,6 +348,10 @@
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -286,7 +360,7 @@
     <link href="http://yoursite.com/2017/05/20/WEB%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     <id>http://yoursite.com/2017/05/20/WEB前端性能优化/</id>
     <published>2017-05-19T16:00:00.000Z</published>
-    <updated>2017-08-11T06:27:56.000Z</updated>
+    <updated>2017-08-11T14:24:54.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="WEB前端性能优化总结"><a href="#WEB前端性能优化总结" class="headerlink" title="WEB前端性能优化总结"></a>WEB前端性能优化总结</h1><h3 id="1-减少http请求-合理设置HTTP缓存"><a href="#1-减少http请求-合理设置HTTP缓存" class="headerlink" title="1.减少http请求,合理设置HTTP缓存"></a>1.减少http请求,合理设置HTTP缓存</h3><h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a. http协议是无状态的应用层协议，意味着每次http请求都需要建立通信链路、进行数据传输，而在服务器端，每个http都需要启动独立的线程去处理。这些通信和服务的开销都很昂贵，减少http请求的数目可有效提高访问性能。</div><div class="line"></div><div class="line">b. 减少http的主要手段是合并CSS、合并javascript、合并图片。将浏览器一次访问需要的javascript和CSS合并成一个文件，这样浏览器就只需要一次请求。图片也可以合并，多张图片合并成一张，如果每张图片都有不同的超链接，可通过CSS偏移响应鼠标点击操作，构造不同的URL。</div><div class="line"></div><div class="line">c. 缓存的力量是强大的，恰当的缓存设置可以大大的减少 HTTP请求。假设某网站首页，当浏览器没有缓存的时候访问一共会发出 78个请求，共 600多 K数据，而当第二次访问即浏览器已缓存之后访问则仅有 10个请求，共 20多 K数据。 (这里需要说明的是，如果直接 F5刷新页面的话效果是不一样的，这种情况下请求数还是一样，不过被缓存资源的请求服务器是 304响应，只有 Header没有Body，可以节省带宽 )</div><div class="line"></div><div class="line">d. 怎样才算合理设置 ?原则很简单，能缓存越多越好，能缓存越久越好。例如，很少变化的图片资源可以直接通过 HTTP Header中的Expires设置一个很长的过期头 ;变化不频繁而又可能会变的资源可以使用 Last-Modifed来做请求验证。尽可能的让资源能够在缓存中待得更久。关于 HTTP缓存的具体设置和原理此处就不再详述了。</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -332,6 +406,16 @@
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="性能优化" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -340,7 +424,7 @@
     <link href="http://yoursite.com/2015/04/10/%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2015/04/10/兼容性问题/</id>
     <published>2015-04-09T16:00:00.000Z</published>
-    <updated>2017-08-11T06:26:04.000Z</updated>
+    <updated>2017-08-11T14:08:54.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="工作中常见的兼容性问题及解决方式"><a href="#工作中常见的兼容性问题及解决方式" class="headerlink" title="工作中常见的兼容性问题及解决方式"></a>工作中常见的兼容性问题及解决方式</h3><ol>
 <li><p>png24位的图片在IE6上出背景，解决方案是 <code>做成png8即可 。</code></p>
@@ -387,6 +471,10 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
     
     </summary>
     
+      <category term="Rendering Engine" scheme="http://yoursite.com/categories/Rendering-Engine/"/>
+    
+    
+      <category term="浏览器的兼容性" scheme="http://yoursite.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7/"/>
     
   </entry>
   
@@ -395,7 +483,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
     <link href="http://yoursite.com/2015/03/15/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/"/>
     <id>http://yoursite.com/2015/03/15/常见的浏览器内核/</id>
     <published>2015-03-14T16:00:00.000Z</published>
-    <updated>2017-08-11T03:52:34.000Z</updated>
+    <updated>2017-08-11T14:05:16.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="nbsp-nbsp-nbsp-通常所属的浏览器内核（Rendering-Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。"><a href="#nbsp-nbsp-nbsp-通常所属的浏览器内核（Rendering-Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。" class="headerlink" title="&nbsp;  &nbsp;  &nbsp;  通常所属的浏览器内核（Rendering Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。"></a>&nbsp;  &nbsp;  &nbsp;  通常所属的浏览器内核（Rendering Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。</h4><ol>
 <li><code>Trident内核（又称MSHTML）</code><ol>
@@ -437,6 +525,10 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
     
     </summary>
     
+      <category term="Rendering Engine" scheme="http://yoursite.com/categories/Rendering-Engine/"/>
+    
+    
+      <category term="浏览器内核" scheme="http://yoursite.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/"/>
     
   </entry>
   
@@ -445,7 +537,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
     <link href="http://yoursite.com/2015/03/12/hexo%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2015/03/12/hexo快速创建个人博客/</id>
     <published>2015-03-11T16:00:00.000Z</published>
-    <updated>2017-08-11T06:27:18.000Z</updated>
+    <updated>2017-08-11T14:19:52.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
 <li><p>安装GIT</p>
@@ -503,28 +595,12 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
     
     </summary>
     
+      <category term="安装文件方法" scheme="http://yoursite.com/categories/%E5%AE%89%E8%A3%85%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/"/>
     
-  </entry>
-  
-  <entry>
-    <title>欢迎来踩***不忘初衷</title>
-    <link href="http://yoursite.com/2015/03/10/first-fell/"/>
-    <id>http://yoursite.com/2015/03/10/first-fell/</id>
-    <published>2015-03-09T16:00:00.000Z</published>
-    <updated>2017-07-26T14:45:48.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="开篇感受"><a href="#开篇感受" class="headerlink" title="开篇感受"></a>开篇感受</h2><blockquote>
-<p>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不知从何时开始，每每自己开始弄一个新的东西，都喜欢留点当时的感受，以便后续自己在回味时，无穷，记忆是无序的，感受是不曾停留的，为留住这一瞬间的感动，以文字作为凭证。<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搭建博客的初衷是记录自己学习前端的点滴，对于我个人而言，是把自己难以记住的知识点或者工作当中，跳进的坑洼，在此记录，便于后续自己再次查看，不在同一个坑里点进两次，同时也希望能给那些和我一样，遇到同样困境的，猿友们一点捷径，不往坑里跳，或许方法或者知识点不够完善，乃至偏离正轨，在此希望进来的各位大神们，指点，小女子不胜感激。</p>
-</blockquote>
-]]></content>
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;开篇感受&quot;&gt;&lt;a href=&quot;#开篇感受&quot; class=&quot;headerlink&quot; title=&quot;开篇感受&quot;&gt;&lt;/a&gt;开篇感受&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;不知从何时
-    
-    </summary>
-    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
   </entry>
   

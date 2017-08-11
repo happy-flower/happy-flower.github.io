@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="块级和词法作用域," />
 
 
 
@@ -90,13 +90,14 @@
 
 
 <meta name="description" content="块级作用域定义： 使用代码块来限定标志的使用范围。块级作用域的访问范围 : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束. 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域. 词法作用域定义： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。块级作用域的访问范围 : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中">
+<meta name="keywords" content="块级和词法作用域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="词法作用域和块级作用域的介绍">
 <meta property="og:url" content="http://yoursite.com/2017/07/28/词法作用域和块级作用域的介绍/index.html">
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="块级作用域定义： 使用代码块来限定标志的使用范围。块级作用域的访问范围 : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束. 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域. 词法作用域定义： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。块级作用域的访问范围 : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T06:25:52.000Z">
+<meta property="og:updated_time" content="2017-08-11T14:07:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="词法作用域和块级作用域的介绍">
 <meta name="twitter:description" content="块级作用域定义： 使用代码块来限定标志的使用范围。块级作用域的访问范围 : 从变量的声明开始到变量所在的 最近的 花括号( { } ) 结束. 注意：ES5 以前是不支持 块级作用域的, 只支持词法作用域. 词法作用域定义： 代码在编写过程中出来的作用范围。js执行过程分两个阶段:预解析, 解释执行。块级作用域的访问范围 : 词法作用域与块级作用域不同, 在 js 中词法作用域的变量在当前作用域中">
@@ -174,7 +175,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Quick notes</p>
       
   </div>
 
@@ -200,16 +201,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -309,6 +300,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -364,6 +377,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/块级和词法作用域/" rel="tag"># 块级和词法作用域</a>
+          
+        </div>
+      
 
       
         
@@ -373,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/字符串操作的方法/" rel="next" title="字符串操作常用的方法">
-                <i class="fa fa-chevron-left"></i> 字符串操作常用的方法
+              <a href="/2017/07/25/清除浮动的方式/" rel="next" title="清除浮动的方式">
+                <i class="fa fa-chevron-left"></i> 清除浮动的方式
               </a>
             
           </div>
@@ -383,8 +402,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/30/数组操作常用的方法/" rel="prev" title="数组操作常用的方法">
-                数组操作常用的方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/28/字符串操作的方法/" rel="prev" title="字符串操作常用的方法">
+                字符串操作常用的方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -457,14 +476,28 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -479,6 +512,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happy-flower" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5476745736/home?wvr=5#_loginLayer_1502466832267" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://wx2.qq.com" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
           
         </div>
 

@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,setTimeout," />
 
 
 
@@ -90,13 +90,14 @@
 
 
 <meta name="description" content="在 js 中是单线程的, 所谓的异步是假的.1以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 shift 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 &quot;数组&quot; 中.">
+<meta name="keywords" content="javascript,setTimeout">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于js执行属于单线程案例---demo">
 <meta property="og:url" content="http://yoursite.com/2017/07/22/js中单线程的证明/index.html">
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="在 js 中是单线程的, 所谓的异步是假的.1以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 shift 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 &quot;数组&quot; 中.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T03:53:54.000Z">
+<meta property="og:updated_time" content="2017-08-11T14:21:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于js执行属于单线程案例---demo">
 <meta name="twitter:description" content="在 js 中是单线程的, 所谓的异步是假的.1以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 shift 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 &quot;数组&quot; 中.">
@@ -174,7 +175,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Quick notes</p>
       
   </div>
 
@@ -200,16 +201,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -309,6 +300,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -364,6 +377,14 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/setTimeout/" rel="tag"># setTimeout</a>
+          
+        </div>
       
 
       
@@ -458,14 +479,28 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -480,6 +515,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happy-flower" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5476745736/home?wvr=5#_loginLayer_1502466832267" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://wx2.qq.com" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
           
         </div>
 

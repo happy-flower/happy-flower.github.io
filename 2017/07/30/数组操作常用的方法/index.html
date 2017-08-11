@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,Number,Array," />
 
 
 
@@ -90,13 +90,14 @@
 
 
 <meta name="description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。length 属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。join() 将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。reverse() 将数组中各元素颠倒顺序。通过此方法也可以实现数组中">
+<meta name="keywords" content="javascript,Number,Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组操作常用的方法">
 <meta property="og:url" content="http://yoursite.com/2017/07/30/数组操作常用的方法/index.html">
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。length 属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。join() 将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。reverse() 将数组中各元素颠倒顺序。通过此方法也可以实现数组中">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T08:05:44.000Z">
+<meta property="og:updated_time" content="2017-08-11T14:16:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组操作常用的方法">
 <meta name="twitter:description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。length 属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。join() 将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。reverse() 将数组中各元素颠倒顺序。通过此方法也可以实现数组中">
@@ -174,7 +175,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Quick notes</p>
       
   </div>
 
@@ -200,16 +201,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -309,6 +300,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -373,6 +386,16 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/Number/" rel="tag"># Number</a>
+          
+            <a href="/tags/Array/" rel="tag"># Array</a>
+          
+        </div>
+      
 
       
         
@@ -382,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/28/词法作用域和块级作用域的介绍/" rel="next" title="词法作用域和块级作用域的介绍">
-                <i class="fa fa-chevron-left"></i> 词法作用域和块级作用域的介绍
+              <a href="/2017/07/28/字符串操作的方法/" rel="next" title="字符串操作常用的方法">
+                <i class="fa fa-chevron-left"></i> 字符串操作常用的方法
               </a>
             
           </div>
@@ -466,14 +489,28 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -488,6 +525,35 @@
         
 
         <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happy-flower" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5476745736/home?wvr=5#_loginLayer_1502466832267" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://wx2.qq.com" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
           
         </div>
 
