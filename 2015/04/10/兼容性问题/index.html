@@ -98,7 +98,7 @@
 <meta property="og:description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是 做成png8即可 。  不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为 {padding：0px; margin:0px}。  IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{floa">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1501379319&di=743f3211cd0ede77c41c5a0db7a9d019&src=http://images2015.cnblogs.com/blog/593188/201512/593188-20151204102045549-1154843748.png">
-<meta property="og:updated_time" content="2017-08-11T14:08:54.000Z">
+<meta property="og:updated_time" content="2017-08-12T13:00:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="兼容性问题及解决方案">
 <meta name="twitter:description" content="工作中常见的兼容性问题及解决方式 png24位的图片在IE6上出背景，解决方案是 做成png8即可 。  不同的浏览器打开的时候，会有8px左右的误差，为统一规格，解决方式为 {padding：0px; margin:0px}。  IE6的双边距BUG:块属性标签shenfloat后，又有横线的margin情况下，在IE6显示margin比设置的大。浮动IE产生的双倍距离里#itcast{floa">
@@ -203,6 +203,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -369,7 +379,7 @@
 <li><p>子元素会继承透明属性:父元素设置了透明度，则子元素也会透明。解决办法：<code>非IE:background:rgba(0,0,0,0.6);IE:filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)。</code><br><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1501379319&amp;di=743f3211cd0ede77c41c5a0db7a9d019&amp;src=http://images2015.cnblogs.com/blog/593188/201512/593188-20151204102045549-1154843748.png" alt="插入圖片"></p>
 </li>
 <li><p>宽度解析不同:在Ie6中width（宽度）包括padding，在其他浏览器中width不包括padding。解決方法：<code>使用过滤器。</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">a.下划线属性过滤器</div><div class="line">当在一个属性前面增加了一个下划线后，由于符合标准的浏览器不能识别带有下线的属性而忽略了这个声明，但是在IE6及更低版本浏览器中会继续解析这个规则。</div><div class="line">语法：选择符&#123;_属性：属性值;&#125;</div><div class="line"></div><div class="line">b. !important关键字过滤器</div><div class="line">它表示所附加的声明具有最高优先级的意思。但由于IE6及更低版本不能识别它,我们可以利用IE6的这个Bug作为过滤器来兼容ＩＥ６和其它标准浏览器。</div><div class="line">语法：选择符&#123;属性：属性值!important;&#125;</div><div class="line"></div><div class="line">c. *属性过滤器</div><div class="line">当在一个属性前面增加了*后，该属性只能被IE7浏览器识别，其它浏览器混略该属性的作用。</div><div class="line">语法：选择符&#123;*属性：属性值;&#125;</div><div class="line"></div><div class="line">d. \9:IE版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\9;&#125;</div><div class="line"></div><div class="line">e.  \0  :   IE8 及以上版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\0;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">a.下划线属性过滤器</div><div class="line">当在一个属性前面增加了一个下划线后，由于符合标准的浏览器不能识别带有下线的属性而忽略了这个声明，但是在IE6及更低版本浏览器中会继续解析这个规则。</div><div class="line">语法：选择符&#123;_属性：属性值;&#125;</div><div class="line"></div><div class="line">b. !important关键字过滤器</div><div class="line">它表示所附加的声明具有最高优先级的意思。但由于IE6及更低版本不能识别它,我们可以利用IE6的这个Bug作为过滤器来兼容IE6和其它标准浏览器。</div><div class="line">语法：选择符&#123;属性：属性值!important;&#125;</div><div class="line"></div><div class="line">c. *属性过滤器</div><div class="line">当在一个属性前面增加了*后，该属性只能被IE7浏览器识别，其它浏览器混略该属性的作用。</div><div class="line">语法：选择符&#123;*属性：属性值;&#125;</div><div class="line"></div><div class="line">d. \9:IE版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\9;&#125;</div><div class="line"></div><div class="line">e.  \0:IE8 及以上版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\0;&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>最大、最小宽、高问题:IE不识别min-width、min-heigh、max-width、max-heigh。解决办法：<code>div{width: auto;height: auto;min-width: 200px;min-height: 200px;}  
 http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code></p>
@@ -501,7 +511,7 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -509,10 +519,10 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
 
           
             <div class="site-state-item site-state-categories">
-              
+              <a href="/categories">
                 <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
-              
+              </a>
             </div>
           
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-11T13:34:56.000Z</updated>
+  <updated>2017-08-12T13:19:40.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>逗号运算符简单的理解和运用</title>
+    <link href="http://yoursite.com/2017/08/30/%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97/"/>
+    <id>http://yoursite.com/2017/08/30/逗号运算符的运算/</id>
+    <published>2017-08-29T16:00:00.000Z</published>
+    <updated>2017-08-12T13:19:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>1. 在函数当中的使用</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">15</span>,</div><div class="line">b = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> b++ , <span class="number">10</span>, a++;</div><div class="line"> &#125;</div><div class="line"><span class="keyword">var</span> c = CommaTest();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 返回15  </span></div><div class="line"><span class="comment">// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。</span></div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p><strong>2. for循环中逗号运算符</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算</span></div><div class="line"><span class="keyword">var</span> i, j = <span class="number">5</span>, k;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ , j++) &#123;</div><div class="line">    k = i + j;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回23</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, m = <span class="number">0</span>; i &lt; <span class="number">10</span>, j &lt; <span class="number">20</span>, m &lt; <span class="number">5</span>; i++ , j++ , m++) &#123;</div><div class="line">    <span class="keyword">var</span> k = i + j + m;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回12</span></div></pre></td></tr></table></figure></p>
+<p> <strong>3.逗号运算符与函数调用运算符的冲突</strong><br>        // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。<br>       如:console.log(2, 5);//2<br>       如:console.log((2, 5));//5</p>
+<p><strong>4.逗号运算符和赋值运算符冲突</strong><br>        // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。<br>        var a = 20;<br>        var b = (++a, 10);<br>        console.log(b);</p>
+<p><strong>案例测试</strong><br>console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)<br> var a = ‘a’, b = ‘b’;<br> a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)<br>a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)<br>[[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;1. 在函数当中的使用&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CommaTest&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; b++ , &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, a++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = CommaTest();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(c); &lt;span class=&quot;comment&quot;&gt;// 返回15  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
@@ -60,7 +88,7 @@
     <link href="http://yoursite.com/2017/08/06/demo/"/>
     <id>http://yoursite.com/2017/08/06/demo/</id>
     <published>2017-08-05T16:14:42.540Z</published>
-    <updated>2017-08-07T05:37:40.000Z</updated>
+    <updated>2017-08-12T12:55:20.000Z</updated>
     
     <content type="html"><![CDATA[<!DOCTYPE html>
 <html lang="en">
@@ -74,11 +102,46 @@
 
 <body>
     <script>
-        if (!String.prototype.trim) {
-            String.prototype.trim = function () {
-                return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
-            };
+        //  1.加号运算符简单的理解
+        //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；
+        var a = 15,
+            b = 20;
+        function CommaTest() {
+            return b++ , 10, a++;
         }
+        var c = CommaTest();
+        console.log(c); // 返回15
+
+        // 2 for循环中逗号运算符
+        //在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算
+        var i, j = 5, k;
+        for (i = 0; i < 10; i++ , j++) {
+            k = i + j;
+        }
+        console.log(k)  // 返回23
+
+        for (var i = 0, j = 0, m = 0; i < 10, j < 20, m < 5; i++ , j++ , m++) {
+            var k = i + j + m;
+        }
+        console.log(k)  // 返回12
+
+        // 3. 逗号运算符与函数调用运算符的冲突
+        // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
+        alert(2, 5);  //2
+        alert((2, 5)); //5
+
+        // 4.逗号运算符和赋值运算符冲突
+        // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
+        var a = 20;
+        var b = (++a, 10);
+        console.log(b);
+
+        // 案例测试
+        console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)
+        var a = 'a', b = 'b';
+        a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)
+        a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)
+        [[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)
     </script>
 </body>
 
@@ -424,7 +487,7 @@
     <link href="http://yoursite.com/2015/04/10/%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2015/04/10/兼容性问题/</id>
     <published>2015-04-09T16:00:00.000Z</published>
-    <updated>2017-08-11T14:08:54.000Z</updated>
+    <updated>2017-08-12T13:00:04.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="工作中常见的兼容性问题及解决方式"><a href="#工作中常见的兼容性问题及解决方式" class="headerlink" title="工作中常见的兼容性问题及解决方式"></a>工作中常见的兼容性问题及解决方式</h3><ol>
 <li><p>png24位的图片在IE6上出背景，解决方案是 <code>做成png8即可 。</code></p>
@@ -446,7 +509,7 @@
 <li><p>子元素会继承透明属性:父元素设置了透明度，则子元素也会透明。解决办法：<code>非IE:background:rgba(0,0,0,0.6);IE:filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000)。</code><br><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&amp;quality=100&amp;size=b4000_4000&amp;sec=1501379319&amp;di=743f3211cd0ede77c41c5a0db7a9d019&amp;src=http://images2015.cnblogs.com/blog/593188/201512/593188-20151204102045549-1154843748.png" alt="插入圖片"></p>
 </li>
 <li><p>宽度解析不同:在Ie6中width（宽度）包括padding，在其他浏览器中width不包括padding。解決方法：<code>使用过滤器。</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">a.下划线属性过滤器</div><div class="line">当在一个属性前面增加了一个下划线后，由于符合标准的浏览器不能识别带有下线的属性而忽略了这个声明，但是在IE6及更低版本浏览器中会继续解析这个规则。</div><div class="line">语法：选择符&#123;_属性：属性值;&#125;</div><div class="line"></div><div class="line">b. !important关键字过滤器</div><div class="line">它表示所附加的声明具有最高优先级的意思。但由于IE6及更低版本不能识别它,我们可以利用IE6的这个Bug作为过滤器来兼容ＩＥ６和其它标准浏览器。</div><div class="line">语法：选择符&#123;属性：属性值!important;&#125;</div><div class="line"></div><div class="line">c. *属性过滤器</div><div class="line">当在一个属性前面增加了*后，该属性只能被IE7浏览器识别，其它浏览器混略该属性的作用。</div><div class="line">语法：选择符&#123;*属性：属性值;&#125;</div><div class="line"></div><div class="line">d. \9:IE版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\9;&#125;</div><div class="line"></div><div class="line">e.  \0  :   IE8 及以上版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\0;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">a.下划线属性过滤器</div><div class="line">当在一个属性前面增加了一个下划线后，由于符合标准的浏览器不能识别带有下线的属性而忽略了这个声明，但是在IE6及更低版本浏览器中会继续解析这个规则。</div><div class="line">语法：选择符&#123;_属性：属性值;&#125;</div><div class="line"></div><div class="line">b. !important关键字过滤器</div><div class="line">它表示所附加的声明具有最高优先级的意思。但由于IE6及更低版本不能识别它,我们可以利用IE6的这个Bug作为过滤器来兼容IE6和其它标准浏览器。</div><div class="line">语法：选择符&#123;属性：属性值!important;&#125;</div><div class="line"></div><div class="line">c. *属性过滤器</div><div class="line">当在一个属性前面增加了*后，该属性只能被IE7浏览器识别，其它浏览器混略该属性的作用。</div><div class="line">语法：选择符&#123;*属性：属性值;&#125;</div><div class="line"></div><div class="line">d. \9:IE版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\9;&#125;</div><div class="line"></div><div class="line">e.  \0:IE8 及以上版本识别；其它浏览器都不识别</div><div class="line">语法：选择符&#123;属性：属性值\0;&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>最大、最小宽、高问题:IE不识别min-width、min-heigh、max-width、max-heigh。解决办法：<code>div{width: auto;height: auto;min-width: 200px;min-height: 200px;}  
 http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code></p>
