@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="Document                 //  1.加号运算符简单的理解         //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；         var a = 15,             b = 20;         function CommaTest() {             ret">
+<meta name="description" content="使用div来高仿textarea              textarea {             margin: 0 auto;             display: block;             width: 400px;             height: 120px;             margin-bottom: 100px;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Liu jinfang&#39;s Nodes">
 <meta property="og:url" content="http://yoursite.com/2017/08/06/demo/index.html">
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
-<meta property="og:description" content="Document                 //  1.加号运算符简单的理解         //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；         var a = 15,             b = 20;         function CommaTest() {             ret">
+<meta property="og:description" content="使用div来高仿textarea              textarea {             margin: 0 auto;             display: block;             width: 400px;             height: 120px;             margin-bottom: 100px;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-12T15:44:40.000Z">
+<meta property="og:updated_time" content="2017-08-14T06:59:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liu jinfang&#39;s Nodes">
-<meta name="twitter:description" content="Document                 //  1.加号运算符简单的理解         //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；         var a = 15,             b = 20;         function CommaTest() {             ret">
+<meta name="twitter:description" content="使用div来高仿textarea              textarea {             margin: 0 auto;             display: block;             width: 400px;             height: 120px;             margin-bottom: 100px;">
 
 
 
@@ -339,54 +339,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>使用div来高仿textarea</title>
+    <style>
+        textarea {
+            margin: 0 auto;
+            display: block;
+            width: 400px;
+            height: 120px;
+            margin-bottom: 100px;
+        }
+
+        .text-box {
+            width: 400px;
+            min-height: 120px;
+            max-height: 300px;
+            /*_height: 120px; 兼容IE代码*/
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            /*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/
+            border: 1px solid rgb(169, 169, 169);
+            font-size: 12px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /*_overflow-y: visible; /*兼容IE代码*/
+        }
+    </style>
 </head>
 
 <body>
-    <script>
-        //  1.加号运算符简单的理解
-        //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；
-        var a = 15,
-            b = 20;
-        function CommaTest() {
-            return b++ , 10, a++;
-        }
-        var c = CommaTest();
-        console.log(c); // 返回15
-
-        // 2 for循环中逗号运算符
-        //在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算
-        var i, j = 5, k;
-        for (i = 0; i < 10; i++ , j++) {
-            k = i + j;
-        }
-        console.log(k)  // 返回23
-
-        for (var i = 0, j = 0, m = 0; i < 10, j < 20, m < 5; i++ , j++ , m++) {
-            var k = i + j + m;
-        }
-        console.log(k)  // 返回12
-
-        // 3. 逗号运算符与函数调用运算符的冲突
-        // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
-        // alert(2, 5);  //2
-        // alert((2, 5)); //5
-
-        // 4.逗号运算符和赋值运算符冲突
-        // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
-        var a = 20;
-        var b = (++a, 10);
-        console.log(b);
-
-        // 案例测试
-        console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)
-        var a = 'a', b = 'b';
-        a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)
-        a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)
-        [[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)
-    </script>
+    <!-- textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻 -->
+    <textarea style="resize: none"></textarea>
+    <!-- 需要用到contenteditable属性（true规定元素可编辑,false规定元素不可编辑），主浏览器（HTML5的新属性，IE	Firefox	Chrome	Safari	Opera）都支持 -->
+    <div contenteditable="true" class="text-box"><br></div>
 </body>
 
 </html>
@@ -419,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/30/数组操作常用的方法/" rel="next" title="数组操作常用的方法">
-                <i class="fa fa-chevron-left"></i> 数组操作常用的方法
+              <a href="/2017/07/28/词法作用域和块级作用域的介绍/" rel="next" title="词法作用域和块级作用域的介绍">
+                <i class="fa fa-chevron-left"></i> 词法作用域和块级作用域的介绍
               </a>
             
           </div>
@@ -429,8 +416,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/10/first-fell/" rel="prev" title="欢迎来踩***不忘初衷">
-                欢迎来踩***不忘初衷 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/30/逗号运算符的运算/" rel="prev" title="逗号运算符简单的理解和运用">
+                逗号运算符简单的理解和运用 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -494,7 +481,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

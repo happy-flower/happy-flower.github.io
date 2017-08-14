@@ -1,0 +1,747 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript,Number,Array," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Liu jinfang's Nodes" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。length 属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。join() 将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。reverse() 将数组中各元素颠倒顺序。通过此方法也可以实现数组中">
+<meta name="keywords" content="javascript,Number,Array">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组操作常用的方法">
+<meta property="og:url" content="http://yoursite.com/2016/07/30/数组操作常用的方法/index.html">
+<meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
+<meta property="og:description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。length 属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。join() 将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。reverse() 将数组中各元素颠倒顺序。通过此方法也可以实现数组中">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-14T07:35:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组操作常用的方法">
+<meta name="twitter:description" content="在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。length 属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。join() 将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。reverse() 将数组中各元素颠倒顺序。通过此方法也可以实现数组中">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/30/数组操作常用的方法/"/>
+
+
+
+
+
+  <title> 数组操作常用的方法 | Liu jinfang's Nodes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Liu jinfang's Nodes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Quick notes</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/30/数组操作常用的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘金芳">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/IMG_20130917_074223.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Liu jinfang's Nodes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数组操作常用的方法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-30T00:00:00+08:00">
+                2016-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。<br><strong>length</strong> <code>属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。</code><br><strong>join()</strong> <code>将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。</code><br><strong>reverse()</strong> <code>将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。</code><br><strong>shift()</strong> <code>从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><a id="more"></a><br><strong>pop()</strong> <code>从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><strong>unshift()</strong> <code>将一个或多个元素添加到数组的开头，并返回新数组的长度。</code><br><strong>push()</strong> <code>往数组结尾添加一个或多个数组元素，长度要改变。</code><br><strong>concat( )</strong> <code>连接数组，返回的是一个新数组。它连接的如果是数组的话，只能是平铺数组，如果是二维的数组，不能展开添加，如需展开，必须结合apply使用。</code><br><strong>slice( )</strong> <code>返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</code><br><strong>sort( )</strong> <code>对数组元素进行排序，默认排序顺序是根据字符串Unicode码点。</code><br><strong>splice( )</strong> <code>插入、删除或替换数组的元素,由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</code><br><strong>toLocaleString( )</strong> <code>把数组转换成局部字符串。</code><br><strong>toString( )</strong> <code>将数组转换成一个字符串。</code><br><strong>forEach()</strong> <code>将数组转换成一个字符串。</code><br><strong>every()</strong>  <code>测试数组的所有元素是否都通过了指定函数的测试。</code><br><strong>some()</strong> <code>方法测试数组中的某些元素是否通过由提供的函数实现的测试。</code><br><strong>map()</strong>  <code>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</code><br><strong>filter()</strong>  <code>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</code><br><!--more--></p>
+<h3 id="通过简单的demo来验证或者取代以上的方法。"><a href="#通过简单的demo来验证或者取代以上的方法。" class="headerlink" title="通过简单的demo来验证或者取代以上的方法。"></a>通过简单的demo来验证或者取代以上的方法。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">join() </div><div class="line">语法: <span class="number">1.</span> str = arr.join() <span class="comment">// 默认是",";</span></div><div class="line">      <span class="number">2.</span> str = arr.join(<span class="string">""</span>) <span class="comment">// 空格符===空字符串""; </span></div><div class="line">      <span class="number">3.</span> str = arr.join(separate) <span class="comment">// 分隔符</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'I'</span>, <span class="string">'love'</span>, <span class="string">'China'</span>] ;</div><div class="line">arr.join() <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">","</span>) <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">""</span>) <span class="comment">//return IloveChina</span></div><div class="line">arr.join(<span class="string">"-"</span>)<span class="comment">//return I-love-China</span></div><div class="line"></div><div class="line">join()和split()结合使用的demo</div><div class="line"><span class="keyword">var</span> str = <span class="string">'getElementById'</span>;<span class="comment">//转化为get-element-by-id</span></div><div class="line">    str = str.split(<span class="string">''</span>);<span class="comment">//使用split方法来切割字符串，并转化为数组，</span></div><div class="line">    <span class="keyword">var</span> newstr = str.map(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (v.toUpperCase() == v) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"-"</span> + v.toLowerCase();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> v;</div><div class="line">        &#125;</div><div class="line">    &#125;).join(<span class="string">''</span>)<span class="comment">//转化为需求了</span></div><div class="line">注意：如果数组为空，通过join()分割后，均返回为一个空字符串；关于字符串之间的转换，经常和split()方法结合使用。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">reverse() </div><div class="line">语法:  arr.reverse() <span class="comment">//无需传参</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.reverse()  <span class="comment">//return [7, 6, 5, 4, 3, 2, 1]</span></div><div class="line"><span class="keyword">var</span> array = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = arr.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    array[array.length] = arr[i];</div><div class="line">&#125;   <span class="comment">//此方法获得的结果和reverse()方法相同。</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shift() </div><div class="line">语法: <span class="number">1.</span> arr.shift() </div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] ;</div><div class="line">arr.shift()  <span class="comment">//return 1;同时arr输出为[2, 3]</span></div><div class="line">[].shift()  <span class="comment">// return undefinded</span></div><div class="line">注意：<span class="number">1.</span> shift 方法并不局限于数组：该方法亦可通过 call 或 apply 作用于对象上。对于不包含 length 属性的对象，将添加一个值为 <span class="number">0</span> 的 length 属性。</div><div class="line">     <span class="number">2.</span> shift 方法移除索引为 <span class="number">0</span> 的元素(即第一个元素)，并返回被移除的元素，其他元素的索引值随之减 <span class="number">1</span>。如果length值 (长度为 <span class="number">0</span>，则返回 <span class="literal">undefined</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pop() </div><div class="line">语法:  arr.pop() <span class="comment">//无需传参</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.pop() <span class="comment">//return 7; 同时arr变成为[1, 2, 3, 4, 5, 6];</span></div><div class="line">[].pop() <span class="comment">//return undefinded;</span></div><div class="line">注意：空数组上调用 pop()，它返回  <span class="literal">undefined</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">unshift() </div><div class="line">语法:  arr.unshift(element1, ..., elementN)</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.unshift(<span class="number">0</span>) <span class="comment">//return 8; 同时arr变成为[0, 1, 2, 3, 4, 5, 6, 7];</span></div><div class="line">注意: <span class="number">1.</span> 当一个对象调用该方法时，返回其 length 属性值。</div><div class="line">      <span class="number">2.</span> unshift 方法会在调用它的类数组（array-like）对象的开始位置插入给定的参数。</div><div class="line">      <span class="number">3.</span> unshift 特意被设计成具有通用性；这个方法能够通过 call 或 apply 方法作用于类似数组的对象上。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">push()</div><div class="line">语法:  arr.push(element1, ..., elementN)</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">arr.push(<span class="number">4</span>, <span class="number">5</span>) <span class="comment">//return 5; 同时arr变成为[ 1, 2, 3, 4, 5];</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </div><div class="line"><span class="keyword">var</span> array = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</div><div class="line">arr.push.apply(arr,array)  <span class="comment">//return 6;同时arr的为[1, 3, 5, 2, 4, 6];</span></div><div class="line">注意: <span class="number">1.</span> 当一个对象调用该方法时，返回其 length 属性值。</div><div class="line">      <span class="number">2.</span> push 方法有意具有通用性。合并数组的时候，该方法和 call() 或 apply()上下文一起使用时，可进行逐一的添加。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">concat()</div><div class="line">语法:  <span class="keyword">var</span> new_array = old_array.concat(value1[, value2[, ...[, valueN]]])</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> array = [<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>];</div><div class="line">arr.concat(array) <span class="comment">//return ["a", "b", "c", "d", "e", "f"]; 同时arr不变为['a','b','c'];</span></div><div class="line">注意: 连接一个或多个数组（值）将不会改变原本的数组/值。进一步说，任何对新数组的操作都不会对原有的数组造成影响（仅当该元素不是对象的引用时），反之亦然。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">slice()</div><div class="line">语法: <span class="number">1.</span> arr.slice()</div><div class="line">      <span class="number">2.</span> arr.slice(begin)</div><div class="line">      <span class="number">3.</span> arr.slice(begin,end)</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>];</div><div class="line">arr.slice(<span class="number">1</span>, <span class="number">3</span>) <span class="comment">//return ["two", "three"];同时原arr数组不变["one", "two", "three", "four", "five", "six"];</span></div><div class="line">注意: 获取的元素不包括end。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sort()</div><div class="line">语法: <span class="number">1.</span> arr.sort() </div><div class="line">      <span class="number">2.</span> arr.sort(compareFunction)</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'parent'</span>, <span class="string">'father'</span>, <span class="string">'mother'</span>, <span class="string">'aunt'</span>];</div><div class="line">arr.sort() <span class="comment">//return ["aunt", "father", "mother", "parent"];</span></div><div class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">23</span>, <span class="number">4</span>, <span class="number">85</span>, <span class="number">9</span>]</div><div class="line">array.sort() <span class="comment">//[1, 23, 4, 85, 9]</span></div><div class="line">array.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;) <span class="comment">//[1, 4, 9, 23, 85]</span></div><div class="line">注意: 当不传参数时，会按照默认排序顺序是根据字符串Unicode码点，如果数字进行排序的时候，必须传入参数，才能按照数字的大小进行排序。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">splice()</div><div class="line">语法: <span class="number">1.</span> array.splice(start) </div><div class="line">      <span class="number">2.</span> array.splice(start, deleteCount)</div><div class="line">      <span class="number">3.</span> array.splice(start, deleteCount, item1, item2, ...)</div><div class="line"><span class="keyword">var</span> myFish = [<span class="string">'angel'</span>, <span class="string">'clown'</span>, <span class="string">'mandarin'</span>, <span class="string">'sturgeon'</span>];</div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'drum'</span>); <span class="comment">// 在索引为2的位置插入'drum';myFish 变为 ["angel", "clown", "drum", "mandarin", "sturgeon"]</span></div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// 从索引为2的位置删除一项（也就是'drum'这一项）;myFish 变为 ["angel", "clown", "mandarin", "sturgeon"]</span></div><div class="line">注意: splice() 方法与 slice() 方法的作用是不同的，splice() 方法会直接对数组进行修改。由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">toLocaleString( )</div><div class="line">语法: <span class="number">1.</span> arr.toLocaleString();</div><div class="line"><span class="keyword">var</span> number = <span class="number">1337</span>;</div><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> myArr = [number, date, <span class="string">"foo"</span>];</div><div class="line"><span class="keyword">var</span> str = myArr.toLocaleString();   <span class="comment">//return "1,337,2016/8/8 下午9:58:12,foo"</span></div><div class="line">注意: toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 <span class="string">","</span>）隔开。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">toString( )</div><div class="line">语法: <span class="number">1.</span> arr.toString()</div><div class="line"><span class="keyword">var</span> myArr = [<span class="string">'I'</span>, <span class="string">'Love'</span>, <span class="string">'China'</span>];</div><div class="line">myArr.toString() <span class="comment">//return "I,Love,China"</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">forEach( )</div><div class="line">语法: array.forEach(callback(currentValue, index, array)&#123;</div><div class="line">         <span class="comment">//do something</span></div><div class="line">      &#125;, <span class="keyword">this</span>)</div><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line">a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</div><div class="line"><span class="built_in">console</span>.log(element); <span class="comment">//return a   b   c</span></div><div class="line">&#125;);</div><div class="line">注意：没有办法中止或者跳出 forEach 循环，除了抛出一个异常。如果可用，新方法 find() 或者findIndex() 也可被用于真值测试的提早终止。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">every()</div><div class="line">语法: arr.every(callback[, thisArg])</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);<span class="comment">// passed is false</span></div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">注意：every不会改变原数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">some()</div><div class="line">    语法: arr.some(callback[, thisArg])</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].some(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">    passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].some(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">    注意：some不会改变原数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">map()</div><div class="line">    语法: <span class="keyword">let</span> array = arr.map(<span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">currentValue, index, array</span>) </span>&#123; </div><div class="line">            <span class="comment">// Return element for new_array </span></div><div class="line">          &#125;[, thisArg])</div><div class="line">          <span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</div><div class="line">          <span class="keyword">var</span> doubles = numbers.map(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</div><div class="line">              <span class="keyword">return</span> x * <span class="number">2</span>;</div><div class="line">           &#125;);</div><div class="line">           <span class="built_in">console</span>.log(doubles) <span class="comment">// return [2, 10, 20, 30]</span></div><div class="line"> 注意：不改变原数组，成为新的数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   filter()</div><div class="line">   语法: <span class="keyword">var</span> new_array = arr.filter(callback[, thisArg])</div><div class="line">         <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">           <span class="keyword">return</span> element &gt;= <span class="number">10</span>;</div><div class="line">         &#125;</div><div class="line">         <span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBigEnough);</div><div class="line">           <span class="comment">// filtered is [12, 130, 44]</span></div><div class="line">         <span class="built_in">console</span>.log(doubles) <span class="comment">// return [2, 10, 20, 30]</span></div><div class="line">注意：filter不会改变原数组。</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/Number/" rel="tag"># Number</a>
+          
+            <a href="/tags/Array/" rel="tag"># Array</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/28/字符串操作的方法/" rel="next" title="字符串操作常用的方法">
+                <i class="fa fa-chevron-left"></i> 字符串操作常用的方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/18/兼容性问题/" rel="prev" title="兼容性问题及解决方案">
+                兼容性问题及解决方案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/IMG_20130917_074223.jpg"
+               alt="刘金芳" />
+          <p class="site-author-name" itemprop="name">刘金芳</p>
+           
+              <p class="site-description motion-element" itemprop="description">未来不迎，当时不杂，过往不恋。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/happy-flower" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5476745736/home?wvr=5#_loginLayer_1502466832267" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://wx2.qq.com" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过简单的demo来验证或者取代以上的方法。"><span class="nav-number">1.</span> <span class="nav-text">通过简单的demo来验证或者取代以上的方法。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

@@ -76,8 +76,6 @@
 
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="Liu jinfang's Nodes" type="application/atom+xml" />
 
@@ -99,7 +97,7 @@
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="1.在函数当中的使用12345678var a = 15,b = 20;function CommaTest() &amp;#123;    return b++ , 10, a++; &amp;#125;var c = CommaTest();console.log(c); // 返回15  // 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-12T23:38:14.000Z">
+<meta property="og:updated_time" content="2017-08-14T07:31:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="逗号运算符简单的理解和运用">
 <meta name="twitter:description" content="1.在函数当中的使用12345678var a = 15,b = 20;function CommaTest() &amp;#123;    return b++ , 10, a++; &amp;#125;var c = CommaTest();console.log(c); // 返回15  // 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。">
@@ -365,7 +363,7 @@
 <h3 id="3-逗号运算符与函数调用运算符的冲突"><a href="#3-逗号运算符与函数调用运算符的冲突" class="headerlink" title="3.逗号运算符与函数调用运算符的冲突"></a>3.逗号运算符与函数调用运算符的冲突</h3><pre><code> // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
 如:alert(2, 5);//2
 如:alert((2, 5));//5
-</code></pre><h2 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h2><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
+</code></pre><h3 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h3><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
 var a = 20;
 var b = (++a, 10);
 console.log(b);
@@ -406,8 +404,8 @@ console.log(b);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/10/first-fell/" rel="next" title="欢迎来踩***不忘初衷">
-                <i class="fa fa-chevron-left"></i> 欢迎来踩***不忘初衷
+              <a href="/2017/08/06/demo/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -416,8 +414,8 @@ console.log(b);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/05/gulp认识及使用/" rel="prev" title="gulp的介绍及使用">
-                gulp的介绍及使用 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/30/使用div来高仿textarea/" rel="prev" title="使用div来高仿textarea标签">
+                使用div来高仿textarea标签 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -490,7 +488,7 @@ console.log(b);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -579,7 +577,7 @@ console.log(b);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在函数当中的使用"><span class="nav-number">1.</span> <span class="nav-text">1.在函数当中的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-for循环中逗号运算符"><span class="nav-number">2.</span> <span class="nav-text">2.for循环中逗号运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-逗号运算符与函数调用运算符的冲突"><span class="nav-number">3.</span> <span class="nav-text">3.逗号运算符与函数调用运算符的冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-逗号运算符和赋值运算符冲突"><span class="nav-number"></span> <span class="nav-text">4.逗号运算符和赋值运算符冲突</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在函数当中的使用"><span class="nav-number">1.</span> <span class="nav-text">1.在函数当中的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-for循环中逗号运算符"><span class="nav-number">2.</span> <span class="nav-text">2.for循环中逗号运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-逗号运算符与函数调用运算符的冲突"><span class="nav-number">3.</span> <span class="nav-text">3.逗号运算符与函数调用运算符的冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-逗号运算符和赋值运算符冲突"><span class="nav-number">4.</span> <span class="nav-text">4.逗号运算符和赋值运算符冲突</span></a></li></ol></div>
             
 
           </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-13T01:21:24.000Z</updated>
+  <updated>2017-08-14T07:30:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,36 +16,47 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>gulp的介绍及使用</title>
-    <link href="http://yoursite.com/2017/09/05/gulp%E8%AE%A4%E8%AF%86%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
-    <id>http://yoursite.com/2017/09/05/gulp认识及使用/</id>
-    <published>2017-09-04T16:00:00.000Z</published>
-    <updated>2017-08-13T01:21:24.000Z</updated>
+    <title>使用div来高仿textarea标签</title>
+    <link href="http://yoursite.com/2017/09/30/%E4%BD%BF%E7%94%A8div%E6%9D%A5%E9%AB%98%E4%BB%BFtextarea/"/>
+    <id>http://yoursite.com/2017/09/30/使用div来高仿textarea/</id>
+    <published>2017-09-29T16:00:00.000Z</published>
+    <updated>2017-08-14T07:30:02.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="gulp的基本介绍"><a href="#gulp的基本介绍" class="headerlink" title="gulp的基本介绍"></a>gulp的基本介绍</h3><p>-&gt; gulp 是一个项目构建工具,其核心内容是提供一个处理项目文件与机构的平台. 相当于一个 处理容器, 处理管道。</p>
-<h3 id="gulp具体的作用"><a href="#gulp具体的作用" class="headerlink" title="gulp具体的作用"></a>gulp具体的作用</h3><ol>
-<li>代码的压缩</li>
-<li>代码的合并</li>
-<li>less 转 css</li>
-<li>代码的混淆</li>
-<li>引用的替换<a id="more"></a>
-<h3 id="gulp常见的第三方库"><a href="#gulp常见的第三方库" class="headerlink" title="gulp常见的第三方库"></a>gulp常见的第三方库</h3>-&gt; gulp-concat  用于合并代码<br>-&gt; gulp-htmlmin 用于压缩 html 文件<br>-&gt; gulp-uglify 用于压缩 js 文件<br>-&gt; gulp-cssmin 用于压缩 css 文件<br>-&gt; gulp-rename, gulp-html-replace<br><code>注意：可以在www.npmjs.org第三方库中查询。</code></li>
-</ol>
-<h3 id="使用gulp来进行代码的实现步骤"><a href="#使用gulp来进行代码的实现步骤" class="headerlink" title="使用gulp来进行代码的实现步骤"></a>使用gulp来进行代码的实现步骤</h3><h4 id="1-创建一个-任务"><a href="#1-创建一个-任务" class="headerlink" title="1. 创建一个 任务"></a>1. 创建一个 任务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(任务名，<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">     执行任务就是执行这个函数</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
-<h4 id="2-确定要处理什么文件"><a href="#2-确定要处理什么文件" class="headerlink" title="2. 确定要处理什么文件"></a>2. 确定要处理什么文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">        // 执行任务就是在执行这个函数</div><div class="line">        gulp.src( <span class="string">'文件名'</span> )</div><div class="line">&#125; )</div></pre></td></tr></table></figure>
-<h4 id="3-利用第三方提供的-方法-例如方法名是-handle"><a href="#3-利用第三方提供的-方法-例如方法名是-handle" class="headerlink" title="3. 利用第三方提供的 方法, 例如方法名是 handle"></a>3. 利用第三方提供的 方法, 例如方法名是 handle</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123; </div><div class="line">    // 执行任务就是在执行这个函数           </div><div class="line">  gulp.src( <span class="string">'文件名'</span> )</div><div class="line">      .pipe( handle )</div><div class="line">&#125; )</div></pre></td></tr></table></figure>
-<h4 id="4-将处理的结果保存到某一个文件夹中-例如-dist-文件夹"><a href="#4-将处理的结果保存到某一个文件夹中-例如-dist-文件夹" class="headerlink" title="4. 将处理的结果保存到某一个文件夹中, 例如 dist 文件夹"></a>4. 将处理的结果保存到某一个文件夹中, 例如 dist 文件夹</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">  // 执行任务就是在执行这个函数</div><div class="line">  gulp.src( <span class="string">'文件名'</span> )</div><div class="line">      .pipe( handle )</div><div class="line">      .pipe( gulp.dest( <span class="string">'dist'</span> ) );</div><div class="line">&#125; );</div></pre></td></tr></table></figure>
-<h4 id="具体案例分析"><a href="#具体案例分析" class="headerlink" title="具体案例分析"></a>具体案例分析</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    --单个任务执行--</div><div class="line">    -&gt; 实现less转css的文件(提前下载好npm install gulp -g 和在需要实现代码转化的目录下下载npm install gulp，npm install gulp-less);</div><div class="line">    -&gt; 在该文件夹下建立一个src文件夹，里面放置需要置换的文件less文件，与此同时还需建立一个gulpfile.js文件，来编写如下的代码。</div><div class="line">        var gulp = require(<span class="string">'gulp'</span>);//需引入包</div><div class="line">        var less = require(<span class="string">'gulp-less'</span>);//需引入包</div><div class="line">        gulp.task(<span class="string">'default'</span>,<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">            gulp.src(<span class="string">'./src/*less'</span>)</div><div class="line">            .pipe(less())</div><div class="line">            .pipe(gulp.dest(<span class="string">'dist'</span>))</div><div class="line">                    &#125;)</div><div class="line">    -&gt; 在linux下运行gulp文件即可。</div><div class="line">    -&gt; 注意：src文件路径，如果有两个文件夹或以上，则需gulp.src(<span class="string">'./src/**/*less'</span>);</div><div class="line"></div><div class="line">--gulp.watch 监视--</div><div class="line">  该方法用于监视文件的变化, 当文件发生变化的时候可以触发一个行为</div><div class="line">  gulp.watch( <span class="string">'文件匹配'</span>, [ 依赖任务 ], <span class="function"><span class="title">function</span></span> () &#123;&#125; )</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="阐述背景"><a href="#阐述背景" class="headerlink" title="阐述背景"></a>阐述背景</h3><p>-&gt; textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻烦。如果没设置style=’resize: none’,则可以拖动文本框的大小，会造成页面的重排和重绘。<br><a id="more"></a></p>
+<h3 id="textarea实现代码"><a href="#textarea实现代码" class="headerlink" title="textarea实现代码"></a>textarea实现代码</h3><pre><code class="js">&lt;textarea style=<span class="string">'resize: none'</span>&gt;&lt;/textarea&gt;
+textarea {
+       <span class="attr">margin</span>: <span class="number">0</span> auto;
+       display: block;
+       width: <span class="number">400</span>px;
+       height: <span class="number">120</span>px;
+       margin-bottom: <span class="number">100</span>px;
+}
+</code></pre>
+<h3 id="div实现代码"><a href="#div实现代码" class="headerlink" title="div实现代码"></a>div实现代码</h3><pre><code class="js">&lt;div contenteditable=<span class="string">"true"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"text-box"</span>&gt;&lt;br/&gt;&lt;/div&gt;
+ .text-box {
+        <span class="attr">width</span>: <span class="number">400</span>px;
+        min-height: <span class="number">120</span>px;
+        max-height: <span class="number">300</span>px;
+        _height: <span class="number">120</span>px;<span class="comment">/* 兼容IE代码*/</span>
+        margin-left: auto;
+        margin-right: auto;
+        padding: <span class="number">3</span>px;
+        outline: <span class="number">0</span>;
+        <span class="comment">/*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/</span>
+        border: <span class="number">1</span>px solid rgb(<span class="number">169</span>, <span class="number">169</span>, <span class="number">169</span>);
+        font-size: <span class="number">12</span>px;
+        word-wrap: <span class="keyword">break</span>-word;
+        overflow-x: hidden;
+        overflow-y: auto;
+        _overflow-y: visible; <span class="comment">/*兼容IE代码*/</span>
+    }
+</code></pre>
+<h3 id="效果图对比"><a href="#效果图对比" class="headerlink" title="效果图对比"></a>效果图对比</h3><p><img src="http://a1.qpic.cn/psb?/V133o6v43qtNPJ/p.kPZqQkmroBFZqvFx.jyvcd4NkKSBt.5GEjZcrrZWE!/b/dD4BAAAAAAAA&amp;bo=zQF6AQAAAAARB4c!&amp;rf=viewer_4" alt="插入图片" title="div和textarea图片对比"></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;gulp的基本介绍&quot;&gt;&lt;a href=&quot;#gulp的基本介绍&quot; class=&quot;headerlink&quot; title=&quot;gulp的基本介绍&quot;&gt;&lt;/a&gt;gulp的基本介绍&lt;/h3&gt;&lt;p&gt;-&amp;gt; gulp 是一个项目构建工具,其核心内容是提供一个处理项目文件与机构的平台. 相当于一个 处理容器, 处理管道。&lt;/p&gt;
-&lt;h3 id=&quot;gulp具体的作用&quot;&gt;&lt;a href=&quot;#gulp具体的作用&quot; class=&quot;headerlink&quot; title=&quot;gulp具体的作用&quot;&gt;&lt;/a&gt;gulp具体的作用&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;代码的压缩&lt;/li&gt;
-&lt;li&gt;代码的合并&lt;/li&gt;
-&lt;li&gt;less 转 css&lt;/li&gt;
-&lt;li&gt;代码的混淆&lt;/li&gt;
-&lt;li&gt;引用的替换
+      &lt;h3 id=&quot;阐述背景&quot;&gt;&lt;a href=&quot;#阐述背景&quot; class=&quot;headerlink&quot; title=&quot;阐述背景&quot;&gt;&lt;/a&gt;阐述背景&lt;/h3&gt;&lt;p&gt;-&amp;gt; textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻烦。如果没设置style=’resize: none’,则可以拖动文本框的大小，会造成页面的重排和重绘。&lt;br&gt;
     
     </summary>
     
@@ -58,10 +69,6 @@
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
-      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
-    
-      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
-    
   </entry>
   
   <entry>
@@ -69,7 +76,7 @@
     <link href="http://yoursite.com/2017/08/30/%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97/"/>
     <id>http://yoursite.com/2017/08/30/逗号运算符的运算/</id>
     <published>2017-08-29T16:00:00.000Z</published>
-    <updated>2017-08-12T23:38:14.000Z</updated>
+    <updated>2017-08-14T07:31:10.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="1-在函数当中的使用"><a href="#1-在函数当中的使用" class="headerlink" title="1.在函数当中的使用"></a>1.在函数当中的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">15</span>,</div><div class="line">b = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> b++ , <span class="number">10</span>, a++;</div><div class="line"> &#125;</div><div class="line"><span class="keyword">var</span> c = CommaTest();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 返回15  </span></div><div class="line"><span class="comment">// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -77,7 +84,7 @@
 <h3 id="3-逗号运算符与函数调用运算符的冲突"><a href="#3-逗号运算符与函数调用运算符的冲突" class="headerlink" title="3.逗号运算符与函数调用运算符的冲突"></a>3.逗号运算符与函数调用运算符的冲突</h3><pre><code> // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
 如:alert(2, 5);//2
 如:alert((2, 5));//5
-</code></pre><h2 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h2><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
+</code></pre><h3 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h3><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
 var a = 20;
 var b = (++a, 10);
 console.log(b);
@@ -98,91 +105,52 @@ console.log(b);
   </entry>
   
   <entry>
-    <title>欢迎来踩***不忘初衷</title>
-    <link href="http://yoursite.com/2017/08/10/first-fell/"/>
-    <id>http://yoursite.com/2017/08/10/first-fell/</id>
-    <published>2017-08-09T16:00:00.000Z</published>
-    <updated>2017-08-11T14:01:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="开篇感受"><a href="#开篇感受" class="headerlink" title="开篇感受"></a>开篇感受</h2><blockquote>
-<p>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不知从何时开始，每每自己开始弄一个新的东西，都喜欢留点当时的感受，以便后续自己在回味时，无穷，记忆是无序的，感受是不曾停留的，为留住这一瞬间的感动，以文字作为凭证。<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搭建博客的初衷是记录自己学习前端的点滴，对于我个人而言，是把自己难以记住的知识点或者工作当中，跳进的坑洼，在此记录，便于后续自己再次查看，不在同一个坑里点进两次，同时也希望能给那些和我一样，遇到同样困境的，猿友们一点捷径，不往坑里跳，或许方法或者知识点不够完善，乃至偏离正轨，在此希望进来的各位大神们，指点，小女子不胜感激。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;开篇感受&quot;&gt;&lt;a href=&quot;#开篇感受&quot; class=&quot;headerlink&quot; title=&quot;开篇感受&quot;&gt;&lt;/a&gt;开篇感受&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;不知从何时
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title></title>
     <link href="http://yoursite.com/2017/08/06/demo/"/>
     <id>http://yoursite.com/2017/08/06/demo/</id>
     <published>2017-08-05T16:14:42.540Z</published>
-    <updated>2017-08-12T15:44:40.000Z</updated>
+    <updated>2017-08-14T06:59:22.000Z</updated>
     
     <content type="html"><![CDATA[<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>使用div来高仿textarea</title>
+    <style>
+        textarea {
+            margin: 0 auto;
+            display: block;
+            width: 400px;
+            height: 120px;
+            margin-bottom: 100px;
+        }
+
+        .text-box {
+            width: 400px;
+            min-height: 120px;
+            max-height: 300px;
+            /*_height: 120px; 兼容IE代码*/
+            margin-left: auto;
+            margin-right: auto;
+            padding: 3px;
+            outline: 0;
+            /*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/
+            border: 1px solid rgb(169, 169, 169);
+            font-size: 12px;
+            word-wrap: break-word;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /*_overflow-y: visible; /*兼容IE代码*/
+        }
+    </style>
 </head>
 
 <body>
-    <script>
-        //  1.加号运算符简单的理解
-        //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；
-        var a = 15,
-            b = 20;
-        function CommaTest() {
-            return b++ , 10, a++;
-        }
-        var c = CommaTest();
-        console.log(c); // 返回15
-
-        // 2 for循环中逗号运算符
-        //在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算
-        var i, j = 5, k;
-        for (i = 0; i < 10; i++ , j++) {
-            k = i + j;
-        }
-        console.log(k)  // 返回23
-
-        for (var i = 0, j = 0, m = 0; i < 10, j < 20, m < 5; i++ , j++ , m++) {
-            var k = i + j + m;
-        }
-        console.log(k)  // 返回12
-
-        // 3. 逗号运算符与函数调用运算符的冲突
-        // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
-        // alert(2, 5);  //2
-        // alert((2, 5)); //5
-
-        // 4.逗号运算符和赋值运算符冲突
-        // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
-        var a = 20;
-        var b = (++a, 10);
-        console.log(b);
-
-        // 案例测试
-        console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)
-        var a = 'a', b = 'b';
-        a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)
-        a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)
-        [[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)
-    </script>
+    <!-- textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻 -->
+    <textarea style="resize: none"></textarea>
+    <!-- 需要用到contenteditable属性（true规定元素可编辑,false规定元素不可编辑），主浏览器（HTML5的新属性，IE	Firefox	Chrome	Safari	Opera）都支持 -->
+    <div contenteditable="true" class="text-box"><br></div>
 </body>
 
 </html>]]></content>
@@ -194,93 +162,13 @@ console.log(b);
 
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0
+    &lt;title&gt;使用div来高仿textarea&lt;/title&gt;
+    &lt;style&gt;
+        textarea {
+     
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>数组操作常用的方法</title>
-    <link href="http://yoursite.com/2017/07/30/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/07/30/数组操作常用的方法/</id>
-    <published>2017-07-29T16:00:00.000Z</published>
-    <updated>2017-08-11T14:16:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。<br><strong>length</strong> <code>属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。</code><br><strong>join()</strong> <code>将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。</code><br><strong>reverse()</strong> <code>将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。</code><br><strong>shift()</strong> <code>从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><a id="more"></a><br><strong>pop()</strong> <code>从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><strong>unshift()</strong> <code>将一个或多个元素添加到数组的开头，并返回新数组的长度。</code><br><strong>push()</strong> <code>往数组结尾添加一个或多个数组元素，长度要改变。</code><br><strong>concat( )</strong> <code>连接数组，返回的是一个新数组。它连接的如果是数组的话，只能是平铺数组，如果是二维的数组，不能展开添加，如需展开，必须结合apply使用。</code><br><strong>slice( )</strong> <code>返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</code><br><strong>sort( )</strong> <code>对数组元素进行排序，默认排序顺序是根据字符串Unicode码点。</code><br><strong>splice( )</strong> <code>插入、删除或替换数组的元素,由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</code><br><strong>toLocaleString( )</strong> <code>把数组转换成局部字符串。</code><br><strong>toString( )</strong> <code>将数组转换成一个字符串。</code><br><strong>forEach()</strong> <code>将数组转换成一个字符串。</code><br><strong>every()</strong>  <code>测试数组的所有元素是否都通过了指定函数的测试。</code><br><strong>some()</strong> <code>方法测试数组中的某些元素是否通过由提供的函数实现的测试。</code><br><strong>map()</strong>  <code>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</code><br><strong>filter()</strong>  <code>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</code><br><!--more--></p>
-<h3 id="通过简单的demo来验证或者取代以上的方法。"><a href="#通过简单的demo来验证或者取代以上的方法。" class="headerlink" title="通过简单的demo来验证或者取代以上的方法。"></a>通过简单的demo来验证或者取代以上的方法。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">join() </div><div class="line">语法: <span class="number">1.</span> str = arr.join() <span class="comment">// 默认是",";</span></div><div class="line">      <span class="number">2.</span> str = arr.join(<span class="string">""</span>) <span class="comment">// 空格符===空字符串""; </span></div><div class="line">      <span class="number">3.</span> str = arr.join(separate) <span class="comment">// 分隔符</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'I'</span>, <span class="string">'love'</span>, <span class="string">'China'</span>] ;</div><div class="line">arr.join() <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">","</span>) <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">""</span>) <span class="comment">//return IloveChina</span></div><div class="line">arr.join(<span class="string">"-"</span>)<span class="comment">//return I-love-China</span></div><div class="line"></div><div class="line">join()和split()结合使用的demo</div><div class="line"><span class="keyword">var</span> str = <span class="string">'getElementById'</span>;<span class="comment">//转化为get-element-by-id</span></div><div class="line">    str = str.split(<span class="string">''</span>);<span class="comment">//使用split方法来切割字符串，并转化为数组，</span></div><div class="line">    <span class="keyword">var</span> newstr = str.map(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (v.toUpperCase() == v) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"-"</span> + v.toLowerCase();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> v;</div><div class="line">        &#125;</div><div class="line">    &#125;).join(<span class="string">''</span>)<span class="comment">//转化为需求了</span></div><div class="line">注意：如果数组为空，通过join()分割后，均返回为一个空字符串；关于字符串之间的转换，经常和split()方法结合使用。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">reverse() </div><div class="line">语法:  arr.reverse() <span class="comment">//无需传参</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.reverse()  <span class="comment">//return [7, 6, 5, 4, 3, 2, 1]</span></div><div class="line"><span class="keyword">var</span> array = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = arr.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    array[array.length] = arr[i];</div><div class="line">&#125;   <span class="comment">//此方法获得的结果和reverse()方法相同。</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shift() </div><div class="line">语法: <span class="number">1.</span> arr.shift() </div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] ;</div><div class="line">arr.shift()  <span class="comment">//return 1;同时arr输出为[2, 3]</span></div><div class="line">[].shift()  <span class="comment">// return undefinded</span></div><div class="line">注意：<span class="number">1.</span> shift 方法并不局限于数组：该方法亦可通过 call 或 apply 作用于对象上。对于不包含 length 属性的对象，将添加一个值为 <span class="number">0</span> 的 length 属性。</div><div class="line">     <span class="number">2.</span> shift 方法移除索引为 <span class="number">0</span> 的元素(即第一个元素)，并返回被移除的元素，其他元素的索引值随之减 <span class="number">1</span>。如果length值 (长度为 <span class="number">0</span>，则返回 <span class="literal">undefined</span>。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pop() </div><div class="line">语法:  arr.pop() <span class="comment">//无需传参</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.pop() <span class="comment">//return 7; 同时arr变成为[1, 2, 3, 4, 5, 6];</span></div><div class="line">[].pop() <span class="comment">//return undefinded;</span></div><div class="line">注意：空数组上调用 pop()，它返回  <span class="literal">undefined</span>。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">unshift() </div><div class="line">语法:  arr.unshift(element1, ..., elementN)</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.unshift(<span class="number">0</span>) <span class="comment">//return 8; 同时arr变成为[0, 1, 2, 3, 4, 5, 6, 7];</span></div><div class="line">注意: <span class="number">1.</span> 当一个对象调用该方法时，返回其 length 属性值。</div><div class="line">      <span class="number">2.</span> unshift 方法会在调用它的类数组（array-like）对象的开始位置插入给定的参数。</div><div class="line">      <span class="number">3.</span> unshift 特意被设计成具有通用性；这个方法能够通过 call 或 apply 方法作用于类似数组的对象上。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">push()</div><div class="line">语法:  arr.push(element1, ..., elementN)</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">arr.push(<span class="number">4</span>, <span class="number">5</span>) <span class="comment">//return 5; 同时arr变成为[ 1, 2, 3, 4, 5];</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </div><div class="line"><span class="keyword">var</span> array = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</div><div class="line">arr.push.apply(arr,array)  <span class="comment">//return 6;同时arr的为[1, 3, 5, 2, 4, 6];</span></div><div class="line">注意: <span class="number">1.</span> 当一个对象调用该方法时，返回其 length 属性值。</div><div class="line">      <span class="number">2.</span> push 方法有意具有通用性。合并数组的时候，该方法和 call() 或 apply()上下文一起使用时，可进行逐一的添加。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">concat()</div><div class="line">语法:  <span class="keyword">var</span> new_array = old_array.concat(value1[, value2[, ...[, valueN]]])</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> array = [<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>];</div><div class="line">arr.concat(array) <span class="comment">//return ["a", "b", "c", "d", "e", "f"]; 同时arr不变为['a','b','c'];</span></div><div class="line">注意: 连接一个或多个数组（值）将不会改变原本的数组/值。进一步说，任何对新数组的操作都不会对原有的数组造成影响（仅当该元素不是对象的引用时），反之亦然。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">slice()</div><div class="line">语法: <span class="number">1.</span> arr.slice()</div><div class="line">      <span class="number">2.</span> arr.slice(begin)</div><div class="line">      <span class="number">3.</span> arr.slice(begin,end)</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>];</div><div class="line">arr.slice(<span class="number">1</span>, <span class="number">3</span>) <span class="comment">//return ["two", "three"];同时原arr数组不变["one", "two", "three", "four", "five", "six"];</span></div><div class="line">注意: 获取的元素不包括end。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sort()</div><div class="line">语法: <span class="number">1.</span> arr.sort() </div><div class="line">      <span class="number">2.</span> arr.sort(compareFunction)</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'parent'</span>, <span class="string">'father'</span>, <span class="string">'mother'</span>, <span class="string">'aunt'</span>];</div><div class="line">arr.sort() <span class="comment">//return ["aunt", "father", "mother", "parent"];</span></div><div class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">23</span>, <span class="number">4</span>, <span class="number">85</span>, <span class="number">9</span>]</div><div class="line">array.sort() <span class="comment">//[1, 23, 4, 85, 9]</span></div><div class="line">array.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;) <span class="comment">//[1, 4, 9, 23, 85]</span></div><div class="line">注意: 当不传参数时，会按照默认排序顺序是根据字符串Unicode码点，如果数字进行排序的时候，必须传入参数，才能按照数字的大小进行排序。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">splice()</div><div class="line">语法: <span class="number">1.</span> array.splice(start) </div><div class="line">      <span class="number">2.</span> array.splice(start, deleteCount)</div><div class="line">      <span class="number">3.</span> array.splice(start, deleteCount, item1, item2, ...)</div><div class="line"><span class="keyword">var</span> myFish = [<span class="string">'angel'</span>, <span class="string">'clown'</span>, <span class="string">'mandarin'</span>, <span class="string">'sturgeon'</span>];</div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'drum'</span>); <span class="comment">// 在索引为2的位置插入'drum';myFish 变为 ["angel", "clown", "drum", "mandarin", "sturgeon"]</span></div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// 从索引为2的位置删除一项（也就是'drum'这一项）;myFish 变为 ["angel", "clown", "mandarin", "sturgeon"]</span></div><div class="line">注意: splice() 方法与 slice() 方法的作用是不同的，splice() 方法会直接对数组进行修改。由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">toLocaleString( )</div><div class="line">语法: <span class="number">1.</span> arr.toLocaleString();</div><div class="line"><span class="keyword">var</span> number = <span class="number">1337</span>;</div><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> myArr = [number, date, <span class="string">"foo"</span>];</div><div class="line"><span class="keyword">var</span> str = myArr.toLocaleString();   <span class="comment">//return "1,337,2016/8/8 下午9:58:12,foo"</span></div><div class="line">注意: toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 <span class="string">","</span>）隔开。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">toString( )</div><div class="line">语法: <span class="number">1.</span> arr.toString()</div><div class="line"><span class="keyword">var</span> myArr = [<span class="string">'I'</span>, <span class="string">'Love'</span>, <span class="string">'China'</span>];</div><div class="line">myArr.toString() <span class="comment">//return "I,Love,China"</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">forEach( )</div><div class="line">语法: array.forEach(callback(currentValue, index, array)&#123;</div><div class="line">         <span class="comment">//do something</span></div><div class="line">      &#125;, <span class="keyword">this</span>)</div><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line">a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</div><div class="line"><span class="built_in">console</span>.log(element); <span class="comment">//return a   b   c</span></div><div class="line">&#125;);</div><div class="line">注意：没有办法中止或者跳出 forEach 循环，除了抛出一个异常。如果可用，新方法 find() 或者findIndex() 也可被用于真值测试的提早终止。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">every()</div><div class="line">语法: arr.every(callback[, thisArg])</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);<span class="comment">// passed is false</span></div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">注意：every不会改变原数组。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">some()</div><div class="line">    语法: arr.some(callback[, thisArg])</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].some(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">    passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].some(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">    注意：some不会改变原数组。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">map()</div><div class="line">    语法: <span class="keyword">let</span> array = arr.map(<span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">currentValue, index, array</span>) </span>&#123; </div><div class="line">            <span class="comment">// Return element for new_array </span></div><div class="line">          &#125;[, thisArg])</div><div class="line">          <span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</div><div class="line">          <span class="keyword">var</span> doubles = numbers.map(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</div><div class="line">              <span class="keyword">return</span> x * <span class="number">2</span>;</div><div class="line">           &#125;);</div><div class="line">           <span class="built_in">console</span>.log(doubles) <span class="comment">// return [2, 10, 20, 30]</span></div><div class="line"> 注意：不改变原数组，成为新的数组。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   filter()</div><div class="line">   语法: <span class="keyword">var</span> new_array = arr.filter(callback[, thisArg])</div><div class="line">         <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">           <span class="keyword">return</span> element &gt;= <span class="number">10</span>;</div><div class="line">         &#125;</div><div class="line">         <span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBigEnough);</div><div class="line">           <span class="comment">// filtered is [12, 130, 44]</span></div><div class="line">         <span class="built_in">console</span>.log(doubles) <span class="comment">// return [2, 10, 20, 30]</span></div><div class="line">注意：filter不会改变原数组。</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。&lt;br&gt;&lt;strong&gt;length&lt;/strong&gt; &lt;code&gt;属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;join()&lt;/strong&gt; &lt;code&gt;将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;reverse()&lt;/strong&gt; &lt;code&gt;将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;shift()&lt;/strong&gt; &lt;code&gt;从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。&lt;/code&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-      <category term="Number" scheme="http://yoursite.com/tags/Number/"/>
-    
-      <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字符串操作常用的方法</title>
-    <link href="http://yoursite.com/2017/07/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2017/07/28/字符串操作的方法/</id>
-    <published>2017-07-27T16:00:00.000Z</published>
-    <updated>2017-08-11T14:17:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。<br><strong>charCodeAt</strong> <code>方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。</code><br><strong>charAt</strong> <code>方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。</code><br><strong>slice</strong> <code>方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。</code><br><strong>substring</strong> <code>方法返回位于String 对象中指定位置的子字符串。</code><br><strong>substr</strong> <code>方法返回一个从指定位置开始的指定长度的子字符串。</code><br><a id="more"></a><br><strong>indexOf</strong> <code>方法返回String 对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。</code><br><strong>lastIndexOf</strong> <code>方法返回String 对象中字符串最后出现的位置。如果没有匹配到子字符串，则返回-1。</code><br><strong>search</strong> <code>方法返回与正则表达式查找内容匹配的第一个字符串的位置。</code><br><strong>concat</strong> <code>concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</code><br><strong>split</strong> <code>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</code><br><strong>match(searchvalue||regexp)</strong> <code>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。括号内的条件必须填写。</code><br><strong>replace(regexp，replacement)</strong> <code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</code><br><strong>toLowerCase()</strong> <code>方法用于把字符串转换为小写。一个新的字符串，在其中 stringObject 的所有大写字符全部被转换为了小写字符。</code><br><strong>toUpperCase()</strong> <code>方法用于把字符串转换为大写。一个新的字符串，在其中 stringObject 的所有小写字符全部被转换为了大写字符。</code><br><strong>trim()</strong> <code>方法会从一个字符串的两端删除空白字符。</code></p>
-<h3 id="通过简单的demo来具体说明以上的方法的使用情况。"><a href="#通过简单的demo来具体说明以上的方法的使用情况。" class="headerlink" title="通过简单的demo来具体说明以上的方法的使用情况。"></a>通过简单的demo来具体说明以上的方法的使用情况。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">charCodeAt()  语法：str.charCodeAt(index)</div><div class="line"><span class="string">"ABC"</span>.charCodeAt(<span class="number">0</span>) <span class="comment">//return 65</span></div><div class="line">注意：如果指定的 index 小于 <span class="number">0</span> 或不小于字符串的长度，则 charCodeAt 返回 <span class="literal">NaN</span>。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">charAt()  语法：str.charAt(index)</div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">0</span>) <span class="comment">//return h</span></div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">5</span>) <span class="comment">//return ' ' ,空格也占位置。</span></div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">8</span>) <span class="comment">//return ''，当索引值大于length-1后，将会返回空字符串。</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">slice()  语法：str.slice(beginSlice，endSlice)</div><div class="line"><span class="string">"hello my wold"</span>.slice(<span class="number">0</span>,<span class="number">11</span>) <span class="comment">//return hello my wo</span></div><div class="line"><span class="string">"hello my wold"</span>.slice(<span class="number">0</span>,<span class="number">-2</span>) <span class="comment">//return hello my wo,如果endSlice该参数为负数，则被看作是 sourceLength + endSlice</span></div><div class="line">注意：slice() 提取的新字符串包括beginSlice但不包括 endSlice。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">substring() 语法：str.substring(indexStart, indexEnd)</div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="number">0</span>,<span class="number">5</span>) <span class="comment">//return forev</span></div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">//return orev</span></div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="number">-2</span>,<span class="number">5</span>) <span class="comment">//return forev</span></div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="literal">NaN</span>,<span class="number">5</span>) <span class="comment">//return forev</span></div><div class="line">注意： <span class="number">1.</span> substring 提取从 indexStart 到 indexEnd（不包括）之间的字符。</div><div class="line">       <span class="number">2.</span> 如果 indexStart 等于 indexEnd，substring 返回一个空字符串。</div><div class="line">       <span class="number">3.</span> 如果省略 indexEnd，substring 提取字符一直到字符串末尾。</div><div class="line">       <span class="number">4.</span> 如果任一参数小于 <span class="number">0</span> 或为 <span class="literal">NaN</span>，则被当作 <span class="number">0</span>。</div><div class="line">       <span class="number">5.</span> 如果任一参数大于 stringName.length，则被当作 stringName.length。</div><div class="line">       <span class="number">6.</span> 如果 indexStart 大于 indexEnd，则 substring 的执行效果就像两个参数调换了一样。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">substr() 语法：substr(start,length)</div><div class="line"><span class="string">"abcdefghi"</span>.substr(<span class="number">1</span>,<span class="number">5</span>) <span class="comment">//return bcdef</span></div><div class="line"><span class="string">"abcdefghi"</span>.substr(<span class="number">-20</span>,<span class="number">2</span>) <span class="comment">//return ab</span></div><div class="line"><span class="string">"abcdefghi"</span>.substr(<span class="number">0</span>) <span class="comment">//return abcdefghi</span></div><div class="line">注意：<span class="number">1.</span> 开始提取字符的位置。如果为负值，则被看作 strLength + start。</div><div class="line">     <span class="number">2.</span> 如果只传一个参数，则表示从开始的索引开始，一直到结束。</div><div class="line">     <span class="number">3.</span> 如果 start 为正值，且大于或等于字符串的长度，则 substr 返回一个空字符串。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">indexOf() 语法：indexOf(searchValue,fromIndex)</div><div class="line"><span class="string">"hello my friend"</span>.indexOf(<span class="string">"friend"</span>,<span class="number">3</span>) <span class="comment">//return 9</span></div><div class="line"><span class="string">"hello my friend"</span>.indexOf(<span class="string">"frient"</span>,<span class="number">3</span>) <span class="comment">//return -1</span></div><div class="line">注意：指定值的第一次出现的索引; 如果没有找到 <span class="number">-1</span>。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lastIndexOf() 语法：lastIndexOf(searchValue,fromIndex)</div><div class="line"><span class="string">"hello my friend"</span>.lastIndexOf(<span class="string">"friend"</span>) <span class="comment">//return 9</span></div><div class="line">注意：指定值的第一次出现的索引; 如果没有找到 <span class="number">-1</span>。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">search() 语法：str.search(regexp)  如果匹配成功，则 search() 返回正则表达式在字符串中首次匹配项的索引。否则，返回 <span class="number">-1</span>。</div><div class="line"><span class="string">"hello my friend"</span>.search(<span class="regexp">/\s/</span>) <span class="comment">//return 5</span></div><div class="line"><span class="string">"hello my friend"</span>.search(<span class="regexp">/\d/</span>) <span class="comment">//return -1</span></div><div class="line">注意：指定值的第一次出现的索引; 如果没有找到 <span class="number">-1</span>。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">concat() 语法：str.concat(other str) </div><div class="line"><span class="string">"hello my friend"</span>.concat(<span class="string">",forever friend"</span>) <span class="comment">//return hello my friend,forever friend</span></div><div class="line"><span class="string">"hello my friend"</span> + <span class="string">",forever friend"</span>  <span class="comment">//return hello my friend,forever friend </span></div><div class="line">注意：如果是字符串的拼接，直接用+号或者是+=号连接会更好。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">split() 语法：str.split([separator[, limit]])</div><div class="line"><span class="string">"hello my friend"</span>.split(<span class="string">" "</span>) <span class="comment">//return ["hello", "my", "friend"] </span></div><div class="line">注意：当字符串为空时，split 返回一个包含一个空字符串的数组，而不是一个空数组。它一般和数组的join()方法结合使用。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">match() 语法：str.match(regexp)</div><div class="line"><span class="string">"hello my friend"</span>.match(<span class="regexp">/my/</span>) <span class="comment">//return ["my", index: 6, input: "hello my friend"]</span></div><div class="line">注意：如果正则表达式包含 g 标志，则该方法返回一个 <span class="built_in">Array</span> ，它包含所有匹配的子字符串而不是匹配对象。捕获组不会被返回(即不返回index属性和input属性)。如果没有匹配到，则返回  <span class="literal">null</span> 。</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">toLowerCase() 语法：str.toLowerCase()</div><div class="line"><span class="string">"HELLO MY FRIEND"</span>.toLowerCase() <span class="comment">//return hello my friend</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">toLowerCase() 语法：str.toUpperCase()</div><div class="line"><span class="string">"hello my friend"</span>.toUpperCase() <span class="comment">//return HELLO MY FRIEND</span></div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">trim() 语法：str.trim()</div><div class="line"><span class="string">"hello "</span>.toUpperCase() <span class="comment">//return hello</span></div><div class="line"><span class="keyword">if</span> (!<span class="built_in">String</span>.prototype.trim) &#123; <span class="comment">//兼容旧版本</span></div><div class="line">        <span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g</span>, <span class="string">''</span>);</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">注意：trim() 方法并不影响原字符串本身，它返回的是一个新的字符串。</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。&lt;br&gt;&lt;strong&gt;charCodeAt&lt;/strong&gt; &lt;code&gt;方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;charAt&lt;/strong&gt; &lt;code&gt;方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;slice&lt;/strong&gt; &lt;code&gt;方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;substring&lt;/strong&gt; &lt;code&gt;方法返回位于String 对象中指定位置的子字符串。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;substr&lt;/strong&gt; &lt;code&gt;方法返回一个从指定位置开始的指定长度的子字符串。&lt;/code&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-      <category term="String" scheme="http://yoursite.com/tags/String/"/>
     
   </entry>
   
@@ -370,40 +258,60 @@ console.log(b);
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/23/hello-world/"/>
-    <id>http://yoursite.com/2017/07/23/hello-world/</id>
-    <published>2017-07-23T10:28:51.580Z</published>
-    <updated>2017-08-11T06:26:58.000Z</updated>
+    <title>gulp的介绍及使用</title>
+    <link href="http://yoursite.com/2017/03/05/gulp%E8%AE%A4%E8%AF%86%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/03/05/gulp认识及使用/</id>
+    <published>2017-03-04T16:00:00.000Z</published>
+    <updated>2017-08-14T07:40:02.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="gulp的基本介绍"><a href="#gulp的基本介绍" class="headerlink" title="gulp的基本介绍"></a>gulp的基本介绍</h3><p>-&gt; gulp 是一个项目构建工具,其核心内容是提供一个处理项目文件与机构的平台. 相当于一个 处理容器, 处理管道。</p>
+<h3 id="gulp具体的作用"><a href="#gulp具体的作用" class="headerlink" title="gulp具体的作用"></a>gulp具体的作用</h3><ol>
+<li>代码的压缩</li>
+<li>代码的合并</li>
+<li>less 转 css</li>
+<li>代码的混淆</li>
+<li>引用的替换<a id="more"></a>
+<h3 id="gulp常见的第三方库"><a href="#gulp常见的第三方库" class="headerlink" title="gulp常见的第三方库"></a>gulp常见的第三方库</h3>-&gt; gulp-concat  用于合并代码<br>-&gt; gulp-htmlmin 用于压缩 html 文件<br>-&gt; gulp-uglify 用于压缩 js 文件<br>-&gt; gulp-cssmin 用于压缩 css 文件<br>-&gt; gulp-rename, gulp-html-replace<br><code>注意：可以在www.npmjs.org第三方库中查询。</code></li>
+</ol>
+<h3 id="使用gulp来进行代码的实现步骤"><a href="#使用gulp来进行代码的实现步骤" class="headerlink" title="使用gulp来进行代码的实现步骤"></a>使用gulp来进行代码的实现步骤</h3><h4 id="1-创建一个-任务"><a href="#1-创建一个-任务" class="headerlink" title="1. 创建一个 任务"></a>1. 创建一个 任务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(任务名，<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">     执行任务就是执行这个函数</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<h4 id="2-确定要处理什么文件"><a href="#2-确定要处理什么文件" class="headerlink" title="2. 确定要处理什么文件"></a>2. 确定要处理什么文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">        // 执行任务就是在执行这个函数</div><div class="line">        gulp.src( <span class="string">'文件名'</span> )</div><div class="line">&#125; )</div></pre></td></tr></table></figure>
+<h4 id="3-利用第三方提供的-方法-例如方法名是-handle"><a href="#3-利用第三方提供的-方法-例如方法名是-handle" class="headerlink" title="3. 利用第三方提供的 方法, 例如方法名是 handle"></a>3. 利用第三方提供的 方法, 例如方法名是 handle</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123; </div><div class="line">    // 执行任务就是在执行这个函数           </div><div class="line">  gulp.src( <span class="string">'文件名'</span> )</div><div class="line">      .pipe( handle )</div><div class="line">&#125; )</div></pre></td></tr></table></figure>
+<h4 id="4-将处理的结果保存到某一个文件夹中-例如-dist-文件夹"><a href="#4-将处理的结果保存到某一个文件夹中-例如-dist-文件夹" class="headerlink" title="4. 将处理的结果保存到某一个文件夹中, 例如 dist 文件夹"></a>4. 将处理的结果保存到某一个文件夹中, 例如 dist 文件夹</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">  // 执行任务就是在执行这个函数</div><div class="line">  gulp.src( <span class="string">'文件名'</span> )</div><div class="line">      .pipe( handle )</div><div class="line">      .pipe( gulp.dest( <span class="string">'dist'</span> ) );</div><div class="line">&#125; );</div></pre></td></tr></table></figure>
+<h4 id="具体案例分析"><a href="#具体案例分析" class="headerlink" title="具体案例分析"></a>具体案例分析</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    --单个任务执行--</div><div class="line">    -&gt; 实现less转css的文件(提前下载好npm install gulp -g 和在需要实现代码转化的目录下下载npm install gulp，npm install gulp-less);</div><div class="line">    -&gt; 在该文件夹下建立一个src文件夹，里面放置需要置换的文件less文件，与此同时还需建立一个gulpfile.js文件，来编写如下的代码。</div><div class="line">        var gulp = require(<span class="string">'gulp'</span>);//需引入包</div><div class="line">        var less = require(<span class="string">'gulp-less'</span>);//需引入包</div><div class="line">        gulp.task(<span class="string">'default'</span>,<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">            gulp.src(<span class="string">'./src/*less'</span>)</div><div class="line">            .pipe(less())</div><div class="line">            .pipe(gulp.dest(<span class="string">'dist'</span>))</div><div class="line">                    &#125;)</div><div class="line">    -&gt; 在linux下运行gulp文件即可。</div><div class="line">    -&gt; 注意：src文件路径，如果有两个文件夹或以上，则需gulp.src(<span class="string">'./src/**/*less'</span>);</div><div class="line"></div><div class="line">--gulp.watch 监视--</div><div class="line">  该方法用于监视文件的变化, 当文件发生变化的时候可以触发一个行为</div><div class="line">  gulp.watch( <span class="string">'文件匹配'</span>, [ 依赖任务 ], <span class="function"><span class="title">function</span></span> () &#123;&#125; )</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;h3 id=&quot;gulp的基本介绍&quot;&gt;&lt;a href=&quot;#gulp的基本介绍&quot; class=&quot;headerlink&quot; title=&quot;gulp的基本介绍&quot;&gt;&lt;/a&gt;gulp的基本介绍&lt;/h3&gt;&lt;p&gt;-&amp;gt; gulp 是一个项目构建工具,其核心内容是提供一个处理项目文件与机构的平台. 相当于一个 处理容器, 处理管道。&lt;/p&gt;
+&lt;h3 id=&quot;gulp具体的作用&quot;&gt;&lt;a href=&quot;#gulp具体的作用&quot; class=&quot;headerlink&quot; title=&quot;gulp具体的作用&quot;&gt;&lt;/a&gt;gulp具体的作用&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;代码的压缩&lt;/li&gt;
+&lt;li&gt;代码的合并&lt;/li&gt;
+&lt;li&gt;less 转 css&lt;/li&gt;
+&lt;li&gt;代码的混淆&lt;/li&gt;
+&lt;li&gt;引用的替换
     
     </summary>
     
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
     
   </entry>
   
   <entry>
     <title>关于js执行属于单线程案例---demo</title>
-    <link href="http://yoursite.com/2017/07/22/js%E4%B8%AD%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E8%AF%81%E6%98%8E/"/>
-    <id>http://yoursite.com/2017/07/22/js中单线程的证明/</id>
-    <published>2017-07-21T16:00:00.000Z</published>
-    <updated>2017-08-11T14:21:00.000Z</updated>
+    <link href="http://yoursite.com/2017/01/22/js%E4%B8%AD%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84%E8%AF%81%E6%98%8E/"/>
+    <id>http://yoursite.com/2017/01/22/js中单线程的证明/</id>
+    <published>2017-01-21T16:00:00.000Z</published>
+    <updated>2017-08-14T07:36:54.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在-js-中是单线程的-所谓的异步是假的"><a href="#在-js-中是单线程的-所谓的异步是假的" class="headerlink" title="在 js 中是单线程的, 所谓的异步是假的."></a>在 js 中是单线程的, 所谓的异步是假的.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">以下代码可以证明：但是如何来模拟多任务的执行呢? 在 js 中引入了事件队列的概念.所谓的事件对象就是事件数组. 这个数组的特点就是每次都调用 <span class="built_in">shift</span> 方法获得数组中的事件处理函数每次都调用 push 方法将函数存储到数组中. 每次在执行类似于事件, 计时器 ajax 等操作时, 并不是立即调用该函数. 每次都是将对应的函数投递到 <span class="string">"数组"</span> 中. 例如:</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="number">1</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">5</span>);</div><div class="line">&#125;<span class="comment">//加入此条命令后，定时器里面的命令将永远无法执行。</span></div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console1'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">1</span> ); </div><div class="line">&#125;, <span class="number">2000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console2'</span> );</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log( <span class="number">2</span> ); </div><div class="line">&#125;, <span class="number">1000</span> );</div><div class="line"><span class="built_in">console</span>.log( <span class="string">'console3'</span> );</div></pre></td></tr></table></figure>
@@ -434,36 +342,11 @@ console.log(b);
   </entry>
   
   <entry>
-    <title>随机生成不重复的0-9的整数-----案例</title>
-    <link href="http://yoursite.com/2017/05/22/%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%900-9%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
-    <id>http://yoursite.com/2017/05/22/随机生成0-9不重复的数字/</id>
-    <published>2017-05-21T16:00:00.000Z</published>
-    <updated>2017-08-11T14:17:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> chest = &#123;&#125;,arr = [],mun, count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">    mun = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div><div class="line">    <span class="keyword">if</span> (!chest[mun]) &#123; <span class="comment">//间接的使用in的方法，判断是否含有mun数字，从而启动去重的作用</span></div><div class="line">        chest[mun] = <span class="literal">true</span>;</div><div class="line">        arr.push(mun);</div><div class="line">        <span class="keyword">continue</span>;<span class="comment">//跳出本次循环，进入下次循环</span></div><div class="line">    &#125;</div><div class="line">    ++count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;<span class="comment">//通过两两的位置交换来实现</span></div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;方法一：&quot;&gt;&lt;a href=&quot;#方法一：&quot; class=&quot;headerlink&quot; title=&quot;方法一：&quot;&gt;&lt;/a&gt;方法一：&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; str=&lt;span class=&quot;string&quot;&gt;&quot;  &quot;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//定义一个字符串，其给一个空的元素&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s=str.charAt(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.floor(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random()*(str.length)));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    str=str.replace(s,i+s); &lt;span class=&quot;comment&quot;&gt;//由于s是随机的，所以位置的放置也是随机的&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;str=str.replace(&lt;span class=&quot;string&quot;&gt;&quot; &quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(str);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>WEB前端性能优化</title>
-    <link href="http://yoursite.com/2017/05/20/WEB%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    <id>http://yoursite.com/2017/05/20/WEB前端性能优化/</id>
-    <published>2017-05-19T16:00:00.000Z</published>
-    <updated>2017-08-11T14:24:54.000Z</updated>
+    <link href="http://yoursite.com/2016/11/20/WEB%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    <id>http://yoursite.com/2016/11/20/WEB前端性能优化/</id>
+    <published>2016-11-19T16:00:00.000Z</published>
+    <updated>2017-08-14T07:36:46.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="WEB前端性能优化总结"><a href="#WEB前端性能优化总结" class="headerlink" title="WEB前端性能优化总结"></a>WEB前端性能优化总结</h1><h3 id="1-减少http请求-合理设置HTTP缓存"><a href="#1-减少http请求-合理设置HTTP缓存" class="headerlink" title="1.减少http请求,合理设置HTTP缓存"></a>1.减少http请求,合理设置HTTP缓存</h3><h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">a. http协议是无状态的应用层协议，意味着每次http请求都需要建立通信链路、进行数据传输，而在服务器端，每个http都需要启动独立的线程去处理。这些通信和服务的开销都很昂贵，减少http请求的数目可有效提高访问性能。</div><div class="line"></div><div class="line">b. 减少http的主要手段是合并CSS、合并javascript、合并图片。将浏览器一次访问需要的javascript和CSS合并成一个文件，这样浏览器就只需要一次请求。图片也可以合并，多张图片合并成一张，如果每张图片都有不同的超链接，可通过CSS偏移响应鼠标点击操作，构造不同的URL。</div><div class="line"></div><div class="line">c. 缓存的力量是强大的，恰当的缓存设置可以大大的减少 HTTP请求。假设某网站首页，当浏览器没有缓存的时候访问一共会发出 78个请求，共 600多 K数据，而当第二次访问即浏览器已缓存之后访问则仅有 10个请求，共 20多 K数据。 (这里需要说明的是，如果直接 F5刷新页面的话效果是不一样的，这种情况下请求数还是一样，不过被缓存资源的请求服务器是 304响应，只有 Header没有Body，可以节省带宽 )</div><div class="line"></div><div class="line">d. 怎样才算合理设置 ?原则很简单，能缓存越多越好，能缓存越久越好。例如，很少变化的图片资源可以直接通过 HTTP Header中的Expires设置一个很长的过期头 ;变化不频繁而又可能会变的资源可以使用 Last-Modifed来做请求验证。尽可能的让资源能够在缓存中待得更久。关于 HTTP缓存的具体设置和原理此处就不再详述了。</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -524,10 +407,10 @@ console.log(b);
   
   <entry>
     <title>兼容性问题及解决方案</title>
-    <link href="http://yoursite.com/2015/04/10/%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2015/04/10/兼容性问题/</id>
-    <published>2015-04-09T16:00:00.000Z</published>
-    <updated>2017-08-12T13:00:04.000Z</updated>
+    <link href="http://yoursite.com/2016/08/18/%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2016/08/18/兼容性问题/</id>
+    <published>2016-08-17T16:00:00.000Z</published>
+    <updated>2017-08-14T07:36:10.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="工作中常见的兼容性问题及解决方式"><a href="#工作中常见的兼容性问题及解决方式" class="headerlink" title="工作中常见的兼容性问题及解决方式"></a>工作中常见的兼容性问题及解决方式</h3><ol>
 <li><p>png24位的图片在IE6上出背景，解决方案是 <code>做成png8即可 。</code></p>
@@ -582,11 +465,119 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
   </entry>
   
   <entry>
+    <title>数组操作常用的方法</title>
+    <link href="http://yoursite.com/2016/07/30/%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/07/30/数组操作常用的方法/</id>
+    <published>2016-07-29T16:00:00.000Z</published>
+    <updated>2017-08-14T07:35:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。<br><strong>length</strong> <code>属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。</code><br><strong>join()</strong> <code>将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。</code><br><strong>reverse()</strong> <code>将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。</code><br><strong>shift()</strong> <code>从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><a id="more"></a><br><strong>pop()</strong> <code>从数组中删除最后一个元素，并返回该元素的值。此方法更改数组的长度。</code><br><strong>unshift()</strong> <code>将一个或多个元素添加到数组的开头，并返回新数组的长度。</code><br><strong>push()</strong> <code>往数组结尾添加一个或多个数组元素，长度要改变。</code><br><strong>concat( )</strong> <code>连接数组，返回的是一个新数组。它连接的如果是数组的话，只能是平铺数组，如果是二维的数组，不能展开添加，如需展开，必须结合apply使用。</code><br><strong>slice( )</strong> <code>返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。</code><br><strong>sort( )</strong> <code>对数组元素进行排序，默认排序顺序是根据字符串Unicode码点。</code><br><strong>splice( )</strong> <code>插入、删除或替换数组的元素,由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</code><br><strong>toLocaleString( )</strong> <code>把数组转换成局部字符串。</code><br><strong>toString( )</strong> <code>将数组转换成一个字符串。</code><br><strong>forEach()</strong> <code>将数组转换成一个字符串。</code><br><strong>every()</strong>  <code>测试数组的所有元素是否都通过了指定函数的测试。</code><br><strong>some()</strong> <code>方法测试数组中的某些元素是否通过由提供的函数实现的测试。</code><br><strong>map()</strong>  <code>创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</code><br><strong>filter()</strong>  <code>创建一个新数组, 其包含通过所提供函数实现的测试的所有元素。</code><br><!--more--></p>
+<h3 id="通过简单的demo来验证或者取代以上的方法。"><a href="#通过简单的demo来验证或者取代以上的方法。" class="headerlink" title="通过简单的demo来验证或者取代以上的方法。"></a>通过简单的demo来验证或者取代以上的方法。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">join() </div><div class="line">语法: <span class="number">1.</span> str = arr.join() <span class="comment">// 默认是",";</span></div><div class="line">      <span class="number">2.</span> str = arr.join(<span class="string">""</span>) <span class="comment">// 空格符===空字符串""; </span></div><div class="line">      <span class="number">3.</span> str = arr.join(separate) <span class="comment">// 分隔符</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'I'</span>, <span class="string">'love'</span>, <span class="string">'China'</span>] ;</div><div class="line">arr.join() <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">","</span>) <span class="comment">//return I,love,China</span></div><div class="line">arr.join(<span class="string">""</span>) <span class="comment">//return IloveChina</span></div><div class="line">arr.join(<span class="string">"-"</span>)<span class="comment">//return I-love-China</span></div><div class="line"></div><div class="line">join()和split()结合使用的demo</div><div class="line"><span class="keyword">var</span> str = <span class="string">'getElementById'</span>;<span class="comment">//转化为get-element-by-id</span></div><div class="line">    str = str.split(<span class="string">''</span>);<span class="comment">//使用split方法来切割字符串，并转化为数组，</span></div><div class="line">    <span class="keyword">var</span> newstr = str.map(<span class="function"><span class="keyword">function</span> (<span class="params">v</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (v.toUpperCase() == v) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="string">"-"</span> + v.toLowerCase();</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">return</span> v;</div><div class="line">        &#125;</div><div class="line">    &#125;).join(<span class="string">''</span>)<span class="comment">//转化为需求了</span></div><div class="line">注意：如果数组为空，通过join()分割后，均返回为一个空字符串；关于字符串之间的转换，经常和split()方法结合使用。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">reverse() </div><div class="line">语法:  arr.reverse() <span class="comment">//无需传参</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.reverse()  <span class="comment">//return [7, 6, 5, 4, 3, 2, 1]</span></div><div class="line"><span class="keyword">var</span> array = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = arr.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</div><div class="line">    array[array.length] = arr[i];</div><div class="line">&#125;   <span class="comment">//此方法获得的结果和reverse()方法相同。</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">shift() </div><div class="line">语法: <span class="number">1.</span> arr.shift() </div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] ;</div><div class="line">arr.shift()  <span class="comment">//return 1;同时arr输出为[2, 3]</span></div><div class="line">[].shift()  <span class="comment">// return undefinded</span></div><div class="line">注意：<span class="number">1.</span> shift 方法并不局限于数组：该方法亦可通过 call 或 apply 作用于对象上。对于不包含 length 属性的对象，将添加一个值为 <span class="number">0</span> 的 length 属性。</div><div class="line">     <span class="number">2.</span> shift 方法移除索引为 <span class="number">0</span> 的元素(即第一个元素)，并返回被移除的元素，其他元素的索引值随之减 <span class="number">1</span>。如果length值 (长度为 <span class="number">0</span>，则返回 <span class="literal">undefined</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">pop() </div><div class="line">语法:  arr.pop() <span class="comment">//无需传参</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.pop() <span class="comment">//return 7; 同时arr变成为[1, 2, 3, 4, 5, 6];</span></div><div class="line">[].pop() <span class="comment">//return undefinded;</span></div><div class="line">注意：空数组上调用 pop()，它返回  <span class="literal">undefined</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">unshift() </div><div class="line">语法:  arr.unshift(element1, ..., elementN)</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>];</div><div class="line">arr.unshift(<span class="number">0</span>) <span class="comment">//return 8; 同时arr变成为[0, 1, 2, 3, 4, 5, 6, 7];</span></div><div class="line">注意: <span class="number">1.</span> 当一个对象调用该方法时，返回其 length 属性值。</div><div class="line">      <span class="number">2.</span> unshift 方法会在调用它的类数组（array-like）对象的开始位置插入给定的参数。</div><div class="line">      <span class="number">3.</span> unshift 特意被设计成具有通用性；这个方法能够通过 call 或 apply 方法作用于类似数组的对象上。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">push()</div><div class="line">语法:  arr.push(element1, ..., elementN)</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">arr.push(<span class="number">4</span>, <span class="number">5</span>) <span class="comment">//return 5; 同时arr变成为[ 1, 2, 3, 4, 5];</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; </div><div class="line"><span class="keyword">var</span> array = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</div><div class="line">arr.push.apply(arr,array)  <span class="comment">//return 6;同时arr的为[1, 3, 5, 2, 4, 6];</span></div><div class="line">注意: <span class="number">1.</span> 当一个对象调用该方法时，返回其 length 属性值。</div><div class="line">      <span class="number">2.</span> push 方法有意具有通用性。合并数组的时候，该方法和 call() 或 apply()上下文一起使用时，可进行逐一的添加。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">concat()</div><div class="line">语法:  <span class="keyword">var</span> new_array = old_array.concat(value1[, value2[, ...[, valueN]]])</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>];</div><div class="line"><span class="keyword">var</span> array = [<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>];</div><div class="line">arr.concat(array) <span class="comment">//return ["a", "b", "c", "d", "e", "f"]; 同时arr不变为['a','b','c'];</span></div><div class="line">注意: 连接一个或多个数组（值）将不会改变原本的数组/值。进一步说，任何对新数组的操作都不会对原有的数组造成影响（仅当该元素不是对象的引用时），反之亦然。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">slice()</div><div class="line">语法: <span class="number">1.</span> arr.slice()</div><div class="line">      <span class="number">2.</span> arr.slice(begin)</div><div class="line">      <span class="number">3.</span> arr.slice(begin,end)</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>, <span class="string">'six'</span>];</div><div class="line">arr.slice(<span class="number">1</span>, <span class="number">3</span>) <span class="comment">//return ["two", "three"];同时原arr数组不变["one", "two", "three", "four", "five", "six"];</span></div><div class="line">注意: 获取的元素不包括end。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sort()</div><div class="line">语法: <span class="number">1.</span> arr.sort() </div><div class="line">      <span class="number">2.</span> arr.sort(compareFunction)</div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'parent'</span>, <span class="string">'father'</span>, <span class="string">'mother'</span>, <span class="string">'aunt'</span>];</div><div class="line">arr.sort() <span class="comment">//return ["aunt", "father", "mother", "parent"];</span></div><div class="line"><span class="keyword">var</span> array = [<span class="number">1</span>, <span class="number">23</span>, <span class="number">4</span>, <span class="number">85</span>, <span class="number">9</span>]</div><div class="line">array.sort() <span class="comment">//[1, 23, 4, 85, 9]</span></div><div class="line">array.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a-b&#125;) <span class="comment">//[1, 4, 9, 23, 85]</span></div><div class="line">注意: 当不传参数时，会按照默认排序顺序是根据字符串Unicode码点，如果数字进行排序的时候，必须传入参数，才能按照数字的大小进行排序。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">splice()</div><div class="line">语法: <span class="number">1.</span> array.splice(start) </div><div class="line">      <span class="number">2.</span> array.splice(start, deleteCount)</div><div class="line">      <span class="number">3.</span> array.splice(start, deleteCount, item1, item2, ...)</div><div class="line"><span class="keyword">var</span> myFish = [<span class="string">'angel'</span>, <span class="string">'clown'</span>, <span class="string">'mandarin'</span>, <span class="string">'sturgeon'</span>];</div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'drum'</span>); <span class="comment">// 在索引为2的位置插入'drum';myFish 变为 ["angel", "clown", "drum", "mandarin", "sturgeon"]</span></div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">1</span>); <span class="comment">// 从索引为2的位置删除一项（也就是'drum'这一项）;myFish 变为 ["angel", "clown", "mandarin", "sturgeon"]</span></div><div class="line">注意: splice() 方法与 slice() 方法的作用是不同的，splice() 方法会直接对数组进行修改。由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">toLocaleString( )</div><div class="line">语法: <span class="number">1.</span> arr.toLocaleString();</div><div class="line"><span class="keyword">var</span> number = <span class="number">1337</span>;</div><div class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> myArr = [number, date, <span class="string">"foo"</span>];</div><div class="line"><span class="keyword">var</span> str = myArr.toLocaleString();   <span class="comment">//return "1,337,2016/8/8 下午9:58:12,foo"</span></div><div class="line">注意: toLocaleString() 返回一个字符串表示数组中的元素。数组中的元素将使用各自的 toLocaleString 方法转成字符串，这些字符串将使用一个特定语言环境的字符串（例如一个逗号 <span class="string">","</span>）隔开。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">toString( )</div><div class="line">语法: <span class="number">1.</span> arr.toString()</div><div class="line"><span class="keyword">var</span> myArr = [<span class="string">'I'</span>, <span class="string">'Love'</span>, <span class="string">'China'</span>];</div><div class="line">myArr.toString() <span class="comment">//return "I,Love,China"</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">forEach( )</div><div class="line">语法: array.forEach(callback(currentValue, index, array)&#123;</div><div class="line">         <span class="comment">//do something</span></div><div class="line">      &#125;, <span class="keyword">this</span>)</div><div class="line"><span class="keyword">var</span> a = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line">a.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">element</span>) </span>&#123;</div><div class="line"><span class="built_in">console</span>.log(element); <span class="comment">//return a   b   c</span></div><div class="line">&#125;);</div><div class="line">注意：没有办法中止或者跳出 forEach 循环，除了抛出一个异常。如果可用，新方法 find() 或者findIndex() 也可被用于真值测试的提早终止。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">every()</div><div class="line">语法: arr.every(callback[, thisArg])</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line"><span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);<span class="comment">// passed is false</span></div><div class="line"><span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].every(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">注意：every不会改变原数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">some()</div><div class="line">    语法: arr.some(callback[, thisArg])</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element, index, array</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> (element &gt;= <span class="number">10</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> passed = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].some(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">    passed = [<span class="number">12</span>, <span class="number">54</span>, <span class="number">18</span>, <span class="number">130</span>, <span class="number">44</span>].some(isBigEnough);<span class="comment">// passed is true</span></div><div class="line">    注意：some不会改变原数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">map()</div><div class="line">    语法: <span class="keyword">let</span> array = arr.map(<span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">currentValue, index, array</span>) </span>&#123; </div><div class="line">            <span class="comment">// Return element for new_array </span></div><div class="line">          &#125;[, thisArg])</div><div class="line">          <span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</div><div class="line">          <span class="keyword">var</span> doubles = numbers.map(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</div><div class="line">              <span class="keyword">return</span> x * <span class="number">2</span>;</div><div class="line">           &#125;);</div><div class="line">           <span class="built_in">console</span>.log(doubles) <span class="comment">// return [2, 10, 20, 30]</span></div><div class="line"> 注意：不改变原数组，成为新的数组。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">   filter()</div><div class="line">   语法: <span class="keyword">var</span> new_array = arr.filter(callback[, thisArg])</div><div class="line">         <span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">           <span class="keyword">return</span> element &gt;= <span class="number">10</span>;</div><div class="line">         &#125;</div><div class="line">         <span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBigEnough);</div><div class="line">           <span class="comment">// filtered is [12, 130, 44]</span></div><div class="line">         <span class="built_in">console</span>.log(doubles) <span class="comment">// return [2, 10, 20, 30]</span></div><div class="line">注意：filter不会改变原数组。</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此数组常用的操作方法和属性需熟悉掌握。&lt;br&gt;&lt;strong&gt;length&lt;/strong&gt; &lt;code&gt;属性动态获取数组长度。//任何数组都有此属性，当数组为空的时候，其length的值为0。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;join()&lt;/strong&gt; &lt;code&gt;将一个数组转成字符串。返回一个字符串。经常和split配合使用，用于数组和字符串之间的转化。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;reverse()&lt;/strong&gt; &lt;code&gt;将数组中各元素颠倒顺序。通过此方法也可以实现数组中元素的倒序。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;shift()&lt;/strong&gt; &lt;code&gt;从数组中删除第一个元素，并返回该元素的值。此方法更改数组的长度。&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="Number" scheme="http://yoursite.com/tags/Number/"/>
+    
+      <category term="Array" scheme="http://yoursite.com/tags/Array/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串操作常用的方法</title>
+    <link href="http://yoursite.com/2016/07/28/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/07/28/字符串操作的方法/</id>
+    <published>2016-07-27T16:00:00.000Z</published>
+    <updated>2017-08-14T07:35:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。<br><strong>charCodeAt</strong> <code>方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。</code><br><strong>charAt</strong> <code>方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。</code><br><strong>slice</strong> <code>方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。</code><br><strong>substring</strong> <code>方法返回位于String 对象中指定位置的子字符串。</code><br><strong>substr</strong> <code>方法返回一个从指定位置开始的指定长度的子字符串。</code><br><a id="more"></a><br><strong>indexOf</strong> <code>方法返回String 对象内第一次出现子字符串位置。如果没有找到子字符串，则返回-1。</code><br><strong>lastIndexOf</strong> <code>方法返回String 对象中字符串最后出现的位置。如果没有匹配到子字符串，则返回-1。</code><br><strong>search</strong> <code>方法返回与正则表达式查找内容匹配的第一个字符串的位置。</code><br><strong>concat</strong> <code>concat() 方法将一个或多个字符串与原字符串连接合并，形成一个新的字符串并返回。</code><br><strong>split</strong> <code>将一个字符串分割为子字符串，然后将结果作为字符串数组返回。</code><br><strong>match(searchvalue||regexp)</strong> <code>方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。括号内的条件必须填写。</code><br><strong>replace(regexp，replacement)</strong> <code>方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。</code><br><strong>toLowerCase()</strong> <code>方法用于把字符串转换为小写。一个新的字符串，在其中 stringObject 的所有大写字符全部被转换为了小写字符。</code><br><strong>toUpperCase()</strong> <code>方法用于把字符串转换为大写。一个新的字符串，在其中 stringObject 的所有小写字符全部被转换为了大写字符。</code><br><strong>trim()</strong> <code>方法会从一个字符串的两端删除空白字符。</code></p>
+<h3 id="通过简单的demo来具体说明以上的方法的使用情况。"><a href="#通过简单的demo来具体说明以上的方法的使用情况。" class="headerlink" title="通过简单的demo来具体说明以上的方法的使用情况。"></a>通过简单的demo来具体说明以上的方法的使用情况。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">charCodeAt()  语法：str.charCodeAt(index)</div><div class="line"><span class="string">"ABC"</span>.charCodeAt(<span class="number">0</span>) <span class="comment">//return 65</span></div><div class="line">注意：如果指定的 index 小于 <span class="number">0</span> 或不小于字符串的长度，则 charCodeAt 返回 <span class="literal">NaN</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">charAt()  语法：str.charAt(index)</div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">0</span>) <span class="comment">//return h</span></div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">5</span>) <span class="comment">//return ' ' ,空格也占位置。</span></div><div class="line"><span class="string">"hello a"</span>.charAt(<span class="number">8</span>) <span class="comment">//return ''，当索引值大于length-1后，将会返回空字符串。</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">slice()  语法：str.slice(beginSlice，endSlice)</div><div class="line"><span class="string">"hello my wold"</span>.slice(<span class="number">0</span>,<span class="number">11</span>) <span class="comment">//return hello my wo</span></div><div class="line"><span class="string">"hello my wold"</span>.slice(<span class="number">0</span>,<span class="number">-2</span>) <span class="comment">//return hello my wo,如果endSlice该参数为负数，则被看作是 sourceLength + endSlice</span></div><div class="line">注意：slice() 提取的新字符串包括beginSlice但不包括 endSlice。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">substring() 语法：str.substring(indexStart, indexEnd)</div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="number">0</span>,<span class="number">5</span>) <span class="comment">//return forev</span></div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="number">5</span>,<span class="number">1</span>) <span class="comment">//return orev</span></div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="number">-2</span>,<span class="number">5</span>) <span class="comment">//return forev</span></div><div class="line"><span class="string">"forever I will rember!"</span>.substring(<span class="literal">NaN</span>,<span class="number">5</span>) <span class="comment">//return forev</span></div><div class="line">注意： <span class="number">1.</span> substring 提取从 indexStart 到 indexEnd（不包括）之间的字符。</div><div class="line">       <span class="number">2.</span> 如果 indexStart 等于 indexEnd，substring 返回一个空字符串。</div><div class="line">       <span class="number">3.</span> 如果省略 indexEnd，substring 提取字符一直到字符串末尾。</div><div class="line">       <span class="number">4.</span> 如果任一参数小于 <span class="number">0</span> 或为 <span class="literal">NaN</span>，则被当作 <span class="number">0</span>。</div><div class="line">       <span class="number">5.</span> 如果任一参数大于 stringName.length，则被当作 stringName.length。</div><div class="line">       <span class="number">6.</span> 如果 indexStart 大于 indexEnd，则 substring 的执行效果就像两个参数调换了一样。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">substr() 语法：substr(start,length)</div><div class="line"><span class="string">"abcdefghi"</span>.substr(<span class="number">1</span>,<span class="number">5</span>) <span class="comment">//return bcdef</span></div><div class="line"><span class="string">"abcdefghi"</span>.substr(<span class="number">-20</span>,<span class="number">2</span>) <span class="comment">//return ab</span></div><div class="line"><span class="string">"abcdefghi"</span>.substr(<span class="number">0</span>) <span class="comment">//return abcdefghi</span></div><div class="line">注意：<span class="number">1.</span> 开始提取字符的位置。如果为负值，则被看作 strLength + start。</div><div class="line">     <span class="number">2.</span> 如果只传一个参数，则表示从开始的索引开始，一直到结束。</div><div class="line">     <span class="number">3.</span> 如果 start 为正值，且大于或等于字符串的长度，则 substr 返回一个空字符串。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">indexOf() 语法：indexOf(searchValue,fromIndex)</div><div class="line"><span class="string">"hello my friend"</span>.indexOf(<span class="string">"friend"</span>,<span class="number">3</span>) <span class="comment">//return 9</span></div><div class="line"><span class="string">"hello my friend"</span>.indexOf(<span class="string">"frient"</span>,<span class="number">3</span>) <span class="comment">//return -1</span></div><div class="line">注意：指定值的第一次出现的索引; 如果没有找到 <span class="number">-1</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lastIndexOf() 语法：lastIndexOf(searchValue,fromIndex)</div><div class="line"><span class="string">"hello my friend"</span>.lastIndexOf(<span class="string">"friend"</span>) <span class="comment">//return 9</span></div><div class="line">注意：指定值的第一次出现的索引; 如果没有找到 <span class="number">-1</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">search() 语法：str.search(regexp)  如果匹配成功，则 search() 返回正则表达式在字符串中首次匹配项的索引。否则，返回 <span class="number">-1</span>。</div><div class="line"><span class="string">"hello my friend"</span>.search(<span class="regexp">/\s/</span>) <span class="comment">//return 5</span></div><div class="line"><span class="string">"hello my friend"</span>.search(<span class="regexp">/\d/</span>) <span class="comment">//return -1</span></div><div class="line">注意：指定值的第一次出现的索引; 如果没有找到 <span class="number">-1</span>。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">concat() 语法：str.concat(other str) </div><div class="line"><span class="string">"hello my friend"</span>.concat(<span class="string">",forever friend"</span>) <span class="comment">//return hello my friend,forever friend</span></div><div class="line"><span class="string">"hello my friend"</span> + <span class="string">",forever friend"</span>  <span class="comment">//return hello my friend,forever friend </span></div><div class="line">注意：如果是字符串的拼接，直接用+号或者是+=号连接会更好。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">split() 语法：str.split([separator[, limit]])</div><div class="line"><span class="string">"hello my friend"</span>.split(<span class="string">" "</span>) <span class="comment">//return ["hello", "my", "friend"] </span></div><div class="line">注意：当字符串为空时，split 返回一个包含一个空字符串的数组，而不是一个空数组。它一般和数组的join()方法结合使用。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">match() 语法：str.match(regexp)</div><div class="line"><span class="string">"hello my friend"</span>.match(<span class="regexp">/my/</span>) <span class="comment">//return ["my", index: 6, input: "hello my friend"]</span></div><div class="line">注意：如果正则表达式包含 g 标志，则该方法返回一个 <span class="built_in">Array</span> ，它包含所有匹配的子字符串而不是匹配对象。捕获组不会被返回(即不返回index属性和input属性)。如果没有匹配到，则返回  <span class="literal">null</span> 。</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">toLowerCase() 语法：str.toLowerCase()</div><div class="line"><span class="string">"HELLO MY FRIEND"</span>.toLowerCase() <span class="comment">//return hello my friend</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">toLowerCase() 语法：str.toUpperCase()</div><div class="line"><span class="string">"hello my friend"</span>.toUpperCase() <span class="comment">//return HELLO MY FRIEND</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">trim() 语法：str.trim()</div><div class="line"><span class="string">"hello "</span>.toUpperCase() <span class="comment">//return hello</span></div><div class="line"><span class="keyword">if</span> (!<span class="built_in">String</span>.prototype.trim) &#123; <span class="comment">//兼容旧版本</span></div><div class="line">        <span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g</span>, <span class="string">''</span>);</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">注意：trim() 方法并不影响原字符串本身，它返回的是一个新的字符串。</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在javascript当中，主要操作的对象可以简单的理解为是字符串，数组和键值对，因此字符串常用的操作方法需熟悉掌握。&lt;br&gt;&lt;strong&gt;charCodeAt&lt;/strong&gt; &lt;code&gt;方法返回一个整数，代表指定位置字符的Unicode编码。Unicode 编码单元（code points）的范围从 0 到 1,114,111（0x10FFFF）。注意：charCodeAt 总是返回一个小于 65,536 的值。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;charAt&lt;/strong&gt; &lt;code&gt;方法返回指定索引位置处的字符。如果超出有效范围的引值返回空字符串,如果没有提供参数，则默认的是0。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;slice&lt;/strong&gt; &lt;code&gt;方法返回字符串的片段。slice() 提取的新字符串包括beginSlice但不包括 endSlice。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;substring&lt;/strong&gt; &lt;code&gt;方法返回位于String 对象中指定位置的子字符串。&lt;/code&gt;&lt;br&gt;&lt;strong&gt;substr&lt;/strong&gt; &lt;code&gt;方法返回一个从指定位置开始的指定长度的子字符串。&lt;/code&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="String" scheme="http://yoursite.com/tags/String/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随机生成不重复的0-9的整数-----案例</title>
+    <link href="http://yoursite.com/2016/05/07/%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%900-9%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <id>http://yoursite.com/2016/05/07/随机生成0-9不重复的数字/</id>
+    <published>2016-05-06T16:00:00.000Z</published>
+    <updated>2017-08-14T07:34:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">"  "</span>; <span class="comment">//定义一个字符串，其给一个空的元素</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    <span class="keyword">var</span> s=str.charAt(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*(str.length)));</div><div class="line">    str=str.replace(s,i+s); <span class="comment">//由于s是随机的，所以位置的放置也是随机的</span></div><div class="line">&#125;</div><div class="line">str=str.replace(<span class="string">" "</span>,<span class="string">""</span>);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> chest = &#123;&#125;,arr = [],mun, count = <span class="number">10</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; count; i++) &#123;</div><div class="line">    mun = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>);</div><div class="line">    <span class="keyword">if</span> (!chest[mun]) &#123; <span class="comment">//间接的使用in的方法，判断是否含有mun数字，从而启动去重的作用</span></div><div class="line">        chest[mun] = <span class="literal">true</span>;</div><div class="line">        arr.push(mun);</div><div class="line">        <span class="keyword">continue</span>;<span class="comment">//跳出本次循环，进入下次循环</span></div><div class="line">    &#125;</div><div class="line">    ++count;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h2>  <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">var</span>  arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</div><div class="line"><span class="keyword">var</span> index,temp;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</div><div class="line">	index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">10</span>);</div><div class="line">	<span class="keyword">if</span>(index != i) &#123;<span class="comment">//通过两两的位置交换来实现</span></div><div class="line">		temp = arr[i];</div><div class="line">		arr[i] = arr[index];</div><div class="line">		arr[index] = temp;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;方法一：&quot;&gt;&lt;a href=&quot;#方法一：&quot; class=&quot;headerlink&quot; title=&quot;方法一：&quot;&gt;&lt;/a&gt;方法一：&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; str=&lt;span class=&quot;string&quot;&gt;&quot;  &quot;&lt;/span&gt;; &lt;span class=&quot;comment&quot;&gt;//定义一个字符串，其给一个空的元素&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt;(&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; i=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;i&amp;lt;&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;;i++)&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s=str.charAt(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.floor(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random()*(str.length)));&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    str=str.replace(s,i+s); &lt;span class=&quot;comment&quot;&gt;//由于s是随机的，所以位置的放置也是随机的&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;str=str.replace(&lt;span class=&quot;string&quot;&gt;&quot; &quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(str);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>常见的浏览器内核</title>
-    <link href="http://yoursite.com/2015/03/15/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/"/>
-    <id>http://yoursite.com/2015/03/15/常见的浏览器内核/</id>
-    <published>2015-03-14T16:00:00.000Z</published>
-    <updated>2017-08-11T14:05:16.000Z</updated>
+    <link href="http://yoursite.com/2016/04/05/%E5%B8%B8%E8%A7%81%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8/"/>
+    <id>http://yoursite.com/2016/04/05/常见的浏览器内核/</id>
+    <published>2016-04-04T16:00:00.000Z</published>
+    <updated>2017-08-14T07:34:28.000Z</updated>
     
     <content type="html"><![CDATA[<h4 id="nbsp-nbsp-nbsp-通常所属的浏览器内核（Rendering-Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。"><a href="#nbsp-nbsp-nbsp-通常所属的浏览器内核（Rendering-Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。" class="headerlink" title="&nbsp;  &nbsp;  &nbsp;  通常所属的浏览器内核（Rendering Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。"></a>&nbsp;  &nbsp;  &nbsp;  通常所属的浏览器内核（Rendering Engine）就是浏览器的渲染引擎，浏览器的渲染引擎决定了浏览器如何显示网页的内容，以及页面的格式信息。</h4><ol>
 <li><code>Trident内核（又称MSHTML）</code><ol>
@@ -636,11 +627,37 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
   </entry>
   
   <entry>
+    <title>欢迎来踩***不忘初衷</title>
+    <link href="http://yoursite.com/2016/03/20/first-fell/"/>
+    <id>http://yoursite.com/2016/03/20/first-fell/</id>
+    <published>2016-03-19T16:00:00.000Z</published>
+    <updated>2017-08-14T07:33:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="开篇感受"><a href="#开篇感受" class="headerlink" title="开篇感受"></a>开篇感受</h2><blockquote>
+<p>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不知从何时开始，每每自己开始弄一个新的东西，都喜欢留点当时的感受，以便后续自己在回味时，无穷，记忆是无序的，感受是不曾停留的，为留住这一瞬间的感动，以文字作为凭证。<br>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搭建博客的初衷是记录自己学习前端的点滴，对于我个人而言，是把自己难以记住的知识点或者工作当中，跳进的坑洼，在此记录，便于后续自己再次查看，不在同一个坑里点进两次，同时也希望能给那些和我一样，遇到同样困境的，猿友们一点捷径，不往坑里跳，或许方法或者知识点不够完善，乃至偏离正轨，在此希望进来的各位大神们，指点，小女子不胜感激。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;开篇感受&quot;&gt;&lt;a href=&quot;#开篇感受&quot; class=&quot;headerlink&quot; title=&quot;开篇感受&quot;&gt;&lt;/a&gt;开篇感受&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;不知从何时
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
     <title>HEXO快速创建个人博客</title>
-    <link href="http://yoursite.com/2015/03/12/hexo%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://yoursite.com/2015/03/12/hexo快速创建个人博客/</id>
-    <published>2015-03-11T16:00:00.000Z</published>
-    <updated>2017-08-11T14:19:52.000Z</updated>
+    <link href="http://yoursite.com/2016/03/12/hexo%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2016/03/12/hexo快速创建个人博客/</id>
+    <published>2016-03-11T16:00:00.000Z</published>
+    <updated>2017-08-14T07:33:32.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ul>
 <li><p>安装GIT</p>
@@ -704,6 +721,35 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
       <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/02/hello-world/"/>
+    <id>http://yoursite.com/2016/03/02/hello-world/</id>
+    <published>2016-03-01T16:00:00.000Z</published>
+    <updated>2017-08-14T07:32:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
     
   </entry>
   
