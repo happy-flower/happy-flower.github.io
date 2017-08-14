@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="Document                 //  1.加号运算符简单的理解         //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；         var a = 15,             b = 20;         function CommaTest() {             ret">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-12T12:55:20.000Z">
+<meta property="og:updated_time" content="2017-08-12T15:44:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Liu jinfang&#39;s Nodes">
 <meta name="twitter:description" content="Document                 //  1.加号运算符简单的理解         //在函数调用的时候，其逗号不是运算符，只是起到间隔的作用，其返回值是最后一位；         var a = 15,             b = 20;         function CommaTest() {             ret">
@@ -371,8 +371,8 @@
 
         // 3. 逗号运算符与函数调用运算符的冲突
         // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
-        alert(2, 5);  //2
-        alert((2, 5)); //5
+        // alert(2, 5);  //2
+        // alert((2, 5)); //5
 
         // 4.逗号运算符和赋值运算符冲突
         // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
@@ -512,7 +512,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

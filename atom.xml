@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-12T13:19:40.000Z</updated>
+  <updated>2017-08-13T01:21:24.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,23 +16,77 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>gulp的介绍及使用</title>
+    <link href="http://yoursite.com/2017/09/05/gulp%E8%AE%A4%E8%AF%86%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/09/05/gulp认识及使用/</id>
+    <published>2017-09-04T16:00:00.000Z</published>
+    <updated>2017-08-13T01:21:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="gulp的基本介绍"><a href="#gulp的基本介绍" class="headerlink" title="gulp的基本介绍"></a>gulp的基本介绍</h3><p>-&gt; gulp 是一个项目构建工具,其核心内容是提供一个处理项目文件与机构的平台. 相当于一个 处理容器, 处理管道。</p>
+<h3 id="gulp具体的作用"><a href="#gulp具体的作用" class="headerlink" title="gulp具体的作用"></a>gulp具体的作用</h3><ol>
+<li>代码的压缩</li>
+<li>代码的合并</li>
+<li>less 转 css</li>
+<li>代码的混淆</li>
+<li>引用的替换<a id="more"></a>
+<h3 id="gulp常见的第三方库"><a href="#gulp常见的第三方库" class="headerlink" title="gulp常见的第三方库"></a>gulp常见的第三方库</h3>-&gt; gulp-concat  用于合并代码<br>-&gt; gulp-htmlmin 用于压缩 html 文件<br>-&gt; gulp-uglify 用于压缩 js 文件<br>-&gt; gulp-cssmin 用于压缩 css 文件<br>-&gt; gulp-rename, gulp-html-replace<br><code>注意：可以在www.npmjs.org第三方库中查询。</code></li>
+</ol>
+<h3 id="使用gulp来进行代码的实现步骤"><a href="#使用gulp来进行代码的实现步骤" class="headerlink" title="使用gulp来进行代码的实现步骤"></a>使用gulp来进行代码的实现步骤</h3><h4 id="1-创建一个-任务"><a href="#1-创建一个-任务" class="headerlink" title="1. 创建一个 任务"></a>1. 创建一个 任务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">gulp.task(任务名，<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">     执行任务就是执行这个函数</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<h4 id="2-确定要处理什么文件"><a href="#2-确定要处理什么文件" class="headerlink" title="2. 确定要处理什么文件"></a>2. 确定要处理什么文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">        // 执行任务就是在执行这个函数</div><div class="line">        gulp.src( <span class="string">'文件名'</span> )</div><div class="line">&#125; )</div></pre></td></tr></table></figure>
+<h4 id="3-利用第三方提供的-方法-例如方法名是-handle"><a href="#3-利用第三方提供的-方法-例如方法名是-handle" class="headerlink" title="3. 利用第三方提供的 方法, 例如方法名是 handle"></a>3. 利用第三方提供的 方法, 例如方法名是 handle</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123; </div><div class="line">    // 执行任务就是在执行这个函数           </div><div class="line">  gulp.src( <span class="string">'文件名'</span> )</div><div class="line">      .pipe( handle )</div><div class="line">&#125; )</div></pre></td></tr></table></figure>
+<h4 id="4-将处理的结果保存到某一个文件夹中-例如-dist-文件夹"><a href="#4-将处理的结果保存到某一个文件夹中-例如-dist-文件夹" class="headerlink" title="4. 将处理的结果保存到某一个文件夹中, 例如 dist 文件夹"></a>4. 将处理的结果保存到某一个文件夹中, 例如 dist 文件夹</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">gulp.task( 任务名, <span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">  // 执行任务就是在执行这个函数</div><div class="line">  gulp.src( <span class="string">'文件名'</span> )</div><div class="line">      .pipe( handle )</div><div class="line">      .pipe( gulp.dest( <span class="string">'dist'</span> ) );</div><div class="line">&#125; );</div></pre></td></tr></table></figure>
+<h4 id="具体案例分析"><a href="#具体案例分析" class="headerlink" title="具体案例分析"></a>具体案例分析</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">    --单个任务执行--</div><div class="line">    -&gt; 实现less转css的文件(提前下载好npm install gulp -g 和在需要实现代码转化的目录下下载npm install gulp，npm install gulp-less);</div><div class="line">    -&gt; 在该文件夹下建立一个src文件夹，里面放置需要置换的文件less文件，与此同时还需建立一个gulpfile.js文件，来编写如下的代码。</div><div class="line">        var gulp = require(<span class="string">'gulp'</span>);//需引入包</div><div class="line">        var less = require(<span class="string">'gulp-less'</span>);//需引入包</div><div class="line">        gulp.task(<span class="string">'default'</span>,<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">            gulp.src(<span class="string">'./src/*less'</span>)</div><div class="line">            .pipe(less())</div><div class="line">            .pipe(gulp.dest(<span class="string">'dist'</span>))</div><div class="line">                    &#125;)</div><div class="line">    -&gt; 在linux下运行gulp文件即可。</div><div class="line">    -&gt; 注意：src文件路径，如果有两个文件夹或以上，则需gulp.src(<span class="string">'./src/**/*less'</span>);</div><div class="line"></div><div class="line">--gulp.watch 监视--</div><div class="line">  该方法用于监视文件的变化, 当文件发生变化的时候可以触发一个行为</div><div class="line">  gulp.watch( <span class="string">'文件匹配'</span>, [ 依赖任务 ], <span class="function"><span class="title">function</span></span> () &#123;&#125; )</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;gulp的基本介绍&quot;&gt;&lt;a href=&quot;#gulp的基本介绍&quot; class=&quot;headerlink&quot; title=&quot;gulp的基本介绍&quot;&gt;&lt;/a&gt;gulp的基本介绍&lt;/h3&gt;&lt;p&gt;-&amp;gt; gulp 是一个项目构建工具,其核心内容是提供一个处理项目文件与机构的平台. 相当于一个 处理容器, 处理管道。&lt;/p&gt;
+&lt;h3 id=&quot;gulp具体的作用&quot;&gt;&lt;a href=&quot;#gulp具体的作用&quot; class=&quot;headerlink&quot; title=&quot;gulp具体的作用&quot;&gt;&lt;/a&gt;gulp具体的作用&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;代码的压缩&lt;/li&gt;
+&lt;li&gt;代码的合并&lt;/li&gt;
+&lt;li&gt;less 转 css&lt;/li&gt;
+&lt;li&gt;代码的混淆&lt;/li&gt;
+&lt;li&gt;引用的替换
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+      <category term="gulp" scheme="http://yoursite.com/tags/gulp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>逗号运算符简单的理解和运用</title>
     <link href="http://yoursite.com/2017/08/30/%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97/"/>
     <id>http://yoursite.com/2017/08/30/逗号运算符的运算/</id>
     <published>2017-08-29T16:00:00.000Z</published>
-    <updated>2017-08-12T13:19:40.000Z</updated>
+    <updated>2017-08-12T23:38:14.000Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>1. 在函数当中的使用</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">15</span>,</div><div class="line">b = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> b++ , <span class="number">10</span>, a++;</div><div class="line"> &#125;</div><div class="line"><span class="keyword">var</span> c = CommaTest();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 返回15  </span></div><div class="line"><span class="comment">// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。</span></div></pre></td></tr></table></figure></p>
+    <content type="html"><![CDATA[<h3 id="1-在函数当中的使用"><a href="#1-在函数当中的使用" class="headerlink" title="1.在函数当中的使用"></a>1.在函数当中的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">15</span>,</div><div class="line">b = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> b++ , <span class="number">10</span>, a++;</div><div class="line"> &#125;</div><div class="line"><span class="keyword">var</span> c = CommaTest();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 返回15  </span></div><div class="line"><span class="comment">// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<p><strong>2. for循环中逗号运算符</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算</span></div><div class="line"><span class="keyword">var</span> i, j = <span class="number">5</span>, k;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ , j++) &#123;</div><div class="line">    k = i + j;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回23</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, m = <span class="number">0</span>; i &lt; <span class="number">10</span>, j &lt; <span class="number">20</span>, m &lt; <span class="number">5</span>; i++ , j++ , m++) &#123;</div><div class="line">    <span class="keyword">var</span> k = i + j + m;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回12</span></div></pre></td></tr></table></figure></p>
-<p> <strong>3.逗号运算符与函数调用运算符的冲突</strong><br>        // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。<br>       如:console.log(2, 5);//2<br>       如:console.log((2, 5));//5</p>
-<p><strong>4.逗号运算符和赋值运算符冲突</strong><br>        // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。<br>        var a = 20;<br>        var b = (++a, 10);<br>        console.log(b);</p>
-<p><strong>案例测试</strong><br>console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)<br> var a = ‘a’, b = ‘b’;<br> a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)<br>a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)<br>[[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)</p>
+<h3 id="2-for循环中逗号运算符"><a href="#2-for循环中逗号运算符" class="headerlink" title="2.for循环中逗号运算符"></a>2.for循环中逗号运算符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算</span></div><div class="line"><span class="keyword">var</span> i, j = <span class="number">5</span>, k;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ , j++) &#123;</div><div class="line">    k = i + j;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回23</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, m = <span class="number">0</span>; i &lt; <span class="number">10</span>, j &lt; <span class="number">20</span>, m &lt; <span class="number">5</span>; i++ , j++ , m++) &#123;</div><div class="line">    <span class="keyword">var</span> k = i + j + m;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回12</span></div></pre></td></tr></table></figure>
+<h3 id="3-逗号运算符与函数调用运算符的冲突"><a href="#3-逗号运算符与函数调用运算符的冲突" class="headerlink" title="3.逗号运算符与函数调用运算符的冲突"></a>3.逗号运算符与函数调用运算符的冲突</h3><pre><code> // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
+如:alert(2, 5);//2
+如:alert((2, 5));//5
+</code></pre><h2 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h2><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
+var a = 20;
+var b = (++a, 10);
+console.log(b);
+</code></pre><p><strong>案例测试</strong><br>console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)<br> var a = ‘a’, b = ‘b’;<br> a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)<br>a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)<br>[[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;1. 在函数当中的使用&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CommaTest&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; b++ , &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, a++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = CommaTest();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(c); &lt;span class=&quot;comment&quot;&gt;// 返回15  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;1-在函数当中的使用&quot;&gt;&lt;a href=&quot;#1-在函数当中的使用&quot; class=&quot;headerlink&quot; title=&quot;1.在函数当中的使用&quot;&gt;&lt;/a&gt;1.在函数当中的使用&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CommaTest&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; b++ , &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, a++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = CommaTest();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(c); &lt;span class=&quot;comment&quot;&gt;// 返回15  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -40,20 +94,6 @@
     
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2017/08/11/tag/"/>
-    <id>http://yoursite.com/2017/08/11/tag/</id>
-    <published>2017-08-11T13:34:55.370Z</published>
-    <updated>2017-08-11T13:34:56.000Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
@@ -88,7 +128,7 @@
     <link href="http://yoursite.com/2017/08/06/demo/"/>
     <id>http://yoursite.com/2017/08/06/demo/</id>
     <published>2017-08-05T16:14:42.540Z</published>
-    <updated>2017-08-12T12:55:20.000Z</updated>
+    <updated>2017-08-12T15:44:40.000Z</updated>
     
     <content type="html"><![CDATA[<!DOCTYPE html>
 <html lang="en">
@@ -127,8 +167,8 @@
 
         // 3. 逗号运算符与函数调用运算符的冲突
         // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
-        alert(2, 5);  //2
-        alert((2, 5)); //5
+        // alert(2, 5);  //2
+        // alert((2, 5)); //5
 
         // 4.逗号运算符和赋值运算符冲突
         // 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
