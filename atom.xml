@@ -72,39 +72,6 @@ textarea {
   </entry>
   
   <entry>
-    <title>逗号运算符简单的理解和运用</title>
-    <link href="http://yoursite.com/2017/08/30/%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97/"/>
-    <id>http://yoursite.com/2017/08/30/逗号运算符的运算/</id>
-    <published>2017-08-29T16:00:00.000Z</published>
-    <updated>2017-08-14T07:31:10.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-在函数当中的使用"><a href="#1-在函数当中的使用" class="headerlink" title="1.在函数当中的使用"></a>1.在函数当中的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">15</span>,</div><div class="line">b = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> b++ , <span class="number">10</span>, a++;</div><div class="line"> &#125;</div><div class="line"><span class="keyword">var</span> c = CommaTest();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 返回15  </span></div><div class="line"><span class="comment">// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2-for循环中逗号运算符"><a href="#2-for循环中逗号运算符" class="headerlink" title="2.for循环中逗号运算符"></a>2.for循环中逗号运算符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算</span></div><div class="line"><span class="keyword">var</span> i, j = <span class="number">5</span>, k;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ , j++) &#123;</div><div class="line">    k = i + j;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回23</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, m = <span class="number">0</span>; i &lt; <span class="number">10</span>, j &lt; <span class="number">20</span>, m &lt; <span class="number">5</span>; i++ , j++ , m++) &#123;</div><div class="line">    <span class="keyword">var</span> k = i + j + m;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回12</span></div></pre></td></tr></table></figure>
-<h3 id="3-逗号运算符与函数调用运算符的冲突"><a href="#3-逗号运算符与函数调用运算符的冲突" class="headerlink" title="3.逗号运算符与函数调用运算符的冲突"></a>3.逗号运算符与函数调用运算符的冲突</h3><pre><code> // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
-如:alert(2, 5);//2
-如:alert((2, 5));//5
-</code></pre><h3 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h3><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
-var a = 20;
-var b = (++a, 10);
-console.log(b);
-</code></pre><p><strong>案例测试</strong><br>console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)<br> var a = ‘a’, b = ‘b’;<br> a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)<br>a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)<br>[[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-在函数当中的使用&quot;&gt;&lt;a href=&quot;#1-在函数当中的使用&quot; class=&quot;headerlink&quot; title=&quot;1.在函数当中的使用&quot;&gt;&lt;/a&gt;1.在函数当中的使用&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CommaTest&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; b++ , &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, a++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = CommaTest();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(c); &lt;span class=&quot;comment&quot;&gt;// 返回15  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title></title>
     <link href="http://yoursite.com/2017/08/06/demo/"/>
     <id>http://yoursite.com/2017/08/06/demo/</id>
@@ -406,6 +373,110 @@ console.log(b);
   </entry>
   
   <entry>
+    <title>jquery.validate 插件的使用说明</title>
+    <link href="http://yoursite.com/2016/09/09/validate/"/>
+    <id>http://yoursite.com/2016/09/09/validate/</id>
+    <published>2016-09-08T16:00:00.000Z</published>
+    <updated>2017-08-21T12:13:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/DiegoLopesLima/validate" target="_blank" rel="external">https://github.com/DiegoLopesLima/validate</a></p>
+<h1 id="使用语法"><a href="#使用语法" class="headerlink" title="使用语法"></a>使用语法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$( <span class="string">'#form'</span> ).validate();</div></pre></td></tr></table></figure>
+<h1 id="可以使用自定义属性设置验证"><a href="#可以使用自定义属性设置验证" class="headerlink" title="可以使用自定义属性设置验证"></a>可以使用自定义属性设置验证</h1><p>data-conditional        Accepts one or more indexes separated by spaces<br>                        from the <code>conditional</code> object that should<br>                        contain a the boolean return function.<br>                        接收 一个或多个 由空格分隔的标记, 该标记定义在 <code>conditional</code><br>                        对象中. 每一个标记都应该是一个返回 boolean 值的函数.</p>
+<a id="more"></a>
+<p>data-ignore-case        Accepts a boolean value to specify if field is case-insensitive.<br>                        接收一个 boolean 值, 来指定是否忽略大小写. </p>
+<p>data-mask               Accepts a mask to change the field value to the specified format.<br>                        The mask should use the character groups of the regular expression<br>                        passed to the <code>data-pattern</code> attribute.<br>                        接收掩码来设定字段中数据的格式. 掩码必须使用 <code>data-pattern</code> 属性设置<br>                        的正则表达式匹配组中的字符. 默认值为 ${ 0 }</p>
+<p>data-pattern            Accepts a regular expression to test the field value.<br>                        接收一个正则表达式, 以测试字段的值.</p>
+<p>data-prepare            Accepts a index from the <code>prepare</code> object that should contain a<br>                        function to receive the field value and returns a new value treated.<br>                        接收一个定义在 <code>prepare</code> 对象中的函数名. 该函数接收字段的数据,<br>                        并返回一个转换后的数据.</p>
+<p>data-required           Accepts a boolean value to specify if field is required.<br>                        接收一个 boolean 值, 用于指定是否必须输入. 默认值为 false</p>
+<p>data-trim               Accepts a boolean value. If true, removes the spaces from the<br>                        ends in the field value. (The field value is not changed)<br>                        接收一个 boolean 值. 如果为 true, 则移除字段结尾的空格( 字段的值不会改变 )<br>                        默认为 false</p>
+<p>data-validate           You can use the <code>data-validate</code> to calling extensions.<br>                        可以使用 <code>data-validate</code> 来调用扩展.</p>
+<h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><p>conditional             Accepts a object to store functions from validation.<br>                        设置为一个对象, 来存储验证函数.</p>
+<p>filter                  Accepts a selector string or function to filter the validated fields.<br>                        设置为一个字符串或函数, 来筛选验证字段. 默认值为 *.</p>
+<p>nameSpace               A namespace used in all delegates events.<br>                        命名空间用于所有的代理事件. 默认为 validate</p>
+<p>onBlur                  Accepts a boolean value. If true, triggers the validation when blur the field.<br>                        接收一个 boolean 值. 如果为 true, 当字段失去焦点的时候触发验证. 默认为 false.</p>
+<p>onChange                Accepts a boolean value. If true, triggers the validation when change the field value.<br>                        接收一个 boolean 值, 如果为真, 字段发生改变的时候触发验证. 默认为 false.</p>
+<p>onKeyup                 Accepts a boolean value. If true, triggers the validation when press any key.<br>                        接收一个 boolean 值. 如果为 真. 在按下任意键的时候触发验证. 默认为 false.</p>
+<p>onSubmit                Accepts a boolean value. If true, triggers the validation when submit the form.<br>                        接收一个 boolean 值. 如果为 真, 在提交表单的时候触发验证.   默认为 true.</p>
+<p>prepare                 Accepts a object to store functions to prepare the field values.<br>                        接收一个对象, 来存储去预处理字段值的函数.</p>
+<p>sendForm                Accepts a boolean value. If false, prevents submit the form (Useful to submit forms via AJAX).<br>                        接收一个 boolean 值. 如果为 false, 阻止表单提交行为( JAJX 提交数据的时候很有用 ). 默认为 true.</p>
+<p>waiAria                 Accepts a boolean value. If false, disables WAI-ARIA.<br>                        接收一个 boolean 值. 如果为 false, 禁用 WAI-ARIA. 默认为 true.</p>
+<h1 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h1><p>valid                   Accepts a function to be calling when form is valid. The context (<code>this</code>) is the current<br>                        verified form and the parameters are respectively <code>event</code> and <code>options</code>.<br>                        接收一个函数, 在表单数据有效的时候会被调用. 上下文( <code>this</code> )是当前被验证的表单对象. 同时参数是<br>                        各自的事件 与 选项.</p>
+<p>invalid                 Accepts a function to be calling when form is invalid. The context (<code>this</code>) is the current<br>                        verified form and the parameters are respectively <code>event</code> and <code>options</code>.<br>                        接收一个函数, 在表单数据无效的时候会被调用. 上下文( <code>this</code> )是当前被验证的表单对象. 同时参数是<br>                        各自的事件 与 选项.</p>
+<p>eachField               Accepts a function to be calling to each field. The context (<code>this</code>) is the current<br>                        verified field and the parameters are respectively <code>event</code>, <code>status</code> and <code>options</code>.<br>                        接收一个函数, 每一个字段都会调用该函数. 上下文( <code>this</code> )是当前被验证的表单对象. 同时参数是<br>                        各自的事件, 状态 与 选项.</p>
+<p>eachInvalidField        Accepts a function to be calling when field is invalid. The context (<code>this</code>) is the current<br>                        verified field and the parameters are respectively <code>event</code>, <code>status</code> and <code>options</code>.<br>                        接收一个函数, 当字段验证失败的时候会调用该函数. 上下文( <code>this</code> )是当前被验证的表单对象. 同时参数是<br>                        各自的事件, 状态 与 选项.</p>
+<p>eachValidField          Accepts a function to be calling when field is valid. The context (<code>this</code>) is the current<br>                        verified field and the parameters are respectively <code>event</code>, <code>status</code> and <code>options</code>.<br>                        接收一个函数, 当字段验证成功的时候会调用该函数. 上下文( <code>this</code> )是当前被验证的表单对象. 同时参数是<br>                        各自的事件, 状态 与 选项.</p>
+<h1 id="移除验证"><a href="#移除验证" class="headerlink" title="移除验证"></a>移除验证</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jQuery(<span class="string">'#form'</span>).validateDestroy();</div></pre></td></tr></table></figure>
+<h1 id="修改-validate-的默认值"><a href="#修改-validate-的默认值" class="headerlink" title="修改 validate 的默认值"></a>修改 validate 的默认值</h1><p>直接提供 validate 方法参数, 来修改默认的属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">jQuery.validate(&#123;</div><div class="line">  <span class="attr">sendForm</span>: <span class="literal">false</span>,</div><div class="line">  <span class="attr">onKeyup</span>: <span class="literal">true</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="创建描述"><a href="#创建描述" class="headerlink" title="创建描述"></a>创建描述</h1><p>对验证不成功的字段, 可以提供错误描述信息. 操作步骤:</p>
+<ul>
+<li>提供需要呈现描述信息的容器标签. 例如 div 标签. 同时提供 id, 例如 ‘textId’</li>
+<li>在需要验证的标签中使用 data-describedby 属性, 用于指向容器 id.</li>
+<li>在验证标签中提供 data-description 属性, 并命名.</li>
+<li>提供对象属性 description. 并提供该对象属性作为验证信息, 该属性名为 data-description 中描述的名字.</li>
+<li>验证描述信息也为一个对象. 每一个验证条件都是一个对象属性. 用于描述验证失败时的提示文本.</li>
+</ul>
+<p>例如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">data-describedby</span>=<span class="string">"messages"</span> <span class="attr">data-description</span>=<span class="string">"test"</span> /&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"messages"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'form'</span>).validate(&#123;</div><div class="line">	<span class="attr">description</span> : &#123;</div><div class="line">		<span class="attr">test</span> : &#123;</div><div class="line">			<span class="attr">required</span> : <span class="string">'&lt;div class="error"&gt;Required&lt;/div&gt;'</span>,</div><div class="line">			<span class="attr">pattern</span> : <span class="string">'&lt;div class="error"&gt;Pattern&lt;/div&gt;'</span>,</div><div class="line">			<span class="attr">conditional</span> : <span class="string">'&lt;div class="error"&gt;Conditional&lt;/div&gt;'</span>,</div><div class="line">			<span class="attr">valid</span> : <span class="string">'&lt;div class="success"&gt;Valid&lt;/div&gt;'</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h1 id="创建扩展"><a href="#创建扩展" class="headerlink" title="创建扩展"></a>创建扩展</h1><p>可以使用 validateExtend 方法来定义扩展, 该扩展名可以利用 data-validate 属性作用与标签中.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">data-validate</span>=<span class="string">"age"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">jQuery(<span class="string">'form'</span>).validate();</div><div class="line"></div><div class="line">jQuery.validateExtend(&#123;</div><div class="line">	<span class="attr">age</span> : &#123;</div><div class="line">		<span class="attr">required</span> : <span class="literal">true</span>,</div><div class="line">		<span class="attr">pattern</span> : <span class="regexp">/^[0-9]+$/</span>,</div><div class="line">		<span class="attr">conditional</span> : <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line"></div><div class="line">			<span class="keyword">return</span> <span class="built_in">Number</span>(value) &gt; <span class="number">17</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/DiegoLopesLima/validate&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/DiegoLopesLima/validate&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;使用语法&quot;&gt;&lt;a href=&quot;#使用语法&quot; class=&quot;headerlink&quot; title=&quot;使用语法&quot;&gt;&lt;/a&gt;使用语法&lt;/h1&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$( &lt;span class=&quot;string&quot;&gt;&#39;#form&#39;&lt;/span&gt; ).validate();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;可以使用自定义属性设置验证&quot;&gt;&lt;a href=&quot;#可以使用自定义属性设置验证&quot; class=&quot;headerlink&quot; title=&quot;可以使用自定义属性设置验证&quot;&gt;&lt;/a&gt;可以使用自定义属性设置验证&lt;/h1&gt;&lt;p&gt;data-conditional        Accepts one or more indexes separated by spaces&lt;br&gt;                        from the &lt;code&gt;conditional&lt;/code&gt; object that should&lt;br&gt;                        contain a the boolean return function.&lt;br&gt;                        接收 一个或多个 由空格分隔的标记, 该标记定义在 &lt;code&gt;conditional&lt;/code&gt;&lt;br&gt;                        对象中. 每一个标记都应该是一个返回 boolean 值的函数.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术积累(转载总结)" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF-%E8%BD%AC%E8%BD%BD%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+      <category term="validate" scheme="http://yoursite.com/tags/validate/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>逗号运算符简单的理解和运用</title>
+    <link href="http://yoursite.com/2016/08/30/%E9%80%97%E5%8F%B7%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E8%BF%90%E7%AE%97/"/>
+    <id>http://yoursite.com/2016/08/30/逗号运算符的运算/</id>
+    <published>2016-08-29T16:00:00.000Z</published>
+    <updated>2017-08-15T11:33:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>逗号运算符是指，多个表达式可以用逗号分开，其中用逗号分开的表达式的值分别结算，但整个表达式的值是最后一个表达式的值。</strong></p>
+<h3 id="1-在函数当中的使用"><a href="#1-在函数当中的使用" class="headerlink" title="1.在函数当中的使用"></a>1.在函数当中的使用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">15</span>,</div><div class="line">b = <span class="number">20</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> b++ , <span class="number">10</span>, a++;</div><div class="line"> &#125;</div><div class="line"><span class="keyword">var</span> c = CommaTest();</div><div class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 返回15  </span></div><div class="line"><span class="comment">// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="2-for循环中逗号运算符"><a href="#2-for循环中逗号运算符" class="headerlink" title="2.for循环中逗号运算符"></a>2.for循环中逗号运算符</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在for循环当中，其逗号运算符的计算，以最后一个传入的参数为准进行计算</span></div><div class="line"><span class="keyword">var</span> i, j = <span class="number">5</span>, k;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ , j++) &#123;</div><div class="line">    k = i + j;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回23</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, m = <span class="number">0</span>; i &lt; <span class="number">10</span>, j &lt; <span class="number">20</span>, m &lt; <span class="number">5</span>; i++ , j++ , m++) &#123;</div><div class="line">    <span class="keyword">var</span> k = i + j + m;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(k)  <span class="comment">// 返回12</span></div></pre></td></tr></table></figure>
+<h3 id="3-逗号运算符与函数调用运算符的冲突"><a href="#3-逗号运算符与函数调用运算符的冲突" class="headerlink" title="3.逗号运算符与函数调用运算符的冲突"></a>3.逗号运算符与函数调用运算符的冲突</h3><pre><code> // 由于逗号运算符在JavaScript中的优先级是最低的，因此函数运算符将先于逗号运算符运行，上述代码中第一个alert函数弹出2。 解决方法如第二个alert函数所示，加上括号，保证逗号运算符先运行。
+如:alert(2, 5);//2
+如:alert((2, 5));//5
+</code></pre><h3 id="4-逗号运算符和赋值运算符冲突"><a href="#4-逗号运算符和赋值运算符冲突" class="headerlink" title="4.逗号运算符和赋值运算符冲突"></a>4.逗号运算符和赋值运算符冲突</h3><pre><code>// 由于逗号运算符要求它的运算数为复杂表达式或简单 表达式（如变量或直接量），赋值运算符先于逗号运算符执行，使逗号运算符左边不是一个运算数或表达式，而是含有var关键字的语句，因此报错。解决方法：只需加上括号，即var b = (++a, 10)，保证逗号运算符先执行即可。
+var a = 20;
+var b = (++a, 10);
+console.log(b);//21
+</code></pre><p><strong>案例测试</strong><br>console.log((0, 9));  //9  (括号提升了逗号运算的等级，不加括号则输出的是0和9)<br> var a = ‘a’, b = ‘b’;<br> a = [b, b = a][0];  //  b   (前面的[]代表的一维数组，0代表的是索引，此处没有牵涉到逗号运算符)<br>a = [b][b = a, 0];  //  b   (前面[]代表的是一维数组，后面的[]根据加号运算符的原理，则指引为0)<br>[[1,2,3],[4,5,6]][1][1]  // 5  (前面的是二维数组，后面的是第一个[]代表数组中的第一个索引，后面的[]代表的是二维护数组中的第一个的索引)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;逗号运算符是指，多个表达式可以用逗号分开，其中用逗号分开的表达式的值分别结算，但整个表达式的值是最后一个表达式的值。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-在函数当中的使用&quot;&gt;&lt;a href=&quot;#1-在函数当中的使用&quot; class=&quot;headerlink&quot; title=&quot;1.在函数当中的使用&quot;&gt;&lt;/a&gt;1.在函数当中的使用&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;15&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;b = &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CommaTest&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; b++ , &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, a++;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = CommaTest();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(c); &lt;span class=&quot;comment&quot;&gt;// 返回15  &lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 函数调用的时候，返回值以逗号运算符最后一位参数为基准，返回值。&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>兼容性问题及解决方案</title>
     <link href="http://yoursite.com/2016/08/18/%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2016/08/18/兼容性问题/</id>
@@ -569,6 +640,121 @@ http://www.divcss5.com/wenji/w194.shtml 只有ie6不支持 ie7都支持。</code
     
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建服务器环境</title>
+    <link href="http://yoursite.com/2016/04/09/%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2016/04/09/搭建服务器环境/</id>
+    <published>2016-04-08T16:00:00.000Z</published>
+    <updated>2017-08-15T12:56:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>为了更好的实现数据在服务器上的存储，或者交换，需要安装和搭建一个服务器环境。</p>
+<h4 id="在wamp的bin目录下-有apache文件夹-里面就是apache的软件；在apache目录下-有一个conf文件夹-所有的配置文件都在这里。首先找到-httpd-conf-文件。"><a href="#在wamp的bin目录下-有apache文件夹-里面就是apache的软件；在apache目录下-有一个conf文件夹-所有的配置文件都在这里。首先找到-httpd-conf-文件。" class="headerlink" title="在wamp的bin目录下, 有apache文件夹, 里面就是apache的软件；在apache目录下 有一个conf文件夹. 所有的配置文件都在这里。首先找到 httpd.conf 文件。"></a>在wamp的bin目录下, 有apache文件夹, 里面就是apache的软件；在apache目录下 有一个conf文件夹. 所有的配置文件都在这里。首先找到 httpd.conf 文件。</h4><ol>
+<li>ServerRoot 配置你的 apache 这个软件所在的文件夹路径。</li>
+<li>listen 类配置默认监听的端口。</li>
+<li>DocumentRoot 来配置网站根目录。</li>
+<li><directory "..."=""> 来配置网站的基本参数( 一般不配置, 一般采用默认 )。</directory></li>
+<li>重启服务器以后, 就可以运行apache.检查网站是否可以访问.</li>
+</ol>
+<h4 id="搭建网站，配置本地的域名系统host文件。"><a href="#搭建网站，配置本地的域名系统host文件。" class="headerlink" title="搭建网站，配置本地的域名系统host文件。"></a>搭建网站，配置本地的域名系统host文件。</h4><ol>
+<li>在c盘的windows文件夹下找到system32,在里面找到 drivers, 在里面的etc目录。</li>
+<li>里面会有一个host文件. 有的同学计算机安全级别较高, 因此将该文件拖到桌面上再修改, 然后拖回去覆盖.( 注意: 备份 )</li>
+<li>打开该文件, 在里面添加 “ip 空格 域名” 的键值对。(如果是苹果的同学在桌面上使用 cmd + shift + g 打开定位目录 输入 /private/etc 可以找到)。</li>
+</ol>
+<h4 id="配置虚拟主机"><a href="#配置虚拟主机" class="headerlink" title="配置虚拟主机"></a>配置虚拟主机</h4><ol>
+<li>这个网站的根目录必须是原始总的这个网站根目录下的文件夹。</li>
+<li>找到 httpd.conf 文件中的 vhost 的注释, 将 include vhost 的配置文件注释去掉# Virtual hosts(Include conf/extra/httpd-vhosts.conf的#)。</li>
+<li>改配置文件就是用于配置虚拟主机的配置文件, 找到该配置文件# 这里是为了配置网站的虚拟主机, 其目的在于在一台计算机上使用多个网站<virtualhost *:80=""> # 这里是配置这个虚拟主机网站的<pre><code class="js">&lt;VirtualHost *:80&gt;
+# 这里是配置这个虚拟主机网站的 根目录 
+DocumentRoot "C:/PHP/httpd-2.4.23-x64-vc11-r3/Apache24/htdocs/study-proj"
+# 这里是配置这个网站的域名
+ServerName study.com
+# 这里是配置网站的别名( 可选 )
+ServerAlias www.study.com
+&lt;/VirtualHost&gt;
+</code></pre>
+</virtualhost></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了更好的实现数据在服务器上的存储，或者交换，需要安装和搭建一个服务器环境。&lt;/p&gt;
+&lt;h4 id=&quot;在wamp的bin目录下-有apache文件夹-里面就是apache的软件；在apache目录下-有一个conf文件夹-所有的配置文件都在这里。首先找到-httpd-con
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建服务器环境</title>
+    <link href="http://yoursite.com/2016/04/09/seo/"/>
+    <id>http://yoursite.com/2016/04/09/seo/</id>
+    <published>2016-04-08T16:00:00.000Z</published>
+    <updated>2017-08-21T12:08:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h3><ol>
+<li>全称：Search Engine Optimization—搜索引擎优化</li>
+<li>分类：<pre><code>+ 白帽SEO
++ 黑帽SEO
+&lt;!---more---&gt;
+</code></pre></li>
+<li>前端工程师：扁平化结构<ul>
+<li>控制首页链接数量：</li>
+<li>扁平化的目录层次：3层就可以跳到任何页面，不要纵深型，</li>
+<li>导航SEO优化： 面包屑导航：随时可以返回</li>
+</ul>
+<ul>
+<li>很久很久以前，在大森林的边上住着一个贫穷的樵夫，他与妻子和两个孩子相依为命。他的儿子名叫汉赛尔，女儿名叫格莱特。后来樵夫的妻子去世了，他又给孩子们娶了一个后母。后母计划把两个孩子带到森林的深处，然后趁他们睡着的时候跑掉。汉赛尔无意中知道了后母的计划，于是偷偷地把一块面包藏在了口袋里。在去森林的路上，汉赛尔悄悄地捏碎了他的面包，并不时地停下脚步，把碎面包屑撒在路上。后母顺利地趁孩子们睡着的时候溜掉了，汉赛尔和格莱特醒来已是一片漆黑。汉赛尔安慰他的妹妹说：“等太阳一出来，我们就看得见我撒在地上的面包屑了，它一定会指给我们回家的路。”但是当太阳升起来时，他们在地上却怎么也找不到一点面包屑了，原来它们都被那些在树林里、田野上飞来飞去的鸟儿一点点地啄食了。<ul>
+<li>分页：首页  多一个下拉框  ，可以随时抓取任意页  控制页面大小，一个页面不要超过100K，太大加载速度慢，小蜘蛛超时就走了</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><title>标题</title></li>
+<li><meta keyworks="">关键字:<meta name="Keywords" content="各种关键字"></li>
+<li><meta description="">网页描述：网页语义化<ul>
+<li><a>标签加title  rel=”nofollow”  爬到其他网页就回不来了</a></li>
+<li><h1>标签   很重要</h1></li>
+<li><br>  文本换行</li>
+<li><img>  alt</li>
+<li><strong><em>小蜘蛛觉得很重要，起到强调的作用，<b><i>只是表示加粗，斜体</i></b></em></strong></li>
+<li>重要HTML代码放在最前面，利用CSS</li>
+<li>重要内容不要用JS输出：小蜘蛛看不到JS</li>
+<li>尽量少使用iframe框架：一般小蜘蛛不会看</li>
+<li>谨慎使用display:none;—-会过滤掉</li>
+<li>不断精简代码：能使用一个标签就用一个，言简意赅</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>SEM (Search Engine Marketing)—–搜索引擎营销</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;SEO&quot;&gt;&lt;a href=&quot;#SEO&quot; class=&quot;headerlink&quot; title=&quot;SEO&quot;&gt;&lt;/a&gt;SEO&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;全称：Search Engine Optimization—搜索引擎优化&lt;/li&gt;
+&lt;li&gt;分类：&lt;pre&gt;&lt;code&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="apache" scheme="http://yoursite.com/tags/apache/"/>
     
   </entry>
   
