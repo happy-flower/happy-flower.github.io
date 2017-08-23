@@ -225,6 +225,233 @@ textarea {
   </entry>
   
   <entry>
+    <title>流行框架angularjs</title>
+    <link href="http://yoursite.com/2017/05/05/angularjs%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%86%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2017/05/05/angularjs基本认识和使用/</id>
+    <published>2017-05-04T16:00:00.000Z</published>
+    <updated>2017-08-23T00:47:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-angularjs优势"><a href="#1-angularjs优势" class="headerlink" title="1.angularjs优势"></a>1.angularjs优势</h3><ul>
+<li>帮助我们快速构建当页面应用</li>
+<li>Angular自身有很多颠覆性的特性 改变了前端的编码方式 简化了我们的操作</li>
+</ul>
+<h3 id="2-angularjs是什么"><a href="#2-angularjs是什么" class="headerlink" title="2.angularjs是什么?"></a>2.angularjs是什么?</h3><ul>
+<li>一款非常优秀的前端高级JS框架</li>
+<li>由谷歌团队负责开发维护</li>
+</ul>
+<h3 id="3-框架与库"><a href="#3-框架与库" class="headerlink" title="3.框架与库"></a>3.框架与库</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=<span class="string">"text"</span> id=<span class="string">"inp"</span>&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'inp'</span>).value;</div><div class="line"></div><div class="line">$(<span class="string">'#inp'</span>).val();</div><div class="line"></div><div class="line">&lt;input type="text" ng-model="val"&gt;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>无论是angularjs还是jQuery都是用原生JS封装的</li>
+<li>库: <ul>
+<li>对代码进行封装 调用封装的方法 简化操作<ul>
+<li>jquery 针对DOM操作</li>
+<li>requirejs js模块化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>框架：<ul>
+<li>虽然也是调用封装的方法</li>
+<li>但是更多的框架会提供代码书写的规则</li>
+<li>我们要按照规则去写代码 框架会帮我们实现相应的功能</li>
+</ul>
+</li>
+<li>框架与库区别:<ul>
+<li>范围不同:库仅仅针对某一个方面,框架包含的范围比较广</li>
+<li>库只是调用封装好的方法,框架会提供代码书写规则</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-angularjs核心思想"><a href="#4-angularjs核心思想" class="headerlink" title="4.angularjs核心思想"></a>4.angularjs核心思想</h3><ul>
+<li>write less do more(和jquery一样)</li>
+<li>其核心是通过指令扩展了HTML，通过表达式绑定数据到HTML。</li>
+<li>Angular不推崇DOM操作，也就是说在NG中几乎找不到任何的DOM操作</li>
+<li>一切操作以数据为中心，用数据驱动DOM</li>
+</ul>
+<h3 id="5-获取angularjs的方式"><a href="#5-获取angularjs的方式" class="headerlink" title="5.获取angularjs的方式"></a>5.获取angularjs的方式</h3><ul>
+<li><a href="http://angularjs.org" target="_blank" rel="external">在官网上下载</a></li>
+<li><a href="https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js" target="_blank" rel="external">通过CDN的方式引入到页面中</a></li>
+<li><code>&lt;script src=&quot;https://cdn.bootcss.com/angular.js/1.6.4/angular.min.js&quot;&gt;&lt;/script&gt;</code></li>
+</ul>
+<h3 id="6-Angular快速入门-hello-world"><a href="#6-Angular快速入门-hello-world" class="headerlink" title="6.Angular快速入门 (hello world)"></a>6.Angular快速入门 (hello world)</h3><ul>
+<li>实现一个最基本的双向数据绑定的例子</li>
+<li>通过例子介绍基本的指令及表达式<ul>
+<li>在使用了angularjsjs的页面，以ng-开头的属性，都可以称之为指令</li>
+<li>ng-app<ul>
+<li>告诉angularjsjs它在页面中所要控制的范围</li>
+<li>页面加载完成angularjs会自动在页面中查找这个指令</li>
+<li>如果页面中没有这个指令,angularjs将不会启动</li>
+<li>告诉angularjs当前页面由哪一个模块来管理</li>
+</ul>
+</li>
+<li>ng-model<ul>
+<li>实现双向数据绑定(必须是表单元素)</li>
+</ul>
+</li>
+<li>ng-click<ul>
+<li>点击事件(和原生JS中的onclick事件作用一样)</li>
+</ul>
+</li>
+<li>ng-init<ul>
+<li>初始化数据</li>
+</ul>
+</li>
+<li>表达式介绍<ul>
+<li>双大括号的形式称之为插值表达式</li>
+<li>在表达式中可以写ng中的变量</li>
+<li>可以显示字符串(显示的内容用引号包裹起来)</li>
+<li>在表达式中可以进行计算</li>
+<li>可以在表达式中写三元运算符</li>
+<li>执行angularjs函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>数据双向绑定(在页面html的表单上修改数据后，js根据对表单的事件监听，立马进行数据的修改，然后再传递到页面进行数据的更新)<ul>
+<li>数据：angularjs中的变量</li>
+<li>双向: html js</li>
+<li>html=&gt;js  js=&gt;html</li>
+</ul>
+</li>
+<li>实现双向数据绑定的条件<ul>
+<li>1.必须是表单元素</li>
+<li>2.在表单元素身上写 ng-model指令</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-angularjs模块化开发"><a href="#7-angularjs模块化开发" class="headerlink" title="7.angularjs模块化开发"></a>7.angularjs模块化开发</h3><ul>
+<li>模块化开发带来的好处<ul>
+<li>方便管理, 复用,后期维护方便</li>
+<li>解决代码冲突,方便多人协作开发</li>
+</ul>
+</li>
+<li>分析模块和控制器与页面之间的关系</li>
+<li>定义模块的语法规则</li>
+<li>定义模块时第二个参数加与不加的区别<ul>
+<li>加第二个参数是创建模块</li>
+<li>不加第二个参数是获取模块</li>
+</ul>
+</li>
+<li><p>报错信息分析</p>
+<ul>
+<li>Module ‘myApp’ is not available! You either misspelled the module name or forgot to load it. If registering a module ensure that you specify the dependencies as the second argument.</li>
+<li>‘myApp’ 这个模块是不可获取的！ 你要么拼写错误 要么忘了加在他 你要确保一个有效的模块 做为了第二个参数的依赖</li>
+</ul>
+</li>
+<li><p>模块依赖</p>
+<ul>
+<li>主模块依赖了其他模块,就相当于拥有了其他模块的功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-angularjs中如何使用控制器"><a href="#8-angularjs中如何使用控制器" class="headerlink" title="8.angularjs中如何使用控制器"></a>8.angularjs中如何使用控制器</h3><ul>
+<li>定义及使用控制器</li>
+<li>控制器的作用<ul>
+<li>向页面中赋初始值</li>
+<li>向页面中展示数据</li>
+<li>代码分类</li>
+</ul>
+</li>
+<li>ng-click<ul>
+<li>函数调用</li>
+<li>angularjs代码 不能写原生JS代码</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-单页Web应用-single-page-web-application-spa"><a href="#10-单页Web应用-single-page-web-application-spa" class="headerlink" title="10.单页Web应用 (single page web application) spa"></a>10.单页Web应用 (single page web application) spa</h3><ul>
+<li>回顾传统网站(<a href="http://www.kuoda.com.cn/indexs.html" target="_blank" rel="external">http://www.kuoda.com.cn/indexs.html</a>)</li>
+<li>单页应用网站(<a href="http://m.daqizhong.com/index.html#/" target="_blank" rel="external">http://m.daqizhong.com/index.html#/</a>)</li>
+<li>单页Web应用,就是只有一张Web页面的应用</li>
+<li>用户与页面交互时,用Javascript动态更新页面</li>
+<li>分析单页面web应用(图)</li>
+<li>单页面应用程序的特点<ul>
+<li>整个网站由一个页面构成</li>
+<li>公共部分只加载一次</li>
+<li><em>利用Ajax局部刷新达到页面切换的目的</em></li>
+<li>不会发生页面跳转白屏的现象</li>
+<li><em>锚点与页面对应</em></li>
+</ul>
+</li>
+<li><p>单页web应用的应用场景</p>
+<ul>
+<li>单页面应用对搜索引擎不友好 不适合做面向大众的展示型网站</li>
+<li>网站后台管理系统 办公OA 混合App 等等不需要被搜索引擎搜索到的应用</li>
+</ul>
+</li>
+<li><p>原生JS实现一个简单的单页面demo</p>
+</li>
+<li>angularjs实现一个简单的单页面demo</li>
+</ul>
+<h3 id="11-angularjs中的路由"><a href="#11-angularjs中的路由" class="headerlink" title="11.angularjs中的路由"></a>11.angularjs中的路由</h3><ul>
+<li>通过画图分析在生活中路由起到什么样的作用</li>
+<li>angularjs中的路由使用方法<ul>
+<li><a href="https://docs.angularjs.org/api/ngRoute" target="_blank" rel="external">官方说明文档</a></li>
+<li>如何获取路由模块<ul>
+<li><a href="https://cdn.bootcss.com/angular.js/1.6.4/angular-route.min.js" target="_blank" rel="external">通过CDN的方式引入到页面中</a></li>
+</ul>
+</li>
+<li>在html页面中通过script标签的方式引入路由模块文件</li>
+<li>在应用主模块中依赖路由模块ngRoute</li>
+<li>配置路由<ul>
+<li>通过config方法注入$routeProvider</li>
+<li>介绍配置中常用的参数</li>
+</ul>
+</li>
+<li>路由和控制器的整合</li>
+<li>使用templateUrl方式载入模板需要在http环境下(本地file协议下不支持)</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-路由传递参数"><a href="#12-路由传递参数" class="headerlink" title="12.路由传递参数"></a>12.路由传递参数</h3><ul>
+<li>在实际的项目中,访问文章详情页面的时候,一般地址栏上都会显示当前文章的ID</li>
+<li>让控制器知道我们当前访问的是哪篇文章,得到文章ID,去请求具体的文章数据</li>
+</ul>
+<h3 id="13-angularjs相关网站"><a href="#13-angularjs相关网站" class="headerlink" title="13.angularjs相关网站"></a>13.angularjs相关网站</h3><ul>
+<li><a href="http://angularjs.org" target="_blank" rel="external">官方网站</a></li>
+<li><a href="https://code.angularjs.org/1.6.4/docs/api" target="_blank" rel="external">官方文档</a></li>
+<li>[学习网站]<ul>
+<li><a href="http://www.angularjs.net.cn" target="_blank" rel="external">http://www.angularjs.net.cn</a></li>
+<li><a href="http://www.apjs.net" target="_blank" rel="external">http://www.apjs.net</a></li>
+<li><a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank" rel="external">http://www.runoob.com/angularjs/angularjs-tutorial.html</a></li>
+<li><a href="https://stackoverflow.com/" target="_blank" rel="external">https://stackoverflow.com/</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1-angularjs优势&quot;&gt;&lt;a href=&quot;#1-angularjs优势&quot; class=&quot;headerlink&quot; title=&quot;1.angularjs优势&quot;&gt;&lt;/a&gt;1.angularjs优势&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;帮助我们快速构建当页面应用&lt;/li&gt;
+&lt;li&gt;Angular自身有很多颠覆性的特性 改变了前端的编码方式 简化了我们的操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;2-angularjs是什么&quot;&gt;&lt;a href=&quot;#2-angularjs是什么&quot; class=&quot;headerlink&quot; title=&quot;2.angularjs是什么?&quot;&gt;&lt;/a&gt;2.angularjs是什么?&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一款非常优秀的前端高级JS框架&lt;/li&gt;
+&lt;li&gt;由谷歌团队负责开发维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;3-框架与库&quot;&gt;&lt;a href=&quot;#3-框架与库&quot; class=&quot;headerlink&quot; title=&quot;3.框架与库&quot;&gt;&lt;/a&gt;3.框架与库&lt;/h3&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;input type=&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt; id=&lt;span class=&quot;string&quot;&gt;&quot;inp&quot;&lt;/span&gt;&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;inp&#39;&lt;/span&gt;).value;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$(&lt;span class=&quot;string&quot;&gt;&#39;#inp&#39;&lt;/span&gt;).val();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;input type=&quot;text&quot; ng-model=&quot;val&quot;&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+      <category term="angularjs" scheme="http://yoursite.com/tags/angularjs/"/>
+    
+      <category term="流行框架" scheme="http://yoursite.com/tags/%E6%B5%81%E8%A1%8C%E6%A1%86%E6%9E%B6/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
     <title>gulp的介绍及使用</title>
     <link href="http://yoursite.com/2017/03/05/gulp%E8%AE%A4%E8%AF%86%E5%8F%8A%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/03/05/gulp认识及使用/</id>
