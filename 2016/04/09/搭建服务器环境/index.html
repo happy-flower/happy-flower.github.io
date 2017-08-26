@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
 <meta property="og:description" content="为了更好的实现数据在服务器上的存储，或者交换，需要安装和搭建一个服务器环境。 在wamp的bin目录下, 有apache文件夹, 里面就是apache的软件；在apache目录下 有一个conf文件夹. 所有的配置文件都在这里。首先找到 httpd.conf 文件。 ServerRoot 配置你的 apache 这个软件所在的文件夹路径。 listen 类配置默认监听的端口。 DocumentRo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-15T12:56:30.000Z">
+<meta property="og:updated_time" content="2017-08-26T06:33:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建服务器环境">
 <meta name="twitter:description" content="为了更好的实现数据在服务器上的存储，或者交换，需要安装和搭建一个服务器环境。 在wamp的bin目录下, 有apache文件夹, 里面就是apache的软件；在apache目录下 有一个conf文件夹. 所有的配置文件都在这里。首先找到 httpd.conf 文件。 ServerRoot 配置你的 apache 这个软件所在的文件夹路径。 listen 类配置默认监听的端口。 DocumentRo">
@@ -363,9 +363,8 @@
 <li>listen 类配置默认监听的端口。</li>
 <li>DocumentRoot 来配置网站根目录。</li>
 <li><directory "..."=""> 来配置网站的基本参数( 一般不配置, 一般采用默认 )。</directory></li>
-<li>重启服务器以后, 就可以运行apache.检查网站是否可以访问.</li>
-</ol>
-<h4 id="搭建网站，配置本地的域名系统host文件。"><a href="#搭建网站，配置本地的域名系统host文件。" class="headerlink" title="搭建网站，配置本地的域名系统host文件。"></a>搭建网站，配置本地的域名系统host文件。</h4><ol>
+<li>重启服务器以后, 就可以运行apache.检查网站是否可以访问.<a id="more"></a>
+<h4 id="搭建网站，配置本地的域名系统host文件。"><a href="#搭建网站，配置本地的域名系统host文件。" class="headerlink" title="搭建网站，配置本地的域名系统host文件。"></a>搭建网站，配置本地的域名系统host文件。</h4></li>
 <li>在c盘的windows文件夹下找到system32,在里面找到 drivers, 在里面的etc目录。</li>
 <li>里面会有一个host文件. 有的同学计算机安全级别较高, 因此将该文件拖到桌面上再修改, 然后拖回去覆盖.( 注意: 备份 )</li>
 <li>打开该文件, 在里面添加 “ip 空格 域名” 的键值对。(如果是苹果的同学在桌面上使用 cmd + shift + g 打开定位目录 输入 /private/etc 可以找到)。</li>
@@ -422,8 +421,8 @@ ServerAlias www.study.com
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/09/seo/" rel="next" title="搭建服务器环境">
-                <i class="fa fa-chevron-left"></i> 搭建服务器环境
+              <a href="/2016/04/09/seo/" rel="next" title="搜索引擎优化详解">
+                <i class="fa fa-chevron-left"></i> 搜索引擎优化详解
               </a>
             
           </div>

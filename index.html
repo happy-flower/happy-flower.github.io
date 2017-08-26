@@ -407,7 +407,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/demo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/angularjs常用的指令归纳/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘金芳">
@@ -429,8 +429,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/06/demo/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2017/08/02/angularjs常用的指令归纳/" itemprop="url">
+                  angularjs常用的指令归纳
                 </a>
               
             
@@ -446,8 +446,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T00:14:42+08:00">
-                2017-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T00:00:00+08:00">
+                2017-08-02
               </time>
             
 
@@ -456,6 +456,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -483,51 +505,15 @@
 
       
         
-          
-            <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>使用div来高仿textarea</title>
-    <style>
-        textarea {
-            margin: 0 auto;
-            display: block;
-            width: 400px;
-            height: 120px;
-            margin-bottom: 100px;
-        }
-
-        .text-box {
-            width: 400px;
-            min-height: 120px;
-            max-height: 300px;
-            /*_height: 120px; 兼容IE代码*/
-            margin-left: auto;
-            margin-right: auto;
-            padding: 3px;
-            outline: 0;
-            /*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/
-            border: 1px solid rgb(169, 169, 169);
-            font-size: 12px;
-            word-wrap: break-word;
-            overflow-x: hidden;
-            overflow-y: auto;
-            /*_overflow-y: visible; /*兼容IE代码*/
-        }
-    </style>
-</head>
-
-<body>
-    <!-- textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻 -->
-    <textarea style="resize: none"></textarea>
-    <!-- 需要用到contenteditable属性（true规定元素可编辑,false规定元素不可编辑），主浏览器（HTML5的新属性，IE	Firefox	Chrome	Safari	Opera）都支持 -->
-    <div contenteditable="true" class="text-box"><br></div>
-</body>
-
-</html>
-          
+          <h3 id="参数传递的形式"><a href="#参数传递的形式" class="headerlink" title="参数传递的形式"></a>参数传递的形式</h3><p>考虑到最终的项目的运行的时候,都会采用压缩,然而,在angularjs在执行的过程,它会根据传递的形参来接收实参的值,因此,为了避免在压缩过程中,传递的形参被代替,因此控制器中,传递的参数需要写成以下模式。<br><strong>模块对象.controller(‘控制器名’,[‘参数’,function(参数){}])</strong></p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>它也存在着作用域链,现在当前的控制器中去找,如果没有则会到父控制器找,如果没有,则会找到全局作用域下。页面一上来的时候 首先会执行 run方法 并且只会执行一次,项目初始化。<br><strong>模块对象.run([‘$rootScope’,function($rootScope){}])</strong> 此方式可以设置全局作用域。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/02/angularjs常用的指令归纳/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

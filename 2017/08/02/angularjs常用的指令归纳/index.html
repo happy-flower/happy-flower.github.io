@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="javascript,angularjs," />
 
 
 
@@ -89,17 +89,18 @@
 
 
 
-<meta name="description" content="使用div来高仿textarea              textarea {             margin: 0 auto;             display: block;             width: 400px;             height: 120px;             margin-bottom: 100px;">
+<meta name="description" content="参数传递的形式考虑到最终的项目的运行的时候,都会采用压缩,然而,在angularjs在执行的过程,它会根据传递的形参来接收实参的值,因此,为了避免在压缩过程中,传递的形参被代替,因此控制器中,传递的参数需要写成以下模式。模块对象.controller(‘控制器名’,[‘参数’,function(参数){}]) 作用域它也存在着作用域链,现在当前的控制器中去找,如果没有则会到父控制器找,如果没有,则">
+<meta name="keywords" content="javascript,angularjs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Liu jinfang&#39;s Nodes">
-<meta property="og:url" content="http://yoursite.com/2017/08/06/demo/index.html">
+<meta property="og:title" content="angularjs常用的指令归纳">
+<meta property="og:url" content="http://yoursite.com/2017/08/02/angularjs常用的指令归纳/index.html">
 <meta property="og:site_name" content="Liu jinfang&#39;s Nodes">
-<meta property="og:description" content="使用div来高仿textarea              textarea {             margin: 0 auto;             display: block;             width: 400px;             height: 120px;             margin-bottom: 100px;">
+<meta property="og:description" content="参数传递的形式考虑到最终的项目的运行的时候,都会采用压缩,然而,在angularjs在执行的过程,它会根据传递的形参来接收实参的值,因此,为了避免在压缩过程中,传递的形参被代替,因此控制器中,传递的参数需要写成以下模式。模块对象.controller(‘控制器名’,[‘参数’,function(参数){}]) 作用域它也存在着作用域链,现在当前的控制器中去找,如果没有则会到父控制器找,如果没有,则">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-14T06:59:22.000Z">
+<meta property="og:updated_time" content="2017-08-26T13:50:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Liu jinfang&#39;s Nodes">
-<meta name="twitter:description" content="使用div来高仿textarea              textarea {             margin: 0 auto;             display: block;             width: 400px;             height: 120px;             margin-bottom: 100px;">
+<meta name="twitter:title" content="angularjs常用的指令归纳">
+<meta name="twitter:description" content="参数传递的形式考虑到最终的项目的运行的时候,都会采用压缩,然而,在angularjs在执行的过程,它会根据传递的形参来接收实参的值,因此,为了避免在压缩过程中,传递的形参被代替,因此控制器中,传递的参数需要写成以下模式。模块对象.controller(‘控制器名’,[‘参数’,function(参数){}]) 作用域它也存在着作用域链,现在当前的控制器中去找,如果没有则会到父控制器找,如果没有,则">
 
 
 
@@ -127,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/06/demo/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/02/angularjs常用的指令归纳/"/>
 
 
 
 
 
-  <title>  | Liu jinfang's Nodes </title>
+  <title> angularjs常用的指令归纳 | Liu jinfang's Nodes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +263,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/demo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/angularjs常用的指令归纳/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="刘金芳">
@@ -283,7 +284,7 @@
             
             
               
-                
+                angularjs常用的指令归纳
               
             
           </h1>
@@ -298,8 +299,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T00:14:42+08:00">
-                2017-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T00:00:00+08:00">
+                2017-08-02
               </time>
             
 
@@ -308,6 +309,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术积累/" itemprop="url" rel="index">
+                    <span itemprop="name">技术积累</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -334,49 +357,15 @@
       
 
       
-        <!DOCTYPE html>
-<html lang="en">
+        <h3 id="参数传递的形式"><a href="#参数传递的形式" class="headerlink" title="参数传递的形式"></a>参数传递的形式</h3><p>考虑到最终的项目的运行的时候,都会采用压缩,然而,在angularjs在执行的过程,它会根据传递的形参来接收实参的值,因此,为了避免在压缩过程中,传递的形参被代替,因此控制器中,传递的参数需要写成以下模式。<br><strong>模块对象.controller(‘控制器名’,[‘参数’,function(参数){}])</strong></p>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>它也存在着作用域链,现在当前的控制器中去找,如果没有则会到父控制器找,如果没有,则会找到全局作用域下。页面一上来的时候 首先会执行 run方法 并且只会执行一次,项目初始化。<br><strong>模块对象.run([‘$rootScope’,function($rootScope){}])</strong> 此方式可以设置全局作用域。<br><a id="more"></a></p>
+<h3 id="常用的指令解析"><a href="#常用的指令解析" class="headerlink" title="常用的指令解析"></a>常用的指令解析</h3><p><strong>ng-repeat = ‘遍历的每一项 in 遍历的数据’  ng-repeat=”(key,val) in info”</strong><br>key代表键  val代表值,数组中则代表的是索引和对应的该项。<br><strong>（此方法主要用于遍历）,注意：遍历的时候一定要用情遍历的数据是什么。</strong><br><strong>$index</strong> 循环过程中的索引<br><strong>$first</strong> 是否是第一项<br><strong>$last</strong>  是否是最后一项<br><strong>$middle</strong> 是否是中间项 除了第一项 和 最后一项 全是中间项<br><strong>$even</strong> 是否是偶数项<br><strong>$odd</strong> 是否是奇数项<br><strong>$timeout</strong>  延时 使用和setTimeout一样<br><strong>ng-class</strong> 是专门用来添加、删除、类名的。<br>-&gt; 如<code>&lt;div ng-class=&#39;{&quot;active&quot;:true}&#39;&gt;&lt;/div&gt;</code>通过传入的布尔值来控制类名的有无。ng-class=”{‘active’: 布尔类型 true | false | 变量 | 能够转换为布尔值的表达式 }”</p>
+<p><strong>ng-bind=”数据变量”</strong> 它作为标签的属性设置<br> -&gt; 如<code>&lt;div ng-bind=&quot;msg&quot; &gt;</code></p>
+<p><strong>ng-bind-template=”数据1、数据2”</strong><br>-&gt; 如：<code>&lt;div ng-bind-template=&quot;{\{msg\}}{\{abc}\}&quot; &gt;</code></p>
+<p><strong>ng-cloak</strong> angularjs在解析完指令所在元素内部的数据以后,会将指令所在的元素, 显示添加样式<br>-&gt; 如<code>&lt;div class=&quot;ng-cloak&quot;&gt;{\{msg}\}{\{abc}\}&lt;/div&gt;     .ng-cloak {display:none};</code></p>
+<p><strong>以上三种方式：可以解决当页面加载的时候,出现的双大括号的现象,很好的解决了用户体验。</strong><br><strong>ng-non-bindable</strong>不解析表达式<br>-&gt; 如<code>&lt;div ng-non-bindable&gt;大括号&lt;/div&gt;</code>双大括号不会被解析</p>
+<p><strong>ng-show=”值”</strong>  如果值为true 指令所在的元素显示,反之隐藏<br><strong>ng-hide=”值”</strong> 如果值为true 指令所在的元素隐藏,反之显示<br><strong>ng-if=”值”</strong> 如果值为true 指令所在的元素显示,反之隐藏<br>-&gt;<strong>注意：ng-if 是通过增加 删除 DOM节点方式达到显示隐藏的目的ng-show ng-hide 是通过样式的方式 达到显示隐藏的目的</strong><br><strong>ng-switch ng-switch-when</strong>  ng-switch=”变量”,拿变量跟 ng-switch-when=”值”的值相匹配, 如果匹配上,元素显示 否则元素隐藏<br><strong>ng-options</strong>  用来循环下拉列表,在select标签上添加此属性,ng-options=每一项数据.值 as 每一项数据.键 for 每一项数据 in 遍历的数据’,表单元素还需要添加ng-model=’ball’属性否则会报错<br><strong>ng-dblclick</strong> 双击,事件对象$event,需作为参数传进去(如果需要打印事件处理对象,则需在传入实参的时候,传入$event),同时可以打印事件处理对象,来查询angularjs里面有哪些方法。</p>
 
-<head>
-    <meta charset="UTF-8">
-    <title>使用div来高仿textarea</title>
-    <style>
-        textarea {
-            margin: 0 auto;
-            display: block;
-            width: 400px;
-            height: 120px;
-            margin-bottom: 100px;
-        }
-
-        .text-box {
-            width: 400px;
-            min-height: 120px;
-            max-height: 300px;
-            /*_height: 120px; 兼容IE代码*/
-            margin-left: auto;
-            margin-right: auto;
-            padding: 3px;
-            outline: 0;
-            /*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/
-            border: 1px solid rgb(169, 169, 169);
-            font-size: 12px;
-            word-wrap: break-word;
-            overflow-x: hidden;
-            overflow-y: auto;
-            /*_overflow-y: visible; /*兼容IE代码*/
-        }
-    </style>
-</head>
-
-<body>
-    <!-- textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻 -->
-    <textarea style="resize: none"></textarea>
-    <!-- 需要用到contenteditable属性（true规定元素可编辑,false规定元素不可编辑），主浏览器（HTML5的新属性，IE	Firefox	Chrome	Safari	Opera）都支持 -->
-    <div contenteditable="true" class="text-box"><br></div>
-</body>
-
-</html>
       
     </div>
 
@@ -396,6 +385,14 @@
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/angularjs/" rel="tag"># angularjs</a>
+          
+        </div>
       
 
       
@@ -465,8 +462,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/IMG_20130917_074223.jpg"
@@ -560,6 +566,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数传递的形式"><span class="nav-number">1.</span> <span class="nav-text">参数传递的形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域"><span class="nav-number">2.</span> <span class="nav-text">作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的指令解析"><span class="nav-number">3.</span> <span class="nav-text">常用的指令解析</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
