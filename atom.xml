@@ -190,6 +190,31 @@ textarea {
   </entry>
   
   <entry>
+    <title>angularjs自定义指令及过滤器介绍</title>
+    <link href="http://yoursite.com/2017/07/22/angularjs%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4%E5%8F%8A%E8%BF%87%E6%BB%A4%E5%99%A8%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://yoursite.com/2017/07/22/angularjs自定义指令及过滤器介绍/</id>
+    <published>2017-07-21T16:00:00.000Z</published>
+    <updated>2017-08-26T14:40:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="操作DOM的方式（代码的执行顺序run-gt-控制器-gt-自定义指令）"><a href="#操作DOM的方式（代码的执行顺序run-gt-控制器-gt-自定义指令）" class="headerlink" title="操作DOM的方式（代码的执行顺序run -&gt; 控制器 -&gt; 自定义指令）"></a>操作DOM的方式（代码的执行顺序run -&gt; 控制器 -&gt; 自定义指令）</h3><p>语法：<strong>模块对象.directive(‘指令名称’,[function(){ return{}}])</strong><br>备注：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">return &#123;</div><div class="line">	// angularjs提供给我们的写DOM操作的地方</div><div class="line">	link:function(scope,element,attributes)&#123;</div><div class="line">		// 注意传入的参数的顺序，必须是scope,element,attributes</div><div class="line">		// element 指令所在的元素 jqLite对象</div><div class="line">		//scope 指令所在作用域中的$scope</div><div class="line">		//attributes 指令所在的元素身上的属性集合</div><div class="line">	element.css('background','red')&#125;</div><div class="line">	template:&lt;div&gt;333333&lt;/div&gt;,</div><div class="line">	templateUrl:'./tpl/tpl-1.html' //必须在服务器中打开</div><div class="line">	transclude:true  </div><div class="line">		//告诉angularjs保留指令所在元素内部的原有内容：template:'&lt;div&gt;&lt;span ng-transclude&gt;&lt;/span&gt;333333 &lt;/div&gt;'</div><div class="line">	replace:true </div><div class="line">		//在HTML页面中 指令所在的元素不想要了， 我只要保留指令内部定义的模板内容</div><div class="line">注意:</div><div class="line">	-&gt; 1.当我们把指令所在的元素删除之后 指令的模板必须有一个根元素 </div><div class="line">	-&gt; 2.link函数对应的element参数 会变成 指令模板中的根元素</div><div class="line">	-&gt; 3.使用replace的时候，"template:&lt;div&gt;333333&lt;/div&gt;&lt;span&gt;&lt;/span&gt;"会报错，是因为当删除该元素的标签后，在template的内容中，span和div标签是平级的，因此无法判断出谁作为根元素。</div><div class="line"> restrict:ECMA</div><div class="line"> + 属性指令 A attributes</div><div class="line"> + 元素指令 E element</div><div class="line"> + 类名指令 C class</div><div class="line"> + 注释指令 M comment   注释指令需要配合replace一起使用</div><div class="line"></div><div class="line">**scope**:true 指令本身拥有自己的作用域 但是会继承父级作用域</div><div class="line">scope:false 指令本身没有自己的作用域 使用的是当前指令所在作用域的 $scope</div><div class="line">scope:&#123;&#125; 指令本身拥有自己的作用域 不会继承父级的作用域</div><div class="line">**@ 取当前指令所在元素身上的同名属性对应的值 并且将 值 赋值给当前属性**</div><div class="line">**= 取当前指令所在元素身上的同名属性对应的值 并且将 值 赋值给当前属性**</div><div class="line">区别：</div><div class="line">1. @ 需要加大括号通过@取到的数据都是字符串</div><div class="line">2. = 不需要大括号通过=取到的数据 是 真实的数据类型</div><div class="line"></div><div class="line">+ ng-repeat-after  可以理解为循环遍历完成后，自定义的指令。</div><div class="line"></div><div class="line">建立指令的四种形式。注意注释标签的填写形式。</div><div class="line">注意：在定义块级作用域的时候，获取外部控制器的数据的时候，方式，通过双大括号获取的全部是字符串，通过""获取的是数据的本身。</div><div class="line"></div><div class="line">### 过滤器</div><div class="line">**&#123; 数据 | 过滤器的名字:参数1:参数2 &#125;**</div><div class="line">**currency** 货币过滤器</div><div class="line">**date** 日期过滤器</div><div class="line">**filter**过滤器 根据过滤条件 过滤出符合条件的数据（注意：模糊匹配：filter过滤器会去数据中的[每一条数据中的每一个字段中]去查找 有没有 [包含]过滤条件的数据 如果有 留下，精确匹配：filter过滤器会去数据中的[指定的字段中]去查找 有没有 [包含]过滤条件的数据 如果有 留下）</div><div class="line">**limitTo** 限制过滤器</div><div class="line">**orderBy** 可以根据某一个字段进行排序 默认 是升序（例如：orderBy:'age' 根据age字段进行升序排列</div><div class="line"> -&gt; orderBy:'-age' 根据age字段进行降序排列</div><div class="line">**json**过滤器 可以将数据以良好的格式 展现到页面中</div><div class="line">#### 自定义过滤器</div><div class="line">``` js</div><div class="line">	模块对象.filter('名字',[function()&#123;</div><div class="line">		return function(value)&#123;	</div><div class="line">				// value 就是我们需要处理的数据</div><div class="line">			    // 最后 我们需要将处理的数据return出去</div><div class="line">		&#125;</div><div class="line">  &#125;])</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;操作DOM的方式（代码的执行顺序run-gt-控制器-gt-自定义指令）&quot;&gt;&lt;a href=&quot;#操作DOM的方式（代码的执行顺序run-gt-控制器-gt-自定义指令）&quot; class=&quot;headerlink&quot; title=&quot;操作DOM的方式（代码的执行顺序run 
+    
+    </summary>
+    
+      <category term="Rendering Engine" scheme="http://yoursite.com/categories/Rendering-Engine/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="angularjs" scheme="http://yoursite.com/tags/angularjs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>流行框架angularjs</title>
     <link href="http://yoursite.com/2017/05/05/angularjs%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%86%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/05/05/angularjs基本认识和使用/</id>
@@ -1099,35 +1124,6 @@ ServerAlias www.study.com
       <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
     
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/03/02/hello-world/"/>
-    <id>http://yoursite.com/2016/03/02/hello-world/</id>
-    <published>2016-03-01T16:00:00.000Z</published>
-    <updated>2017-08-14T07:32:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
     
   </entry>
   
