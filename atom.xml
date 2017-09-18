@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-14T07:30:02.000Z</updated>
+  <updated>2017-08-26T13:50:18.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,62 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>使用div来高仿textarea标签</title>
-    <link href="http://yoursite.com/2017/09/30/%E4%BD%BF%E7%94%A8div%E6%9D%A5%E9%AB%98%E4%BB%BFtextarea/"/>
-    <id>http://yoursite.com/2017/09/30/使用div来高仿textarea/</id>
-    <published>2017-09-29T16:00:00.000Z</published>
-    <updated>2017-08-14T07:30:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="阐述背景"><a href="#阐述背景" class="headerlink" title="阐述背景"></a>阐述背景</h3><p>-&gt; textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻烦。如果没设置style=’resize: none’,则可以拖动文本框的大小，会造成页面的重排和重绘。<br><a id="more"></a></p>
-<h3 id="textarea实现代码"><a href="#textarea实现代码" class="headerlink" title="textarea实现代码"></a>textarea实现代码</h3><pre><code class="js">&lt;textarea style=<span class="string">'resize: none'</span>&gt;&lt;/textarea&gt;
-textarea {
-       <span class="attr">margin</span>: <span class="number">0</span> auto;
-       display: block;
-       width: <span class="number">400</span>px;
-       height: <span class="number">120</span>px;
-       margin-bottom: <span class="number">100</span>px;
-}
-</code></pre>
-<h3 id="div实现代码"><a href="#div实现代码" class="headerlink" title="div实现代码"></a>div实现代码</h3><pre><code class="js">&lt;div contenteditable=<span class="string">"true"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"text-box"</span>&gt;&lt;br/&gt;&lt;/div&gt;
- .text-box {
-        <span class="attr">width</span>: <span class="number">400</span>px;
-        min-height: <span class="number">120</span>px;
-        max-height: <span class="number">300</span>px;
-        _height: <span class="number">120</span>px;<span class="comment">/* 兼容IE代码*/</span>
-        margin-left: auto;
-        margin-right: auto;
-        padding: <span class="number">3</span>px;
-        outline: <span class="number">0</span>;
-        <span class="comment">/*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/</span>
-        border: <span class="number">1</span>px solid rgb(<span class="number">169</span>, <span class="number">169</span>, <span class="number">169</span>);
-        font-size: <span class="number">12</span>px;
-        word-wrap: <span class="keyword">break</span>-word;
-        overflow-x: hidden;
-        overflow-y: auto;
-        _overflow-y: visible; <span class="comment">/*兼容IE代码*/</span>
-    }
-</code></pre>
-<h3 id="效果图对比"><a href="#效果图对比" class="headerlink" title="效果图对比"></a>效果图对比</h3><p><img src="http://a1.qpic.cn/psb?/V133o6v43qtNPJ/p.kPZqQkmroBFZqvFx.jyvcd4NkKSBt.5GEjZcrrZWE!/b/dD4BAAAAAAAA&amp;bo=zQF6AQAAAAARB4c!&amp;rf=viewer_4" alt="插入图片" title="div和textarea图片对比"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;阐述背景&quot;&gt;&lt;a href=&quot;#阐述背景&quot; class=&quot;headerlink&quot; title=&quot;阐述背景&quot;&gt;&lt;/a&gt;阐述背景&lt;/h3&gt;&lt;p&gt;-&amp;gt; textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻烦。如果没设置style=’resize: none’,则可以拖动文本框的大小，会造成页面的重排和重绘。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
-    
-    
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
-  </entry>
   
   <entry>
     <title>angularjs常用的指令归纳</title>
@@ -685,6 +629,62 @@ console.log(b);//21
     
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用div来高仿textarea标签</title>
+    <link href="http://yoursite.com/2016/08/20/%E4%BD%BF%E7%94%A8div%E6%9D%A5%E9%AB%98%E4%BB%BFtextarea/"/>
+    <id>http://yoursite.com/2016/08/20/使用div来高仿textarea/</id>
+    <published>2016-08-19T16:00:00.000Z</published>
+    <updated>2017-09-18T03:40:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="阐述背景"><a href="#阐述背景" class="headerlink" title="阐述背景"></a>阐述背景</h3><p>-&gt; textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻烦。如果没设置style=’resize: none’,则可以拖动文本框的大小，会造成页面的重排和重绘。<br><a id="more"></a></p>
+<h3 id="textarea实现代码"><a href="#textarea实现代码" class="headerlink" title="textarea实现代码"></a>textarea实现代码</h3><pre><code class="js">&lt;textarea style=<span class="string">'resize: none'</span>&gt;&lt;/textarea&gt;
+textarea {
+       <span class="attr">margin</span>: <span class="number">0</span> auto;
+       display: block;
+       width: <span class="number">400</span>px;
+       height: <span class="number">120</span>px;
+       margin-bottom: <span class="number">100</span>px;
+}
+</code></pre>
+<h3 id="div实现代码"><a href="#div实现代码" class="headerlink" title="div实现代码"></a>div实现代码</h3><pre><code class="js">&lt;div contenteditable=<span class="string">"true"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"text-box"</span>&gt;&lt;br/&gt;&lt;/div&gt;
+ .text-box {
+        <span class="attr">width</span>: <span class="number">400</span>px;
+        min-height: <span class="number">120</span>px;
+        max-height: <span class="number">300</span>px;
+        _height: <span class="number">120</span>px;<span class="comment">/* 兼容IE代码*/</span>
+        margin-left: auto;
+        margin-right: auto;
+        padding: <span class="number">3</span>px;
+        outline: <span class="number">0</span>;
+        <span class="comment">/*现代浏览器如Firefox在可编辑模式下的div获取焦点的时候会有虚框,可以去掉虚框*/</span>
+        border: <span class="number">1</span>px solid rgb(<span class="number">169</span>, <span class="number">169</span>, <span class="number">169</span>);
+        font-size: <span class="number">12</span>px;
+        word-wrap: <span class="keyword">break</span>-word;
+        overflow-x: hidden;
+        overflow-y: auto;
+        _overflow-y: visible; <span class="comment">/*兼容IE代码*/</span>
+    }
+</code></pre>
+<h3 id="效果图对比"><a href="#效果图对比" class="headerlink" title="效果图对比"></a>效果图对比</h3><p><img src="http://a1.qpic.cn/psb?/V133o6v43qtNPJ/p.kPZqQkmroBFZqvFx.jyvcd4NkKSBt.5GEjZcrrZWE!/b/dD4BAAAAAAAA&amp;bo=zQF6AQAAAAARB4c!&amp;rf=viewer_4" alt="插入图片" title="div和textarea图片对比"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;阐述背景&quot;&gt;&lt;a href=&quot;#阐述背景&quot; class=&quot;headerlink&quot; title=&quot;阐述背景&quot;&gt;&lt;/a&gt;阐述背景&lt;/h3&gt;&lt;p&gt;-&amp;gt; textarea有一个不足就是不能像普通div标签一样高度可以跟随内容自适应。textarea总是很自信地显摆它的滚动条，高度固执地岿然不动。所以，有时候,为了增加交互体验,让文本域高度自适应的时候，就会遇到麻烦。如果没设置style=’resize: none’,则可以拖动文本框的大小，会造成页面的重排和重绘。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="技术积累" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E7%A7%AF%E7%B4%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
   </entry>
   
